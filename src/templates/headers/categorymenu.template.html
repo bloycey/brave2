@@ -1,0 +1,51 @@
+    <div class="relative top-lvl-cat close-menu-wrapper panel">
+        <div class="top-lvl-title-wrapper">
+                <a href="javascript:void(0)" id="closeCatMenu" class="closeCatMenu"><i class="fa fa-chevron-left"></i> Close Category Menu</a>
+        </div>
+    </div>
+
+    <div class="relative top-lvl-cat panel">
+        <div class="top-lvl-title-wrapper">
+                <a href="[@config:homeurl@]?rf=kw&kw=">All Products</a>
+        </div>
+    </div>
+
+[%cache type:'menu' id:'category-menu-desktop'%] [%content_menu type:'category' sortby:'sortorder' show_empty:'1'%] 
+[%param *level_1%]
+    
+    <div class="relative top-lvl-cat panel">
+        <div class="top-lvl-title-wrapper">
+                <a href="[@url@]" class="category [%IF [@next_level@] %] next-level[%/if%]">[@name@]</a>[%IF [@next_level@] %]<span class="category-toggle" data-target=".cat-menu-[@id@]" data-toggle="collapse"><i class="fa fa-chevron-down"></i></span>[%/if%]
+        </div>
+    
+        
+        [%if [@next_level@]%]
+        <div class="collapse cat-menu-[@id@]">
+                <div class="category-lvl-wrapper">
+            [@next_level@]
+            </div>
+        </div>
+        [%/if%]
+    </div>
+
+    [%/param%] 
+    [%param *level_2%]
+    <div class="relative second-lvl-cat">
+            <div class="second-lvl-title-wrapper">
+                    <a href="[@url@]" class="category [%IF [@next_level@] %] next-level[%/if%]">[@name@]</a>[%IF [@next_level@] %]<span class="category-toggle" data-target=".cat-menu-[@id@]" data-toggle="collapse"><i class="fa fa-chevron-down"></i></span>[%/if%]
+            </div>
+        
+                
+            
+            [%if [@next_level@]%]
+            <div id="cat-menu-[@id@]" class="collapse cat-menu-[@id@]">
+                [@next_level@]
+            </div>
+            [%/if%]
+        </div>
+    [%/param%] 
+    [%param *level_3%]
+        <a href="[@url@]" class="third-lvl-cat"> &mdash; [@name@]</a>
+    [%/param%] 
+    [%/content_menu%] 
+    [%/ cache%]

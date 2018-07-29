@@ -1,0 +1,278 @@
+[%SET [@page_type@]='category'/%]
+<div class="container-fluid category-sticky-panel-container">
+
+[%THUMB_LIST type:'products' limit:'[@config:THUMB_LIMIT@]'%]
+	[%PARAM template%][%VIEWBY type:'products' default:'[@templatethumb@]'%][%/VIEWBY%][%/PARAM%]
+	[%PARAM *header%]
+	
+	<div class="row category-sticky-panel">
+	
+			<div class="col-xs-8 col-md-6">
+				<div class="category-page-title">
+						<h1>Search: [%if [@form:kw@] ne ''%][@form:kw@][%else%] Entire store[%/if%]</h1>
+				</div>	
+			</div>
+			<!-- <p>[@content_short_description1@]</p> -->
+			<div class="hidden-xs hidden-sm col-md-4">
+				<form method="get" class="form-horizontal category-sort-form" action="[@config:CURRENT_URL@]">
+					<input name="rf" type="hidden" value="[%FILTER_CODE%][%/FILTER_CODE%]">
+					<div class="form-group">
+						<label class="control-label col-xs-2" for="sortby">Sort</label>
+						<div class="col-xs-10">
+							<select id="sortby" name="sortby" onChange="return this.form.submit();" class="nice wide" aria-label="Sort products by">
+								<option value="popular" [%SORTBY type:'products' if:'eq' value:'popular'%]selected[%/SORTBY%]>
+									Most Popular
+								</option>
+								<option value="name" [%SORTBY type:'products' if:'eq' value:'name'%]selected[%/SORTBY%]>
+									Name
+								</option>
+								<option value="SKU" [%SORTBY type:'products' if:'eq' value:'SKU'%]selected[%/SORTBY%]>
+									SKU
+								</option>
+								<option value="lowest_price" [%SORTBY type:'products' if:'eq' value:'lowest_price'%]selected[%/SORTBY%]>
+									Lowest Price
+								</option>
+								<option value="highest_price" [%SORTBY type:'products' if:'eq' value:'highest_price'%]selected[%/SORTBY%]>
+									Highest Price
+								</option>
+							</select>
+						</div>
+					</div>
+				</form>
+			</div>
+		<div class="col-xs-4 col-md-2 text-right">
+				<p class="relative filter-toggle" data-toggle="collapse" data-target="#filter-panel">Filters <i class="up-down fa fa-angle-down"></i></p>
+		</div>		
+	</div>
+</div>
+
+	<div class="col-xs-12">
+			<div class="panel panel-default collapse" id="filter-panel">
+					<div class="panel-heading panel-heading-thumbnails">
+						<h3 class="panel-title">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#filters-accordion" href="#filters">Filter Products</a>
+						</h3>
+					</div>
+					<ul id="filters" class="panel-collapse in collapse list-group" role="group">
+						[%PRODUCT_FILTER type:'variations' autohide:'0' sortoption:'sortorder'%]
+							[%PARAM *header%]
+								<li class="list-group-item"><h4>Filter By [@filter_name@]</h4></li>
+							[%/PARAM%]
+							[%PARAM *body%]
+								[%DATA id:'selected' if:'==' value:'1'%]
+									[%PARAM *if_true%]
+										<li class="filter-remove filter"><a href="[@remove_single_url@]" class="list-group-item" rel="nofollow" >
+											[@name@] <span class="text-muted"></span></a>
+										</li>
+									[%/PARAM%]
+									[%PARAM *if_false%]
+										<li class="filter">
+											<a class="list-group-item" href="[@url@]"  aria-label="Filter [@filter_name@] to [@name@]"> [@name@] <span class="text-muted"></span></a>
+										</li>
+									[%/PARAM%]
+								[%/DATA%]
+							[%/PARAM%]
+						[%/PRODUCT_FILTER%]
+						[%PRODUCT_FILTER type:'category' limit:'100' autohide:'0' filter_parent_content:'1'%]
+							[%PARAM header%]
+								<li class="list-group-item">
+									<h4>Filter By Category</h4>
+								</li>
+							[%/PARAM%]
+							[%PARAM *body%]
+								[%DATA id:'selected' if:'==' value:'1'%]
+									[%PARAM *if_true%]
+									<li class="filter-remove"><a href="[@remove_url@]" class="list-group-item" rel="nofollow" >
+									[@name@] <span class="text-muted">([@total@])</span></a>
+									</li>
+									[%/PARAM%]
+									[%PARAM *if_false%]
+										<li class="filter">
+										<a href="[@url@]" class="list-group-item" >[@name@] <span class="text-muted">([@total@])</span></a>
+										</li>
+									[%/PARAM%]
+								[%/DATA%]
+							[%/PARAM%]
+						[%/PRODUCT_FILTER%]
+						[%product_filter type:'instock' autohide:'0'%]
+							[%param header%]
+								<li class="list-group-item">
+									<h4>Filter By Stock</h4>
+								</li>
+							[%/param%]
+							[%param *body%]
+								[%if [@selected@]%]
+									<li class="filter-remove">
+										<a href="[@remove_url@]" class="list-group-item" rel="nofollow" >In Stock <span class="text-muted">([@total@])</span></a>
+									</li>
+								[%else%]
+									<li class="filter">
+										<a href="[@url@]" class="list-group-item" >In Stock <span class="text-muted">([@total@])</span></a>
+									</li>
+								[%/if%]
+							[%/param%]
+						[%/product_filter%]
+							[%PRODUCT_FILTER type:'price' limit:'6'%]
+								[%PARAM header%]
+									<li class="list-group-item hidden-md hidden-lg"><h4>Filter By Price Range</h4></li>
+								[%/PARAM%]
+								[%PARAM *body%]
+									[%DATA id:'selected' if:'==' value:'1'%]
+										[%PARAM *if_true%]
+											<li class="filter-remove hidden-md hidden-lg"><a href="[@remove_url@]" class="list-group-item" rel="nofollow" >
+												[@name@] <span class="text-muted">([@total@])</span></a>
+											</li>
+										[%/PARAM%]
+										[%PARAM *if_false%]
+											[%DATA id:'min' if:'=' value:'0'%]
+												[%DATA id:'max' if:'>' value:'0'%]
+													<li class="filter hidden-md hidden-lg"><a class="list-group-item" href="[@url@]" >[%FORMAT type:'currency' dp:'0'%][@max@][%/FORMAT%] or below</a></li>
+												[%/DATA%]
+											[%/DATA%]
+											[%DATA id:'min' if:'>' value:'0'%]
+												[%DATA id:'max' if:'>' value:'0'%]
+													<li class="filter hidden-md hidden-lg"><a class="list-group-item" href="[@url@]" >[%FORMAT type:'currency' dp:'0'%][@min@][%/FORMAT%] to [%FORMAT type:'currency' dp:'0'%][@max@][%/FORMAT%]</a></li>
+												[%/DATA%]
+											[%/DATA%]
+											[%DATA id:'max' if:'=' value:'0'%]
+												<li class="filter hidden-md hidden-lg"><a class="list-group-item" href="[@url@]" >[%FORMAT type:'currency' dp:'0'%][@min@][%/FORMAT%] or above</a></li>
+											[%/DATA%]
+										[%/PARAM%]
+									[%/DATA%]
+								[%/PARAM%]
+							[%/PRODUCT_FILTER%]
+							[%PRODUCT_FILTER type:'price' limit:'1'%]
+								[%PARAM header%]
+									<li class="list-group-item hidden-sm hidden-xs"><h4>Filter By Price Range</h4></li>
+								[%/PARAM%]
+								[%PARAM *body%]
+									[%SITE_VALUE id:'footer_javascript'%]
+										<script type="text/javascript">
+											$(function() {
+											var vals = ['[@min@]','[@max@]'];
+											for(var i=0; i<vals.length; i++) {vals[i]=parseInt(vals[i]); }
+												$( "#price-range" ).slider({
+													range: true,
+													min: vals[0],
+													max: vals[1],
+													values: vals,
+													slide: function( event, ui ) {
+														$( "#price-range-text" ).html( '[@config:currency_symbol@]'+ui.values[0]+' to [@config:currency_symbol@]'+ui.values[1] );
+														$( '#pricesearch input[name="pr"]' ).val( ui.values[0]+'-'+ui.values[1] );
+													},
+													create: function( event, ui ) {
+														$( "#price-range-text" ).html( '[@config:currency_symbol@]'+vals[0]+' to [@config:currency_symbol@]'+vals[1] );
+														$( '#pricesearch input[name="pr"]' ).val( vals[0]+'-'+vals[1] );
+													}
+												});
+											});
+										</script>
+									[%/SITE_VALUE%]
+									<li class="list-group-item hidden-sm hidden-xs"><p id="price-range"></p>
+										[%DATA id:'selected' if:'==' value:'1'%]
+											[%PARAM *if_true%]
+												<p id="price-range-text" class="price_range"></p>
+											[%/PARAM%]
+											[%PARAM *if_false%]
+												<p id="price-range-text" class="price_range"></p>
+											[%/PARAM%]
+										[%/DATA%]
+										<form id="pricesearch" method="get" action="[@config:current_url@]">
+											<input type="hidden" name="rf" value="[%FILTER_CODE id:'price'%][%/FILTER_CODE%]">
+											<input  name="pr" type="hidden" value="">
+											<input type="submit" value="Filter By Price" class="btn btn-default btn-xs" />
+											<a href="[@remove_url@]" class="btn btn-default btn-xs" rel="nofollow"> clear</a>
+										</form>
+									</li>
+								[%/PARAM%]
+							[%/PRODUCT_FILTER%]
+							[%PRODUCT_FILTER type:'brand' autohide:'0'%]
+								[%PARAM header%]
+									<li class="list-group-item"><h4>Filter By Brand</h4></li>
+								[%/PARAM%]
+								[%PARAM *body%]
+									[%DATA id:'selected' if:'==' value:'1'%]
+										[%PARAM *if_true%]
+											<li class="filter-remove"><a href="[@remove_url@]" class="list-group-item" rel="nofollow" >
+												[@brand@] <span class="text-muted">([@total@])</span></a>
+											</li>
+										[%/PARAM%][%PARAM *if_false%]
+											<li class="filter">
+												<a href="[@url@]" class="list-group-item" >[@brand@] <span class="text-muted">([@total@])</span></a>
+											</li>
+										[%/PARAM%]
+									[%/DATA%]
+								[%/PARAM%]
+							[%/PRODUCT_FILTER%]
+					</ul>
+				</div>
+	</div>
+
+	<div class="container-fluid">
+			<div class="row">
+					<div class="hidden-md hidden-lg col-xs-10 col-xs-offset-1">
+						<form method="get" class="form-horizontal category-sort-form" action="[@config:CURRENT_URL@]">
+							<input name="rf" type="hidden" value="[%FILTER_CODE%][%/FILTER_CODE%]">
+							<div class="text-center">
+								<label class="sort-title">Sort by:</label>
+							</div>
+							<div class="form-group">
+								<div class="col-xs-12">
+									<select id="sortby" name="sortby" onChange="return this.form.submit();" class="nice wide" aria-label="Sort products by">
+										<option value="popular" [%SORTBY type:'products' if:'eq' value:'popular'%]selected[%/SORTBY%]>
+											Most Popular
+										</option>
+										<option value="name" [%SORTBY type:'products' if:'eq' value:'name'%]selected[%/SORTBY%]>
+											Name
+										</option>
+										<option value="SKU" [%SORTBY type:'products' if:'eq' value:'SKU'%]selected[%/SORTBY%]>
+											SKU
+										</option>
+										<option value="lowest_price" [%SORTBY type:'products' if:'eq' value:'lowest_price'%]selected[%/SORTBY%]>
+											Lowest Price
+										</option>
+										<option value="highest_price" [%SORTBY type:'products' if:'eq' value:'highest_price'%]selected[%/SORTBY%]>
+											Highest Price
+										</option>
+									</select>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+	</div>
+	<div class="[%VIEWBY type:'products' if:'eq' value:'list' if_true:'thumb_list' if_false:'thumb'%][%/VIEWBY%] category-outer-wrapper col-xs-12">
+		<section aria-label="Products in category" class="category-thumb-list clearfix row">
+		[%/PARAM%]
+		[%PARAM *footer%]
+		</section>
+	</div>
+	[%IF [@total_results@] > [@config:thumb_limit@]%]
+		<div class="row">
+			<div class="col-xs-12">
+				<hr aria-hidden="true"/>
+				<div class="text-center">
+					<ul class="pagination" aria-label="Pagination navigation">
+						[%paging limit:'3'%]
+							[%PARAM *previous_page%]<li><a href="[@URL@]" aria-label="Go back one page"><i class="fa fa-chevron-left" aria-hidden="true"></i></a></li>[%/PARAM%]
+							[%PARAM *goback_pages%]<li><a href="[@URL@]"  aria-label="Go to page [@PAGE@]">[@PAGE@]</a></li>[%/PARAM%]
+							[%PARAM *current_page%]<li class="active"><a href="[@URL@]" aria-label="Current page">[@PAGE@]</a></li>[%/PARAM%]
+							[%PARAM *gonext_pages%]<li><a href="[@URL@]" aria-label="Go to page [@PAGE@]">[@PAGE@]</a></li>[%/PARAM%]
+							[%PARAM *next_page%]<li><a href="[@URL@]" aria-label="Go forward one page"><i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>[%/PARAM%]
+						[%/paging%]
+					</ul>
+				</div>
+				<hr aria-hidden="true"/>
+			</div>
+		</div>
+	[%/IF%]
+	[%/PARAM%]
+	[%PARAM *ifempty%]
+		<div class="row">
+			<div class="col-xs-12">
+				<p>This category is empty! Please try another category or use our search function to find what you are looking for. If you require further assistance please contact us.</p>
+			</div>
+		</div>
+	[%/PARAM%]
+[%/THUMB_LIST%]
+</div>

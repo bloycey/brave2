@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head itemscope itemtype="http://schema.org/WebSite">
+	[%load_template file:'headers/includes/head.template.html'/%]
+	<link class="theme-selector" rel="stylesheet" type="text/css" href="[%ntheme_asset%]css/app.css[%/ntheme_asset%]" media="all"/>
+	<link rel="stylesheet" type="text/css" href="[%ntheme_asset%]css/style.css[%/ntheme_asset%]" media="all"/>
+</head>
+<body id="n_[@config:current_page_type@]" class="n_[@CONFIG:TEMPLATELANG@]">
+<a href="#main-content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<div id="catMenuOverlay"></div>
+
+<div class="category-menu-slide hidden-sm hidden-xs hidden-md">
+	<div class="col-xs-12">
+			[%load_template file:'headers/categorymenu.template.html' /%]
+</div>
+</div>
+<header class="wrapper-header" aria-label="Header container">
+	<div class="container-fluid">
+			<div class="row mobile-header">
+					<div class="col-xs-3 text-center hidden-sm hidden-md hidden-lg" id="mobile-menu-toggle" data-toggle="collapse" data-target=".header-menu-item-wrapper">
+							<div class="account-wrapper">
+									<i class="fa fa-bars"></i>
+									<p class="text-center">Menu</p>
+							</div>
+					</div>
+					<div class="col-xs-6 col-sm-12 col-lg-12 wrapper-logo text-center">
+						<a href="[@config:homeurl@]" title="[@config:company_name@]">
+							<img class="logo" src="[@config:imageurl@]/website_logo.png?[@config:neto_css_version@]" alt="[@config:company_name@] logo"/>
+						</a>
+					</div>
+					<div class="col-xs-3 text-center hidden-sm hidden-md hidden-lg">
+							<div class="checkout-wrapper checkout-inner relative">
+									<a href="[%url page:'checkout' type:'cart'/%]">
+									<i class="fa fa-shopping-cart"></i><span class="cart-count" rel="a2c_item_count">[%format type:'number' dp:'0'%][%CART id:'total_items'%][%/CART%][%/format%]</span>
+									<span class="checkout-label">Cart</span>
+									</a>
+									
+								</div>
+					</div>
+			</div>
+			<div class="row">
+					<div class="col-xs-12 col-sm-12 col-lg-12 text-right hidden-xs">
+							<div class="mobile-cart-wrapper text-center relative">
+									<div class="menu-wrapper hidden-lg" data-toggle="collapse" data-target=".header-menu-item-wrapper">
+											<i class="fa fa-bars"></i>
+											<p class="text-center">Menu</p>
+										</div>
+									<div class="account-wrapper">
+										<a href="[%url page:'account'/%]">
+											<i class="fa fa-user"></i>
+											<p class="text-center">Account</p>
+										</a>
+									</div>
+									<div class="wishlist-wrapper">
+										<a href="[%url page:'account' type:'wishlist'/%]">
+											<i class="fa fa-heart"></i>
+											<p class="text-center">Wishlist</p>
+										</a>
+									</div>
+									<div class="checkout-wrapper relative">
+										<div class="checkout-inner" id="cartcontentsheader">
+												<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+													<i class="fa fa-shopping-cart"></i><span class="cart-count" rel="a2c_item_count">[%format type:'number' dp:'0'%][%CART id:'total_items'%][%/CART%][%/format%]</span>
+												<span class="checkout-label">Cart</span>
+												</a>
+												<ul class="dropdown-menu">
+													<li class="box" id="neto-dropdown">
+														<div class="body padding" id="cartcontents"></div>
+														<div class="footer"></div>
+													</li>
+												</ul>
+											</div>
+									</div>	
+							</div>
+	
+						</div>
+					</div>
+				</div>	
+					<div class="container-fluid">
+
+							<div class="header-menu-item-wrapper row collapse">
+								<div class="col-xs-12 col-sm-6 col-lg-12 overflow-hidden">
+										<div class="header-search mobile">
+												<form name="productsearch" method="get" action="/" role="search" aria-label="Product Search">
+													<input type="hidden" name="rf" value="kw"/>
+													<div class="input-group">
+														<input class="form-control ajax_search mob-search" value="[%nohtml%][%filter ID:'keywords'%][%/filter%][%/nohtml%]" id="name_search" autocomplete="off" name="kw" type="search" aria-label="Input search" placeholder="Search..."/>
+														<span class="input-group-btn">
+															<button type="submit" value="Search" class="btn btn-default mob-search" aria-label="Search site"><i class="fa fa-search" aria-hidden="true"></i></button>
+														</span>
+													</div>
+												</form>
+											</div>
+											
+										<div class="mobile-menu-items-wrapper">
+											<div class="slide-1">
+													<h2 class="category-trigger-btn"><a href="javascript:void(0)" class="text-decoration-none">Shop by Category <i class="fa fa-chevron-right"></i></a></h2>
+													<h2 class="promo-btn-trigger"><a href="javascript:void(0)" class="text-decoration-none">Current Promotions</a></h2>
+													[%cache type:'menu' id:'header-content-menu'%]
+													[%menu id:'web_header'%]
+														[%param *level_1%]
+															<h2><a href="[@url@]" class="text-decoration-none">[@name@]</a></h2>
+														[%/param%]
+													[%/menu%]
+													[%/ cache%]
+											</div><div class="slide-2 height-100 hidden-lg">
+													[%load_template file:'headers/categorymenu.template.html' /%]
+											</div>
+										</div>
+										
+									
+
+								</div>
+								<div class="col-sm-6 hidden-xs hidden-lg">
+										[%advert type:'text' ad_group:'current_promotions' category:'0' limit:'10' allow_duplicate:'1'%]
+											[%param *body%]
+											<div class="row">
+												<div class="col-xs-12">
+													<div class="single-promotion">
+															[%if [@headline@]%]<h3>[@headline@]</h3>[%/if%]
+			
+															<a href="[@url@]"><img class="img-responsive" src="[%asset_url type:'adw' id:'[@ad_id@]' thumb:'alt_1' default:'[@config:imageurl@]/pixel.gif'/%]" alt=""></a>
+															[%if [@description@]%]<p>[@description@]</p>[%/if%]
+															[%if [@linktext@]%]<p><a href="[@url@]" class="underline">[@linktext@]</a></p>[%/if%]
+													</div>
+												</div>
+											</div>
+											[%/param%]
+											[%param *ifempty%]
+												There's no promotions right now, check back later!
+											[%/param%]
+										[%/advert%]
+								</div>	
+							</div>
+					</div>			
+	<div class="header-spacer"></div>	
+
+	<div class="header-footer">
+		<ul class="list-inline list-social text-center" itemscope itemtype="http://schema.org/Organization" role="contentinfo" aria-label="Social media">
+			<meta itemprop="url" content="[@config:home_url@]"/>
+			<meta itemprop="logo" content="[@config:home_url@][@config:imageurl@]/website_logo.png"/>
+			<meta itemprop="name" content="[@config:company_name@]"/>
+			<li><a href="[%url type:'page' id:'contact_us'/%]" target="_blank" title="Email us" rel="noopener" aria-label="Email us"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
+			[%if [@config:facebook_account_id@]%]
+			<li><a itemprop="sameAs" href="[@config:facebook_account_id@]" target="_blank" title="[@config:company_name@] on Facebook" rel="noopener"><i class="fa fa-facebook-square text-facebook" aria-hidden="true"></i><span class="sr-only">Facebook</span></a></li>
+			[%/if%]
+			[%if [@config:twitter_account_id@]%]
+			<li><a itemprop="sameAs" href="[@config:twitter_account_id@]" target="_blank" title="[@config:company_name@] on Twitter" rel="noopener"><i class="fa fa-twitter-square text-twitter" aria-hidden="true"></i><span class="sr-only">Twitter</span></a></li>
+			[%/if%]
+			[%if [@config:googleplus_account_id@]%]
+			<li><a itemprop="sameAs" href="[@config:googleplus_account_id@]" target="_blank" title="[@config:company_name@] on Google Plus" rel="noopener"><i class="fa fa-google-plus-square text-google-plus" aria-hidden="true"></i><span class="sr-only">Google Plus</span></a></li>
+			[%/if%]
+			[%if [@config:youtube_account_id@]%]
+			<li><a itemprop="sameAs" href="[@config:youtube_account_id@]" target="_blank" title="[@config:company_name@] on Youtube" rel="noopener"><i class="fa fa-youtube-square text-youtube" aria-hidden="true"></i><span class="sr-only">Youtube</span></a></li>
+			[%/if%]
+			[%if [@config:instagram_account_id@]%]
+			<li><a itemprop="sameAs" href="[@config:instagram_account_id@]" target="_blank" title="[@config:company_name@] on Instagram" rel="noopener"><i class="fa fa-instagram text-instagram" aria-hidden="true"></i><span class="sr-only">Instagram</span></a></li>
+			[%/if%]
+			[%if [@config:pinterest_account_id@]%]
+			<li><a itemprop="sameAs" href="[@config:pinterest_account_id@]" target="_blank" title="[@config:company_name@] on Pinterest" rel="noopener"><i class="fa fa-pinterest-square text-pinterest" aria-hidden="true"></i><span class="sr-only">Pinterest</span></a></li>
+			[%/if%]
+			[%if [@config:tumblr_account_id@]%]
+			<li><a itemprop="sameAs" href="[@config:tumblr_account_id@]" target="_blank" title="[@config:company_name@] on Tumblr" rel="noopener"><i class="fa fa-tumblr-square text-tumblr" aria-hidden="true"></i><span class="sr-only">Tumblr</span></a></li>
+			[%/if%]
+			[%if [@config:linkedin_account_id@]%]
+			<li><a itemprop="sameAs" href="[@config:linkedin_account_id@]" target="_blank" title="[@config:company_name@] on Linkedin" rel="noopener"><i class="fa fa-linkedin-square text-linkedin" aria-hidden="true"></i><span class="sr-only">Linkedin</span></a></li>
+			[%/if%]
+		</ul>
+	</div>
+
+
+</header>
+<div id="main-content" class="main-content" role="main">
+
+	<div id="morph-search" class="morphsearch">
+		<div class="morphsearch-content container-fluid clearfix">
+			<div class="row">
+				<div class="col-xs-12">
+					<h2 class="promotions-heading">Promotions:</h2>
+				</div>
+			</div>
+			
+			<div class="row">
+				<!-- <div class="col-xs-12 col-md-8">
+					<div class="row">
+							[%advert type:'product' ad_group:'featured_product' template:'featured' limit:'3' category:'0' /%]
+					</div>
+				</div> -->
+				<div class="col-xs-12 text-advert-container">
+						<div class="row">
+					[%advert type:'text' ad_group:'current_promotions' category:'0' limit:'10' allow_duplicate:'1'%]
+						[%param *body%]
+							<div class="col-xs-12 col-md-4">
+									<div class="single-promotion">
+											[%if [@headline@]%]<h3>[@headline@]</h3>[%/if%]
+	
+											<a href="[@url@]"><img class="img-responsive" src="[%asset_url type:'adw' id:'[@ad_id@]' thumb:'alt_1' default:'[@config:imageurl@]/pixel.gif'/%]" alt=""></a>
+											[%if [@description@]%]<p>[@description@]</p>[%/if%]
+											[%if [@linktext@]%]<p><a href="[@url@]" class="underline">[@linktext@]</a></p>[%/if%]
+									</div>
+							</div>	
+							[%/param%]
+					[%/advert%]
+						</div>
+				</div>
+			</div>
+			<span id="close-search" class="morphsearch-close">CLOSE <i class="fa fa-close fa-2x"></i></span>
+		</div><!-- /morphsearch-content -->
+	  </div><!-- /morphsearch -->

@@ -1,0 +1,176 @@
+<div class="product-tabs-wrapper">
+  <div class="panel-group panel-product" id="accordion" role="tablist" aria-multiselectable="true">
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingDescription">
+          <h4 class="panel-title panel-title-mob">
+            <a class="active" data-toggle="collapse" data-parent="#accordion" href="#collapseDescription" aria-expanded="true" aria-controls="collapseDescription">
+              Description
+            </a>
+          </h4>
+        </div>
+        <div id="collapseDescription" class="panel-collapse collapsemob collapse in">
+          <div class="panel-body">
+            <div class="productdetails">[@description@]</div>
+            [%tracking_code type:'ProductDescription' /%]
+            <p class="small">(<span itemprop="productID">[@SKU@]</span>)</p>
+          </div>
+        </div>
+      </div>
+      [%if [@config:show_shipping_calc@]%]
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingCalc">
+          <h4 class="panel-title panel-title-mob">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseCalc" class="collapsed" aria-expanded="true" aria-controls="collapseCalc">
+              Calculate Shipping
+            </a>
+          </h4>
+        </div>
+        <div id="collapseCalc" class="panel-collapse collapse collapsemob">
+          <div class="panel-body">
+            [%load_ajax_template id:'_shipping_calc' type:'item' template:'shipping_calc' preload:'1' tmpl_sku:'[@current_sku@]' tmpl_preview:'y'/%]
+          </div>
+        </div>
+      </div>
+      [%/ if%]
+      [%IF [@features@]%]
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingFeatures">
+          <h4 class="panel-title panel-title-mob">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseFeatures" class="collapsed" aria-expanded="true" aria-controls="collapseFeatures">
+              Features
+            </a>
+          </h4>
+        </div>
+        <div id="collapseFeatures" class="panel-collapse collapse collapsemob">
+          <div class="panel-body">[@features@]</div>
+        </div>
+      </div>
+      [%/ IF%]
+      [%IF [@warranty@]%]
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingWarranty">
+          <h4 class="panel-title panel-title-mob">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseWarranty" class="collapsed" aria-expanded="true" aria-controls="collapseWarranty">
+              Warranty
+            </a>
+          </h4>
+        </div>
+        <div id="collapseWarranty" class="panel-collapse collapse collapsemob">
+          <div class="panel-body">[@warranty@]</div>
+        </div>
+      </div>
+      [%/ IF%]
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingSpecifications">
+          <h4 class="panel-title panel-sizing" id="sizinglistscroll">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseSpecifications" class="collapsed" aria-expanded="true" aria-controls="collapseSpecifications">
+              Specifications
+            </a>
+          </h4>
+        </div>
+        <div id="collapseSpecifications" class="panel-collapse collapse collapsesizing">
+          <div class="panel-body">
+            [%IF [@specifications@]%][@specifications@][%/IF%]
+            <table class="table">
+            <tbody>
+            <tr>
+            <td><strong>SKU</strong></td>
+            <td>[@SKU@]</td>
+            </tr>
+            [%IF [@manufacturer_model@]%]
+            <tr>
+            <td><strong>Model #</strong></td>
+            <td>[@manufacturer_model@]</td>
+            </tr>
+            [%/IF%]
+            [%IF [@barcode@]%]
+            <tr>
+            <td><strong>Barcode #</strong></td>
+            <td>[@barcode@]</td>
+            </tr>
+            [%/IF%]
+            [%IF [@brand@]%]
+            <tr>
+            <td><strong>Brand</strong></td>
+            <td>[@brand@]</td>
+            </tr>
+            [%/IF%]
+            [%IF [@artist_author@]%]
+            <tr>
+            <td><strong>Artist / Author</strong></td>
+            <td>[@artist_author@]</td>
+            </tr>
+            [%/IF%]
+            [%IF [@weight@] > '0'%]
+            <tr>
+            <td><strong>Shipping Weight</strong></td>
+            <td>[@weight@]kg</td>
+            </tr>
+            [%/IF%]
+            [%IF [@width@] > '0'%]
+            <tr>
+            <td><strong>Shipping Width</strong></td>
+            <td>[@width@]m</td>
+            </tr>
+            [%/IF%]
+            [%IF [@height@] > '0'%]
+            <tr>
+            <td><strong>Shipping Height</strong></td>
+            <td>[@height@]m</td>
+            </tr>
+            [%/IF%]
+            [%IF [@length@] > '0'%]
+            <tr>
+            <td><strong>Shipping Length</strong></td>
+            <td>[@length@]m</td>
+            </tr>
+            [%/IF%]
+            [%IF [@cubic@] > '0'%]
+            <tr>
+            <td><strong>Shipping Cubic</strong></td>
+            <td>[@cubic@]m3</td>
+            </tr>
+            [%/IF%]
+            [%IF [@unit@]%]
+            <tr>
+            <td><strong>Unit Of Measure</strong></td>
+            <td>[@unit@]</td>
+            </tr>
+            [%/IF%]
+            [%IF [@actual_length@] > '0'%]
+            <tr>
+            <td><strong>Assembled Length</strong></td>
+            <td>[@actual_length@]m</td>
+            </tr>
+            [%/IF%]
+            [%IF [@actual_height@] > '0'%]
+            <tr>
+            <td><strong>Assembled Height</strong></td>
+            <td>[@actual_height@]m</td>
+            </tr>
+            [%/IF%]
+            [%IF [@actual_width@] > '0'%]
+            <tr>
+            <td><strong>Assembled Width</strong></td>
+            <td>[@actual_width@]m</td>
+            </tr>
+            [%/IF%]
+            [%IF [@product_type@]%]
+            <tr>
+            <td><strong>Type</strong></td>
+            <td>[@product_type@]</td>
+            </tr>
+            [%/IF%]
+            [%IF [@format@]%]
+            <tr>
+            <td><strong>Format</strong></td>
+            <td>[@format@]</td>
+            </tr>
+            [%/IF%]
+          </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

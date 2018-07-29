@@ -1,0 +1,42 @@
+<div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="wrapper-pricing">
+    <meta itemprop="priceCurrency" content="[@config:defaultcurrency@]">
+    <input class="hidden" id="product_price" value="[%if ![@inpromo@]%][@store_price@][%else%][@promo_price@][%/if%]">
+    [%if ![@inpromo@]%]
+    [%if [@save@] > 0%]
+    <span class="specials-pricing">
+        <div class="productrrp text-muted" aria-label="RRP Price">
+                RRP [%FORMAT type:'currency'%][@retail@][%/FORMAT%]
+            </div>
+            <div class="productsave" aria-label="Save Price">
+                SAVE [%format type:'currency'%][@save_price@][%/format%] ([%format type:'percent'%][@save@][%/format%])
+            </div>
+    </span>
+
+        
+    [%/if%]
+        <div class="productprice productpricetext" itemprop="price" content="[@store_price@]" aria-label="Store Price">
+            $<span class="finalprice">[@store_price@]</span>
+        </div>
+        
+    [%else%]
+    <span class="specials-pricing">
+            <div class="productwasprice" aria-label="Was price">
+                    WAS [%FORMAT type:'currency'%][@store_price@][%/FORMAT%]
+                </div>
+                [%if [@save@] > 0%]
+                    <div class="productrrp muted" aria-label="RRP Price">
+                        RRP [%FORMAT type:'currency'%][@retail@][%/FORMAT%]
+                    </div>
+                [%/if%]
+                [%if [@save@] > 0%]
+                    <div class="productsave" aria-label="Save Price">
+                        SAVE [%format type:'percent'%][@save@][%/format%]!
+                    </div>
+                [%/if%]
+    </span>
+        <div class="productpromo" itemprop="price" content="[@promo_price@]" aria-label="Promo Price">
+            NOW $<span class="finalprice">[@promo_price@]</span>
+        </div>
+        
+    [%/if%]
+</div>

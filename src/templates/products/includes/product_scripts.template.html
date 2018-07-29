@@ -1,0 +1,216 @@
+[%site_value id:'footer_javascript'%]
+<script type="text/javascript" language="javascript">
+	$(document).ready(function() {
+		$.product_variationInit({
+			'loadtmplates': ['_buying_options', '_images','_header'],
+			'fns' : {
+				'onLoad' : function () {
+					$('.btn-ajax-loads').button("loading");
+					$('.variation-wrapper').addClass('disable-interactivity');
+				},
+				'onReady' : function () {
+					$('.btn-ajax-loads').button("reset");
+					$('.zoom').zoom();
+					$('.variation-wrapper').removeClass('disable-interactivity');
+					$("#sale-end").countdown({
+						date: "[%format type:'date' format:'#K #d, #Y  #H:#I'%][@promo_end@][%/format%]"
+					});
+						$('.product-image-slider').slick({
+								nextArrow: '<i class="fa fa-angle-right slick-right"></i>',
+								prevArrow: '<i class="fa fa-angle-left slick-left"></i>',
+								arrows: false,
+								dots: false,
+								infinite: true,
+								autoplay: true,
+								centerMode: false,
+								autoplaySpeed: 5000,
+								slidesToShow: 1,
+								slidesToScroll: 1
+							});
+				},
+			}
+		});
+		[%if [@has_components@]%]
+			$.kit_variationInit({
+				'fns' : {
+					'onLoad' : function () {
+						$('.btn-ajax-loads').button("loading");
+						$('.component-wrapper').addClass('disable-interactivity');
+					},
+					'onReady' : function () {
+						$('.btn-ajax-loads').button("reset");
+						$('.component-wrapper').removeClass('disable-interactivity');
+					},
+				}
+			});
+		[%/if%]
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.upsell-row').slick({
+			nextArrow: '<i class="fa fa-angle-right slick-right"></i>',
+			  prevArrow: '<i class="fa fa-angle-left slick-left"></i>',
+			arrows: false,
+			infinite: true,
+			slidesToShow: 3,
+			autoplay: true,
+			centerMode: false,
+			autoplaySpeed: 3000,
+			slidesToScroll: 1,
+			responsive: [
+						{
+						breakpoint: 1600,
+						settings: {
+							slidesToShow: 2,
+							slidesToScroll: 2,
+							infinite: true,
+						}
+						},
+						{
+						breakpoint: 1200,
+						settings: {
+							slidesToShow: 3,
+							slidesToScroll: 3,
+							infinite: true,
+						}
+						},
+						{
+						breakpoint: 992,
+						settings: {
+							slidesToShow: 2,
+							slidesToScroll: 2,
+							infinite: true,
+						}
+						},
+						{
+						breakpoint: 480,
+						settings: {
+							slidesToShow: 1,
+							slidesToScroll: 1
+						}
+						}
+					]
+		})
+
+		$('.product-image-slider').slick({
+			nextArrow: '<i class="fa fa-angle-right slick-right"></i>',
+			prevArrow: '<i class="fa fa-angle-left slick-left"></i>',
+			arrows: false,
+			dots: false,
+			infinite: true,
+			autoplay: true,
+			centerMode: false,
+			autoplaySpeed: 5000,
+			slidesToShow: 1,
+			slidesToScroll: 1
+		});
+	});
+</script>
+
+	<script type="text/javascript" src="//cdn.neto.com.au/assets/neto-cdn/zoom/1.4/jquery.zoom-min.js"></script>
+	<script type="text/javascript" src="[%ntheme_asset%]js/vendors/jquery.waypoints.min.js[%/ntheme_asset%]"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.zoom').zoom();
+
+		var waypoint = new Waypoint({
+			element: $('.information-row'),
+			handler: function(direction) {
+				if($(window).width() > 1199) {
+					if(direction == "down") {
+						$('.product-footer').addClass('footer-in');
+					} else {
+						$('.product-footer').removeClass('footer-in');
+					}
+					
+				}
+			},
+			offset: 100
+		})
+
+		var buyingOptionsWaypoint = new Waypoint({
+			element: $('.extra-options'),
+			handler: function(direction) {
+				if($(window).width() < 768) {
+					if(direction == "down") {
+						$('.buying-options').addClass('buying-options-sticky');
+					} else {
+						$('.buying-options').removeClass('buying-options-sticky');
+					}
+					
+					
+				}
+			},
+			offset: 'bottom-in-view'
+		})
+
+		$(window).resize(function(){
+			if ($(window).width() > 767) {
+				$('.buying-options').removeClass('buying-options-sticky');
+			} else {
+				$('.product-footer').removeClass('footer-in');
+			} 
+		})
+
+		// When a cross-sell item is added or removed
+		$(document).on('change', '.nCrossSellItem input[type="checkbox"]', function(){
+
+			$(this).parent().parent().toggleClass('added');
+			
+			//First check whether any cross sell boxes are checked. Then toggle the addtocart classes accordingly.
+			
+			if($('.nCrossSellItem input[type="checkbox"]:checked').length > 0) {
+				$('.addtocart').addClass('addMultipleCartItems').removeClass('addtocart');
+			} else {
+				$('.addMultipleCartItems').addClass('addtocart').removeClass('addMultipleCartItems');
+			}
+
+			// Set a 1 or 0 quantity based on whether the checkbox is ticked.
+			var isChecked = ($(this).prop('checked') ? 1 : 0);
+
+			// Get the item SKU
+			var sku = $(this).attr('data-product');
+
+			// Adjust the quantity
+			$("#qty" + sku).val(isChecked);
+		});
+
+		// Cross-sell add to cart
+		$(document).on('click', '.addMultipleCartItems', function(){
+			$.addMultipleCartItems('multiitemadd');
+		});
+
+		//Add cross-sell from the modal 
+
+		$(".data-upsell-btn").click(function(){
+			var target = $(this).data("addupsell");
+			$("#" + target).click();
+			$('.modal').modal('hide');
+		})
+
+
+		});
+	</script>
+	<script type="text/javascript" src="//cdn.neto.com.au/assets/neto-cdn/jcountdown/1.4/jquery.jcountdown.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#sale-end").countdown({
+				date: "[%format type:'date' format:'#K #d, #Y  #H:#I'%][@promo_end@][%/format%]"
+			});
+		});
+	</script>
+	<script>
+		$(document).ready(function(){
+			$("li[role='tab']").click(function(){
+				$("li[role='tab']").attr("aria-selected","false"); //deselect all the tabs
+			 	$(this).attr("aria-selected","true");  // select this tab
+				var tabpanid= $(this).attr("aria-controls"); //find out what tab panel this tab controls
+			   var tabpan = $("#"+tabpanid);
+				$("div[role='tabpanel']").attr("aria-hidden","true"); //hide all the panels
+				tabpan.attr("aria-hidden","false");  // show our panel
+			 });
+		})
+		$('#_jstl__buying_options').on('click', '.wishlist_toggle', function(e){e.preventDefault();})
+	</script>
+[%/site_value%]

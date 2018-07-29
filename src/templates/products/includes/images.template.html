@@ -1,0 +1,27 @@
+<meta property="og:image" content="[@full_image@]"/>
+<div class="main-image text-center product-image-slider">
+	<div>
+		<a href="[%asset_url type:'product' id:'[@SKU@]' thumb:'full' check_parent:'y'/%]" class="fancybox fancybox-img" data-fancybox="product-images" data-options='{"loop": "true"}' rel="product_images">
+			<img src="[%asset_url type:'product' id:'[@SKU@]' thumb:'thumbL' check_parent:'y'/%]" border="0" class="pp-product-img" title="Large View">
+		</a>
+	</div>
+	[%THUMBNAILS id:'[@SKU@]' check_parent:'y'%]
+		[%PARAM *body%]
+		<div>
+			<a href="[@full_image@]" class="fancybox fancybox-img" data-fancybox="product-images" data-options='{"loop": "true"}' rel="product_images">
+				<img src="[@full_image@]" border="0" class="pp-product-img" title="Large View">
+			</a>
+		</div>
+		[%END PARAM%]
+	[%END THUMBNAILS%]
+</div>
+
+<div class="row">
+	[%THUMBNAILS id:'[@SKU@]' check_parent:'y'%]
+		[%PARAM *brochure%]
+			<div class="col-xs-3">
+				<a href="[@file@]" target="_blank"><img src="[@config:imageurl@]/pdf_brochure.gif" alt="View PDF brochure for [%NOHTML%][@name@][%END NOHTML%]" width="45" height="45"></a>
+			</div>
+		[%END PARAM%]
+	[%END THUMBNAILS%]
+</div> 

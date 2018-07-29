@@ -1,0 +1,97 @@
+</div>
+</div>
+
+
+[%site_value id:'footer_javascript'%]
+<script>
+
+function setCategoryThumbsSize(qty) {
+
+console.log("there is " + qty + " thumbs");
+var height = $(window).height();
+var halfHeight = height /2;
+var thirdHeight = height /3;
+
+switch(qty){
+	case 1:
+			$('.cat-0').css("width", "100%").css("height", height);
+		break;
+	case 2:
+			$('.cat-0, .cat-1').css("width", "50%").css("height", height);
+		break;
+	case 3:
+			$('.cat-0, .cat-1').css("width", "50%").css("height", halfHeight);
+			$('.cat-2').css("width", "100%").css("height", halfHeight);
+		break;
+	case 4:
+			$('.cat-0, .cat-1, .cat-2, .cat-3').css("width", "50%").css("height", halfHeight);
+		break;
+	case 5:
+			$('.cat-0, .cat-1, .cat-2').css("width", "33.33%").css("height", halfHeight);
+			$('.cat-3, .cat-4').css("width", "50%").css("height", halfHeight);
+		break;
+	case 6:
+			$('.cat-0, .cat-1, .cat-2, .cat-3, .cat-4, .cat-5').css("width", "33.33%").css("height", halfHeight);
+		break;
+	case 7:
+			$('.cat-0, .cat-1, .cat-2').css("width", "33.33%").css("height", halfHeight);
+			$('.cat-3, .cat-4, .cat-5, .cat-6').css("width", "25%").css("height", halfHeight);
+			
+		break;
+	case 8:
+			$('.cat-0, .cat-1, .cat-2, .cat-3, .cat-4, .cat-5, .cat-6, .cat-7').css("width", "25%").css("height", halfHeight);
+		break;
+	case 9:
+			$('.cat-0, .cat-1, .cat-2, .cat-3, .cat-4, .cat-5, .cat-6, .cat-7, .cat-8').css("width", "33.33%").css("height", thirdHeight);
+		break;
+	case 10:
+			$('.cat-0, .cat-1, .cat-2, .cat-3, .cat-4, .cat-5').css("width", "33.33%").css("height", thirdHeight);
+			$('.cat-6, .cat-7, .cat-8, .cat-9').css("width", "25%").css("height", thirdHeight);
+		break;
+	case 11:
+			$('.cat-0, .cat-1, .cat-2').css("width", "33.33%").css("height", thirdHeight);
+			$('.cat-3, .cat-4, .cat-5, .cat-6, .cat-7, .cat-8, .cat-9, .cat-10').css("width", "25%").css("height", thirdHeight);
+		break;
+	default:
+			$('.category-thumbnail').css("width", "25%").css("height", thirdHeight);
+}
+}
+
+$(document).ready(function() {
+setCategoryThumbsSize($('.category-thumbnail').length);
+});
+
+$(window).resize(function(){
+	setCategoryThumbsSize($('.category-thumbnail').length);
+})
+</script>
+[%/site_value%]
+
+
+<div class="main-content container-fluid">
+
+[%thumb_list type:'content' content_type:'category'  filter_content:'' filter_category:'' limit:'50'%]
+	[%PARAM header%]
+		<section class="row" aria-label="Categories" id="categories-page">
+	[%/ PARAM%]
+	[%PARAM *body%]
+		<div class="category-thumbnail no-padding cat-[@count@] relative" role="article" aria-label="[@name@] category">
+			
+			<a href="[@url@]">
+			<div class="wrapper-category-image" style="background-image: url([%asset_url type:'content' id:'[@content_id@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%end param%][%/asset_url%])">	
+				<div class="category-overlay category-overlay-[@count@]">
+				</div>
+				<div class="category-name">
+					<span class="text-decoration-none">[@name@] <i class="fa fa-hand-o-right category-hand hidden"></i></span>
+				</div>
+			</div>
+			</a>
+		</div>
+	[%/ PARAM%]
+	[%PARAM footer%]
+		</section>
+	[%/ PARAM%]
+[%/ thumb_list%]
+
+</div>
+  

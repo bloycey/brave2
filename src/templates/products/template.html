@@ -1,0 +1,281 @@
+[%load_template file:"products/includes/product_scripts.template.html"/%]
+[%cache type:'display' id:'[@inventory_id@]'%]
+	
+		[%breadcrumb%]
+			[%param *header%]
+				<ul class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList" aria-label="Breadcrumb">
+					<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+						<a href="[@config:home_url@]" itemprop="item" class="text-decoration-none"><span itemprop="name">Home</span></a>
+					</li>
+			[%/param%]
+			[%param *body%]
+				<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+					<a href="[@url@]" itemprop="item" class="text-decoration-none"><span itemprop="name">[@name@]</span></a>
+				</li>
+			[%/param%]
+			[%param *footer%]
+				</ul>
+			[%/param%]
+		[%/breadcrumb%]
+				
+		<div class="product-top-wrapper container-fluid clearfix" id="multiitemadd" itemscope itemtype="http://schema.org/Product">
+			<div class="row">
+				<div class="col-xs-12 col-md-10 col-md-offset-1">
+					<div class="row">
+						<section class="col-xs-12 col-md-6" role="contentinfo" aria-label="Product images">
+							<div class="hidden-md hidden-lg text-center">
+									[%load_ajax_template id:'_header' type:'item' template:'header' preload:'1' tmpl_sku:'[@current_sku@]' tmpl_preview:'y'/%]
+							</div>
+							[%load_ajax_template id:'_images' type:'item' template:'images' preload:'1' tmpl_sku:'[@current_sku@]' tmpl_preview:'y'/%]
+						</section>
+
+						<section class="col-xs-12 col-md-6 product-shadow-box-wrapper [%if [@is_kit@]%] kitted[%/if%]">
+								<div class="row product-info product-page-main-info">
+										<div class="col-md-12 hidden-sm hidden-xs">
+											[%load_ajax_template id:'_header' type:'item' template:'header' preload:'1' tmpl_sku:'[@current_sku@]' tmpl_preview:'y'/%]
+										</div>
+										[%if ![@has_child@] || [@has_variation@]%]	
+											<div class="col-md-12">
+												[%load_ajax_template id:'_pricing' type:'item' template:'pricing' preload:'1' tmpl_sku:'[@current_sku@]' tmpl_preview:'y'/%]
+											</div>
+										[%/if%]	
+										<div class="col-xs-12">
+											<!-- child products -->
+											[%load_template file:"products/includes/child_products.template.html"/%]
+										</div>
+										[%if [@has_components@]%]
+											<div class="col-xs-12">
+												<!-- kit components -->
+												[%load_template file:"products/includes/components.template.html"/%]
+											</div>
+										[%/if%]
+										[%if [@has_variation@] || ![@has_child@] AND ![@has_components@]%]
+											<!-- addtocart functionality -->
+											[%load_ajax_template id:'_buying_options' type:'item' template:'buying_options' preload:'1' tmpl_sku:'[@current_sku@]' tmpl_preview:'y'/%]
+										[%/if%]
+							</div>
+						</section>
+					</div>
+				</div>
+			</div>	
+
+			<div class="row information-row">
+				<div class="col-xs-12 col-sm-10 col-sm-offset-1">
+					<div class="row">
+						<section class="col-xs-12 col-md-7" role="contentinfo" aria-label="Products information">
+								[%load_template file:"products/includes/product_information.template.html"/%]
+								[%if [@form:disable_scripts@] ne 'true'%][%tracking_code type:'ProductDescription' /%][%/if%]
+						</section>
+						<section class="col-xs-12 col-md-5 cross-sell-section" aria-label="Cross Sell Products">
+									[%crosssell id:'[@SKU@]' limit:'4' show_all:'1' template:'upsell'%]
+										[%param header%]
+												<input type="hidden" id="sku[@rndm@][@SKU@]" name="sku[@rndm@][@SKU@]" value="[@SKU@]">
+												<input type="hidden" id="model[@rndm@][@SKU@]" name="model[@rndm@][@SKU@]" value="[@model@]">
+												<input type="hidden" id="thumb[@rndm@][@SKU@]" name="thumb[@rndm@][@SKU@]" value="[@thumb@]">
+												
+												<h3 class="inline-block crosssell-section-title">Add to your purchase:</h3>
+												
+										[%/param%]
+
+										[%param *ifempty%]
+											PRODUCT USPS GO HERE
+										[%/param%]
+										[%param footer%]
+										[%/param%]
+									[%/crosssell%]
+						</section>
+					</div>
+				</div>
+			</div>	
+		</div>
+				<div class="container-fluid reviews-panel hidden">
+					<div class="row">
+						<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
+							<div class="clearfix">
+							<div class="text-center">
+								<div class="star-rating">
+										<a class="reviews" href="#reviews" data-toggle="tab">
+												[%set [@data:ratings-count@] = 1 /%]
+												[%while [@data:ratings-count@] <= [@data:rating@]%]
+													[%set [@data:ratings-count@] = [@data:ratings-count@]+1 /%]
+													<i class="fa fa-star secondary-color" aria-hidden="true"></i>
+												[%/while%]
+												[%while [@data:ratings-count@] <= 5%]
+													[%set [@data:ratings-count@] = [@data:ratings-count@]+1 /%]
+													<i class="fa fa-star-o secondary-color" aria-hidden="true"></i>
+												[%/while%]
+											</a>
+										
+								</div>
+								<h3 class="reviews-title"> 
+								[%if [@reviews@] > 0%]	Rated <span itemprop="ratingValue">[@rating@]</span>/<span itemprop="bestRating">5</span> based on <span itemprop="ratingCount">[@reviews@]</span> review[%if [@reviews@] > 1%]s[%/if%]. <i class="fa fa-thumbs-o-up review-thumbs-up"></i> [%else%] No reviews yet. Leave your review below. [%/if%]
+								</h3>
+								<a href="[%URL page:'account' type:'write_review' qs:'item=[@SKU@]'%][%/URL%]"><button class="btn btn-primary">Add your review</button></a>
+							</div>
+							</div>
+						</div>
+						</div>
+				</div>
+			
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
+								[%load_ajax_template id:'_reviews' type:'item' template:'product_reviews' preload:'1' tmpl_preview:'y'/%]
+						</div>
+					</div>
+				</div>
+
+
+					
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
+						[%discount_products id:'[@SKU@]' template:'' show_all:'1' limit:'100'%]
+					[%param header%]
+						
+						<div class="alert alert-success">
+							<h3>BONUS ITEMS! <small>Buy [@name@] Today &amp; Receive These For FREE!</small></h3>
+								<div class="row">
+						[%/param%]
+						[%param *body%]
+								<div class="col-sm-3">
+									<div class="thumbnail">
+										<a href="[%url type:'item ' id:'[@SKU@]'/%]" class="thumbnail-image">
+											<img src="[@thumb@]" alt="[@name@]">
+										</a>
+										<div class="caption">
+											<h3 class="title">
+												<a href="[%URL type:'item' id:'[@SKU@]'/%]">[%format type:'text' maxlength:'150' rmhtml:'1'%][@name@][%/FORMAT%]</a>
+											</h3>
+											<div class="text-success"><strong>FREE</strong> With This Item!</div>
+										</div>
+									</div>
+								</div>
+						[%/param%]
+						[%param footer%]
+							</div>
+						</div>
+
+					[%/param%]
+				[%/discount_products%]
+				[%free_gifts id:'[@SKU@]'%]
+					[%param *header%]
+						
+						<div class="alert alert-success">
+							<h3>FREEBIES! <small>Buy [@name@] Today &amp; Choose From One Of These FREE Gifts!</small></h3>
+								<div class="row">
+					[%/param%]
+					[%param *body%]
+							<div class="col-sm-3">
+								<div class="thumbnail">
+									<a href="[%url type:'item ' id:'[@SKU@]'/%]" class="thumbnail-image">
+										<img src="[@thumb@]" alt="[@name@]">
+									</a>
+									<div class="caption">
+										<h3 class="title">
+											<a href="[%URL type:'item' id:'[@SKU@]'/%]">[%format type:'text' maxlength:'150' rmhtml:'1'%][@name@][%/FORMAT%]</a>
+										</h3>
+										<div class="text-success"><strong>FREE</strong> With This Item!</div>
+									</div>
+								</div>
+							</div>
+					[%/param%]
+					[%param *footer%]
+							</div>
+						</div>
+
+					[%/param%]
+				[%/free_gifts%]
+				<div class="upsells-container">
+					[%upsell_products id:'[@SKU@]' limit:'[@config:upsell_limit@]' template:'' show_all:'1'%]
+						[%param header%]
+						<h3 class="inline-block secondary-title">We Also Recommend</h3>
+						<div class="row upsell-row">
+						[%/param%]
+						[%param footer%]
+						</div>
+						[%/param%]
+					[%/upsell_products%]
+					[%related_products id:'[@SKU@]' limit:'[@config:upsell_limit@]' template:'' show_all:'1'%]
+						[%param header%]
+						<h3 class="inline-block secondary-title">Others Also Bought</h3>
+						<div class="row upsell-row">
+						[%/param%]
+						[%param footer%]
+						</div>
+						[%/param%]
+					[%/related_products%]
+					[%thumb_list type:'products' sortby:'random' filter_category:'[@content_id@]' template:'' filter_exsku1:'[@sku@]' limit:'[@config:upsell_limit@]'%]
+						[%param *header%]
+						<h3 class="inline-block secondary-title">More From This Category</h3>
+						<div class="row upsell-row">
+						[%/param%]
+						[%param footer%]
+						</div>
+						[%/param%]
+					[%/thumb_list%]
+				[%/CACHE%]
+				</div><!--/.col-xs-12-->
+				</div>
+			</div>
+		</div>
+
+	[%if [@CONFIG:instagram_userID@] && [@CONFIG:Instagram_Access_Token@]%]
+	<!-- Instagram Feed -->
+
+	[%site_value id:'footer_javascript'%]
+			<script type="text/javascript">
+		    $(document).ready(function(){
+		        var feed = new Instafeed({
+		            get: 'user',
+		            userId: '[@CONFIG:instagram_userID@]',
+		            accessToken: '[@CONFIG:Instagram_Access_Token@]',
+		            template: '<a href="{{link}}" target="_blank"><div class="instafeed-image" style="background-image: url({{image}})"><span class="likes"><span><i class="fa fa-instagram"></i> {{model.created_at}}</span></span></div></a>',
+		            resolution: 'standard_resolution',
+		            limit: '6',
+		            sortBy: 'most-recent'
+		        });
+		        feed.run();
+		    });
+			</script>
+		[%/site_value%]
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12">
+				<div id="instafeed"></div>
+			</div>
+		</div>
+	</div>
+	[%/if%]
+
+	<div class="container-fluid">
+		<div class="row product-footer">
+			<div class="col-xs-6 col-md-4 col-lg-2">
+				<div class="brand-box">
+						[%brand id:'[@brand@]'%]
+							[%param *body%]
+								[%set [@brand_thumb@] %][%asset_url type:'content' id:'[@content_id@]' thumb:'thumb' /%][%/set%]
+								[%if [@brand_thumb@] %]
+									<a href="[%url type:'brand' id:'[@brand@]'/%]"><h4>More from the brand [@brand@]</h4></a>
+								[%/if%]
+							[%/param%]
+						[%/brand%]
+				</div>
+			</div>
+			<div class="hidden-xs col-md-4 col-lg-8">
+
+			</div>
+			<div class="col-xs-6 col-md-4 col-lg-2">
+				<div class="category-box">
+					[%content_path id:'[@inventory_id@]' type:'category' limit:'1' %]
+						[%param *body%]
+							<a href="[%url type:'cms'%][%param id%][@content_id@][%/param%][%/url%]"><h4>More from the category [@content_name@]</h4></a>
+						[%/param%]
+					[%/content_path%]
+				</div>
+			</div>
+		</div>
+	</div>
+</div><!--/.row-->
+
