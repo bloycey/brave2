@@ -53,6 +53,20 @@
 			return true;
 		},
 
+		amend_total: function(ident) {
+			var modifier = $("#price"+ident).val();
+			var obj = $("#chk"+ident);
+			var price = $("#product_price").val();
+			var newprice = 0;
+			if(obj.is(':checked')) newprice = (price*100 + modifier*100) / 100;
+			else newprice = (price*100 - modifier*100) / 100;
+
+			$("#product_price").val(newprice);
+
+			$(".finalprice").html($.formatNumber(newprice, {'pf':'','dp':2,'sp':','}));
+			return true;
+		},
+
 		modQtyByMulti: function(obj,act) {
 			var mul = 1;
 			var maxm;
