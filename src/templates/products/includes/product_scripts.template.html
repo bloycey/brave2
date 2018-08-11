@@ -153,44 +153,20 @@
 			} 
 		})
 
-		// When a cross-sell item is added or removed
-		$(document).on('change', '.nCrossSellItem input[type="checkbox"]', function(){
-
-			$(this).parent().parent().toggleClass('added');
-			
-			//First check whether any cross sell boxes are checked. Then toggle the addtocart classes accordingly.
-			
-			if($('.nCrossSellItem input[type="checkbox"]:checked').length > 0) {
-				$('.addtocart').addClass('addMultipleCartItems').removeClass('addtocart');
-			} else {
-				$('.addMultipleCartItems').addClass('addtocart').removeClass('addMultipleCartItems');
-			}
-
-			// Set a 1 or 0 quantity based on whether the checkbox is ticked.
-			var isChecked = ($(this).prop('checked') ? 1 : 0);
-
-			// Get the item SKU
-			var sku = $(this).attr('data-product');
-
-			// Adjust the quantity
-			$("#qty" + sku).val(isChecked);
-		});
-
 		// Cross-sell add to cart
 		$(document).on('click', '.addMultipleCartItems', function(){
 			$.addMultipleCartItems('multiitemadd');
 		});
-
+ 
 		//Add cross-sell from the modal 
-
-		$(".data-upsell-btn").click(function(){
-			var target = $(this).data("addupsell");
-			$("#" + target).click();
+		function closeModals () {
 			$('.modal').modal('hide');
+		}
+
+		$('.upsell-modal .upsell-btn').click(function(){
+			closeModals();
 		})
-
-
-		});
+	});
 	</script>
 	<script type="text/javascript" src="//cdn.neto.com.au/assets/neto-cdn/jcountdown/1.4/jquery.jcountdown.min.js"></script>
 	<script type="text/javascript">

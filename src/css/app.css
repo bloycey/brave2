@@ -10295,10 +10295,6 @@ a:focus {
   text-decoration: none;
   border-bottom: 0;
 }
-.product-top-wrapper {
-  margin-top: 30px;
-  margin-bottom: 75px;
-}
 .upsell-row .slick-left,
 .upsell-row .slick-right,
 .main-image .slick-right,
@@ -10504,17 +10500,6 @@ a:focus {
 .product-image-slider img {
   display: inline-block;
   max-width: 100%;
-}
-@media only screen and (min-width: 1200px) {
-  .product-image-slider,
-  .product-shadow-box-wrapper {
-    height: 600px;
-    display: flex;
-    align-items: center;
-  }
-  .product-image-slider img {
-    max-height: 600px;
-  }
 }
 ._itmspec_listopt {
   margin-top: 20px;
@@ -11468,7 +11453,7 @@ h2.promotions-heading {
   font-size: 16px;
   margin-bottom: 10px;
   text-transform: uppercase;
-  background: linear-gradient(to right, #59656F 50%, #efefef 50%);
+  background: #efefef;
   background-size: 200% 100%;
   background-position: right bottom;
   transition: all 0.3s ease;
@@ -11791,4 +11776,201 @@ h2.promotions-heading {
 }
 .inline-block {
   display: inline-block;
+}
+.upsell-checkbox-wrapper {
+  padding: unset;
+  font-size: unset;
+  font-weight: unset;
+  display: unset;
+  align-items: unset;
+  overflow: unset;
+}
+.upsell-quickview:hover {
+  cursor: pointer;
+}
+.upsell-title,
+.upsell-price {
+  height: auto;
+  font-size: 16px;
+}
+.upsell-price {
+  font-weight: 600;
+}
+.upsell-img-wrapper {
+  position: relative;
+  border-left: 5px solid #48a2a2;
+  display: inline-block;
+  height: 120px;
+}
+.upsell-quickview {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: inline-flex;
+  background-color: #d8ac64;
+  width: 25px;
+  height: 25px;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+.upsell-img-wrapper:hover .upsell-quickview {
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+}
+.upsell-quickview i {
+  transition: all 0.3s ease;
+}
+.upsell-img-wrapper:hover .upsell-quickview i {
+  font-size: 35px;
+}
+.quickview-icon {
+  display: inline-block;
+}
+.upsell-section-title {
+  font-size: 26px;
+  color: #58656f;
+  padding: 15px 0 20px;
+}
+.btn-primary-ghost {
+  border-color: #49a2a2;
+  color: #49a2a2;
+  background-color: transparent;
+}
+.btn-tertiary-ghost {
+  border-color: #4d5860;
+  color: #4d5860;
+  background-color: transparent;
+}
+@media (min-width: 1600px) {
+  .col-xl-1,
+  .col-xl-2,
+  .col-xl-3,
+  .col-xl-4,
+  .col-xl-5,
+  .col-xl-6,
+  .col-xl-7,
+  .col-xl-8,
+  .col-xl-9,
+  .col-xl-10,
+  .col-xl-11,
+  .col-xl-12 {
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .col-xl-1 {
+    width: 8.33333333%;
+  }
+  .col-xl-2 {
+    width: 16.66666667%;
+  }
+  .col-xl-3 {
+    width: 25%;
+  }
+  .col-xl-4 {
+    width: 33.33333333%;
+  }
+  .col-xl-5 {
+    width: 41.66666667%;
+  }
+  .col-xl-6 {
+    width: 50%;
+  }
+  .col-xl-7 {
+    width: 58.33333333%;
+  }
+  .col-xl-8 {
+    width: 66.66666667%;
+  }
+  .col-xl-9 {
+    width: 75%;
+  }
+  .col-xl-10 {
+    width: 83.33333333%;
+  }
+  .col-xl-11 {
+    width: 91.66666667%;
+  }
+  .col-xl-12 {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .upsell-text-wrapper,
+  .upsell-text,
+  .upsell-cart {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+  }
+  .upsell-title,
+  .upsell-price {
+    font-size: 14px;
+    margin-bottom: 0;
+    text-align: center;
+    display: block;
+  }
+  .upsell-cart button {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .product-image-slider img {
+    max-width: 90%;
+  }
+  .flex-center-md-up {
+    display: flex;
+    align-items: center;
+  }
+}
+.information-row {
+  margin-top: 0;
+  margin-bottom: 60px;
+}
+.breadcrumb {
+  margin-bottom: 15px;
+}
+.flex-row {
+  display: flex;
+  align-items: center;
+}
+.upsell-img-wrapper {
+  display: inline-block;
+  vertical-align: top;
+  height: 120px;
+}
+.upsell-text-wrapper {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  height: 120px;
+  background-color: #ffffff;
+  padding: 5px 15px;
+}
+.upsell-text {
+  flex: 3;
+}
+.upsell-cart {
+  flex: 1;
+}
+.upsell {
+  margin-bottom: 15px;
+  display: flex;
+}
+.upsell-img-wrapper img {
+  max-height: 100%;
+  object-fit: cover;
+  width: auto;
+  height: 100%;
+}
+.upsell button {
+  white-space: normal;
 }

@@ -314,8 +314,3 @@ $(document).ready(function(){
 	})
 
 })
-
-
-
-
-
