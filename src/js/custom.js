@@ -259,13 +259,13 @@ $(document).ready(function(){
 	})
 
 	function toggleCatMenu(){
-			if($(window).width() > 1200){
-				$('.category-menu-slide').toggleClass('openCatMenu');
-				$('.category-trigger-btn').toggleClass('active-menu');
-				$('#catMenuOverlay').fadeToggle();
-			} else {
+			// if($(window).width() > 1200){
+			// 	$('.category-menu-slide').toggleClass('openCatMenu');
+			// 	$('.category-trigger-btn').toggleClass('active-menu');
+			// 	$('#catMenuOverlay').fadeToggle();
+			// } else {
 				$('.mobile-menu-items-wrapper').toggleClass('categoriesOpen');
-			}
+			// }
 	}
 
 
@@ -283,11 +283,11 @@ $(document).ready(function(){
 	})
 
 
-	$(window).resize(function(){
-		if($(window).width() > 1199) {
-		$('.mobile-menu-items-wrapper').removeClass('categoriesOpen');
-		}
-	})
+	// $(window).resize(function(){
+	// 	if($(window).width() > 1199) {
+	// 	$('.mobile-menu-items-wrapper').removeClass('categoriesOpen');
+	// 	}
+	// })
 
 	$('#return-menu').click(function(){
 		$('.mobile-menu-items-wrapper').toggleClass('categoriesOpen');

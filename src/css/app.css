@@ -11249,15 +11249,6 @@ h2.promotions-heading {
     width: 100vw;
   }
 }
-@media (min-width: 1200px) {
-  .mobile-menu-items-wrapper {
-    width: 660px;
-    transition: all 0.5s ease;
-  }
-  .categoriesOpen {
-    margin-left: -330px;
-  }
-}
 .gallery-name {
   pointer-events: initial;
   z-index: 1000;
