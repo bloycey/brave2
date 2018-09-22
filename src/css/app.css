@@ -10765,12 +10765,6 @@ a:focus {
   display: inline-block;
   vertical-align: middle;
 }
-@media (min-width: 1200px) {
-  .header-menu-item-wrapper {
-    height: auto!important;
-    display: block;
-  }
-}
 .morphsearch {
   width: calc(100% - 330px);
   height: 100%;
