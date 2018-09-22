@@ -16,24 +16,155 @@ $(document).ready(function(){
 
 	
 	</script>
+
 [%/site_value%]
+
+<style>
+
+.homepage-bg {
+	height: 600px;
+	min-height: 600px;
+}
+
+.thumbs-outer-wrapper {
+	padding: 30px;
+}
+
+#homepageCarousel {
+	padding-top: 15px;
+}
+
+.home-text-wrapper {
+    text-align: center;
+    background-color: #58656f;
+    padding: 20px 15%;
+    width: 100%
+}
+
+@media (max-width: 767px) {
+	.home-text-wrapper {
+		padding: 20px 30px;
+		margin-top: 0px;
+	}
+}
+
+.parallax-advert {
+	height: 500px;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.home-ad-overlay {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+}
+
+.home-ad-overlay {
+    width: 100%;
+    height: 100%;
+    padding: 50px 0;
+}
+
+</style>
+
 <div id="homepageCarousel">
 	[%advert type:'text' limit:'10' ad_group:''%]
 	[%param *body%]
-	<div class="container-fluid homepage-bg" style="background-image: linear-gradient(rgba(51, 51, 51, 0.0), rgba(51, 51, 51, 0.0)), url([%asset_url type:'adw' id:'[@ad_id@]' default:'https://source.unsplash.com/random/1920x1080'/%])">
-
+	<div class="container-fluid">
+		<a href="[@linkurl@]">
+			<img src="[%asset_url type:'adw' id:'[@ad_id@]' default:'https://source.unsplash.com/random/1920x600'/%]" alt="[@headline@]" />
+		</a>
+		
+		[%if [@headline@] or [@description@] %]
 		<div class="home-text-wrapper">
-			[%if [@headline@] or [@description@] or [@linktext@]%]
-					[%if [@headline@]%]<h1>[@headline@]</p>[%/if%]
+					[%if [@headline@]%]<h1>[@headline@]</h1>[%/if%]
 					[%if [@description@]%]<p>[@description@]</p>[%/if%]
 					[%if [@linktext@]%]<p><span class="btn btn-primary btn-lg">[@linktext@]</span></p>[%/if%]
-			[%/if%]
 		</div>
+		[%/if%]
 	
 	</div>
 [%/param%]
 [%/advert%]
 </div>
+
+<div class="container-fluid">
+<div class="thumbs-outer-wrapper">
+	<div class="row">
+		<div class="col-xs-12 col-md-8 col-md-offset-2">
+			[%if [@config:show_home_ads@]%]
+		[%advert type:'product' limit:'6' template:'' ad_group:''%]
+			[%param *header%]
+				<section class="row products-row" aria-label="Featured products">
+			[%/param%]
+			[%param footer%]
+				</section>
+			[%/param%]
+			[%param *ifempty%]
+				[%random_products filter_category:'' template:'' limit:'6'%]
+					[%param *header%]
+						<section class="row products-row" aria-label="Featured products">
+					[%/param%]
+					[%param *footer%]
+						</section>
+					[%/param%]
+				[%/random_products%]
+			[%/param%]
+		[%/advert%]
+	[%/if%]
+		</div>
+	</div>
+</div>
+</div>
+
+<div class="container-fluid">
+			[%advert type:'text' limit:'10' ad_group:'home-advert'%]
+			[%param *header%]
+
+			[%/param%]
+			[%param *body%]
+					<div class="parallax-advert" style="background-image: url([%asset_url type:'adw' id:'[@ad_id@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%end param%][%END asset_url%]); height: 500px">
+						<div class="home-ad-overlay">
+							
+						</div>
+					</div>
+			[%/param%]
+			[%param *footer%]
+
+			[%/param%]
+		[%/advert%]
+</div>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-xs-12 col-md-8 col-md-offset-2">
+			<div class="row">
+				<div class="col-md-4">
+				<h3>Big Brands</h3>
+				<span>View all</span>
+				</div>
+				<div class="col-md-8">
+					[%thumb_list type:'content' content_type:'brand' limit:'12' sortby:'sortorder'%]
+						[%param *header%]
+						[%/param%]
+						[%param *body%]
+						<!--slick these-->
+						<div class="col-md-6">
+							<a href="[@URL@]"><img src="[%ASSET_URL type:'content' id:'[@content_id@]' default:'[@config:imageurl@]/pixel.gif'%][%/ASSET_URL%]" alt="[@content_name@]"/></a>
+						</div>
+						[%/param%]
+						[%param *footer%]
+						[%/param%]
+					[%/thumb_list%]
+				</div>
+				
+
+			</div>
+		</div>
+	</div>
+</div>
+
 
 
 
