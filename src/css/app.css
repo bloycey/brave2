@@ -11974,3 +11974,6 @@ h2.promotions-heading {
 .upsell button {
   white-space: normal;
 }
+.logo {
+  max-height: 110px;
+}
