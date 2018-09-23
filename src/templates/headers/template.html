@@ -10,31 +10,33 @@
 
 [%site_value id:'footer_javascript'%]
 	<script>
-		$(document).ready(function(){
+	$(document).ready(function(){
 
-			function openNav() {
-				$("#mySidenav").toggleClass("open-nav");
-				$(".bg-overlay").toggleClass("active-overlay");
-			}
+		function openNav() {
+			$("#mySidenav").toggleClass("open-nav");
+			$(".bg-overlay").toggleClass("active-overlay");
+			$('body').css("overflow", "hidden");
+		}
 
-			function closeNav() {
-				$("#mySidenav").removeClass("open-nav");
-				$(".bg-overlay").removeClass("active-overlay");
-				$('#triggerMenu').find($('.fa')).toggleClass('fa-bars fa-times');
-			}
+		function closeNav() {
+			$("#mySidenav").removeClass("open-nav");
+			$(".bg-overlay").removeClass("active-overlay");
+			$('#triggerMenu').find($('.fa')).toggleClass('fa-bars fa-times');
+			$('body').css("overflow", "auto");
+		}
 
-			$('#triggerMenu').click(function(){
-				openNav();
-			})
-
-			$('#closeNav').click(function(){
-				closeNav();
-			})
-
-			$(document).on("click", ".active-overlay", function(){
-				closeNav();
-			})
+		$('#triggerMenu').click(function(){
+			openNav();
 		})
+
+		$('#closeNav').click(function(){
+			closeNav();
+		})
+
+		$(document).on("click", ".active-overlay", function(){
+			closeNav();
+		})
+	})
 	
 	</script>
 		

@@ -10560,12 +10560,6 @@ a:focus {
     font-size: 25px;
   }
 }
-@media (min-width: 1200px) {
-  .modal-dialog {
-    width: 800px;
-    margin: 30px auto;
-  }
-}
 .mobile-menu-bar {
   margin-bottom: 25px;
 }
@@ -11499,13 +11493,6 @@ h2.promotions-heading {
 @media only screen and (max-width: 767px) {
   .wrapper-thumbnail {
     margin-bottom: 100px;
-  }
-}
-@media (min-width: 1200px) {
-  .modal-dialog {
-    width: calc(60% - 330px);
-    margin-top: 30px;
-    margin-left: calc(20% + 330px);
   }
 }
 .crosssell-section-title {
