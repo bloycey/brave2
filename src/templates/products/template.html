@@ -64,11 +64,11 @@
 			<div class="row">
 				<div class="col-xs-12">
 					<div class="row">
-						<section class="col-xs-12 col-xl-7" role="contentinfo" aria-label="Products information">
+						<section class="col-xs-12 col-lg-6" role="contentinfo" aria-label="Products information">
 								[%load_template file:"products/includes/product_information.template.html"/%]
 								[%if [@form:disable_scripts@] ne 'true'%][%tracking_code type:'ProductDescription' /%][%/if%]
 						</section>
-						<section class="col-xs-12 col-xl-5 cross-sell-section" aria-label="Cross Sell Products">
+						<section class="col-xs-12 col-lg-5 col-lg-offset-1 cross-sell-section" aria-label="Cross Sell Products">
 									[%crosssell id:'[@SKU@]' limit:'4' show_all:'1' template:'upsell'%]
 										[%param header%]
 											<div class="row">
