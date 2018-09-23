@@ -29,6 +29,8 @@ $(document).ready(function(){
 
 [%/site_value%]
 
+</div>
+</div>
 <div id="homepageCarousel">
 	[%advert type:'text' limit:'10' ad_group:''%]
 	[%param *body%]
@@ -55,11 +57,12 @@ $(document).ready(function(){
 [%/param%]
 [%/advert%]
 </div>
-
-<div class="container">
-<div class="thumbs-outer-wrapper">
+<div class="main-content container clearfix" role="main">
 	<div class="row">
+
+
 		<div class="col-xs-12">
+				<div class="thumbs-outer-wrapper">
 			[%if [@config:show_home_ads@]%]
 		[%advert type:'product' limit:'6' template:'' ad_group:''%]
 			[%param *header%]
@@ -82,10 +85,10 @@ $(document).ready(function(){
 	[%/if%]
 		</div>
 	</div>
-</div>
-</div>
 
-<div>
+
+</div>
+</div>
 			[%advert type:'text' limit:'10' ad_group:'home-advert'%]
 			[%param *header%]
 
@@ -106,9 +109,8 @@ $(document).ready(function(){
 
 			[%/param%]
 		[%/advert%]
-</div>
 
-<div class="container">
+<div class="main-content container clearfix" role="main">
 	<div class="row">
 		<div class="col-xs-12 brands-wrapper">
 			<div class="row">
@@ -133,8 +135,7 @@ $(document).ready(function(){
 
 			</div>
 		</div>
-	</div>
-</div>
+
 
 
 [%if [@CONFIG:instagram_userID@] && [@CONFIG:Instagram_Access_Token@]%]
@@ -156,8 +157,7 @@ $(document).ready(function(){
 		    });
 			</script>
 		[%/site_value%]
-		<div class="container">
-			<div class="row">
+
 				<div class="col-xs-12">
 					<div id="instafeed" class="homepage relative clearfix"></div>
 					<div class="insta-panel">
@@ -168,13 +168,4 @@ $(document).ready(function(){
 						</div>
 					</div>
 				</div>	
-			</div>
-		</div>
-				
-
 	[%/if%]
-
-
-
-
-

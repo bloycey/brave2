@@ -12150,3 +12150,38 @@ h2.promotions-heading {
 .footer-wrapper .nav > li > a:focus {
   background-color: transparent;
 }
+@media (min-width: 992px) {
+  .collapseit {
+    display: block;
+    margin-left: -30%;
+  }
+}
+.collapseit {
+  display: none;
+}
+.panel-title > a,
+.panel-heading > h3 {
+  padding: initial;
+}
+.breadcrumb {
+  display: inline-block;
+  margin-top: 30px;
+}
+.page-header {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin: 30px 0 15px;
+  font-size: 48px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.category-header-row {
+  display: flex;
+  align-items: center;
+}
+#left-sidebar {
+  opacity: 0.9;
+}
+.main-content {
+  margin-left: auto;
+}

@@ -215,40 +215,5 @@
 
 
 </header>
-<div id="main-content" class="main-content" role="main">
-
-	<div id="morph-search" class="morphsearch">
-		<div class="morphsearch-content container-fluid clearfix">
-			<div class="row">
-				<div class="col-xs-12">
-					<h2 class="promotions-heading">Promotions:</h2>
-				</div>
-			</div>
-			
-			<div class="row">
-				<!-- <div class="col-xs-12 col-md-8">
-					<div class="row">
-							[%advert type:'product' ad_group:'featured_product' template:'featured' limit:'3' category:'0' /%]
-					</div>
-				</div> -->
-				<div class="col-xs-12 text-advert-container">
-						<div class="row">
-					[%advert type:'text' ad_group:'current_promotions' category:'0' limit:'10' allow_duplicate:'1'%]
-						[%param *body%]
-							<div class="col-xs-12 col-md-4">
-									<div class="single-promotion">
-											[%if [@headline@]%]<h3>[@headline@]</h3>[%/if%]
-	
-											<a href="[@url@]"><img class="img-responsive" src="[%asset_url type:'adw' id:'[@ad_id@]' thumb:'alt_1' default:'[@config:imageurl@]/pixel.gif'/%]" alt=""></a>
-											[%if [@description@]%]<p>[@description@]</p>[%/if%]
-											[%if [@linktext@]%]<p><a href="[@url@]" class="underline">[@linktext@]</a></p>[%/if%]
-									</div>
-							</div>	
-							[%/param%]
-					[%/advert%]
-						</div>
-				</div>
-			</div>
-			<span id="close-search" class="morphsearch-close">CLOSE <i class="fa fa-close fa-2x"></i></span>
-		</div><!-- /morphsearch-content -->
-	  </div><!-- /morphsearch -->
+<div id="main-content" class="main-content container clearfix" role="main">
+	<div class="row">
