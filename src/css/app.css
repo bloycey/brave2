@@ -10655,10 +10655,10 @@ a:focus {
   opacity: 1;
 }
 .information-row {
-  margin-top: 25px;
-  margin-top: 75px;
+  margin-top: 60px;
+  margin-bottom: 60px;
   background-color: #f6f6f6;
-  padding: 30px 0;
+  padding: 60px 0;
 }
 @media only screen and (max-width: 767px) {
   .product-image-slider {
@@ -11900,10 +11900,6 @@ h2.promotions-heading {
     align-items: center;
   }
 }
-.information-row {
-  margin-top: 0;
-  margin-bottom: 60px;
-}
 .breadcrumb {
   margin-bottom: 15px;
 }
@@ -12225,4 +12221,8 @@ h2.promotions-heading {
 }
 .overflow-hidden {
   overflow: hidden;
+}
+.product-tabs-wrapper .panel-body {
+  font-size: 18px;
+  line-height: 1.5;
 }
