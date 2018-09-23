@@ -29,7 +29,7 @@
 							[%load_ajax_template id:'_images' type:'item' template:'images' preload:'1' tmpl_sku:'[@current_sku@]' tmpl_preview:'y'/%]
 						</section>
 
-						<section class="col-xs-12 col-md-7 product-shadow-box-wrapper [%if [@is_kit@]%] kitted[%/if%]">
+						<section class="col-xs-12 col-md-6 col-md-offset-1 product-shadow-box-wrapper [%if [@is_kit@]%] kitted[%/if%]">
 								<div class="row product-info product-page-main-info">
 										<div class="col-md-12 hidden-sm hidden-xs">
 											[%load_ajax_template id:'_header' type:'item' template:'header' preload:'1' tmpl_sku:'[@current_sku@]' tmpl_preview:'y'/%]
@@ -61,7 +61,7 @@
 	</div>
 	<div class="information-row">
 		<div class="container">
-			<div class="row information-row">
+			<div class="row">
 				<div class="col-xs-12">
 					<div class="row">
 						<section class="col-xs-12 col-xl-7" role="contentinfo" aria-label="Products information">
@@ -133,10 +133,7 @@
 
 
 					
-
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
+				<div class="col-xs-12">
 						[%discount_products id:'[@SKU@]' template:'' show_all:'1' limit:'100'%]
 					[%param header%]
 						
@@ -224,63 +221,5 @@
 				[%/CACHE%]
 				</div><!--/.col-xs-12-->
 				</div>
-			</div>
-		</div>
-
-	[%if [@CONFIG:instagram_userID@] && [@CONFIG:Instagram_Access_Token@]%]
-	<!-- Instagram Feed -->
-
-	[%site_value id:'footer_javascript'%]
-			<script type="text/javascript">
-		    $(document).ready(function(){
-		        var feed = new Instafeed({
-		            get: 'user',
-		            userId: '[@CONFIG:instagram_userID@]',
-		            accessToken: '[@CONFIG:Instagram_Access_Token@]',
-		            template: '<a href="{{link}}" target="_blank"><div class="instafeed-image" style="background-image: url({{image}})"><span class="likes"><span><i class="fa fa-instagram"></i> {{model.created_at}}</span></span></div></a>',
-		            resolution: 'standard_resolution',
-		            limit: '6',
-		            sortBy: 'most-recent'
-		        });
-		        feed.run();
-		    });
-			</script>
-		[%/site_value%]
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-xs-12">
-				<div id="instafeed"></div>
-			</div>
-		</div>
-	</div>
-	[%/if%]
-
-	<div class="container-fluid">
-		<div class="row product-footer">
-			<div class="col-xs-6 col-md-4 col-lg-2">
-				<div class="brand-box">
-						[%brand id:'[@brand@]'%]
-							[%param *body%]
-								[%set [@brand_thumb@] %][%asset_url type:'content' id:'[@content_id@]' thumb:'thumb' /%][%/set%]
-								[%if [@brand_thumb@] %]
-									<a href="[%url type:'brand' id:'[@brand@]'/%]"><h4>More from the brand [@brand@]</h4></a>
-								[%/if%]
-							[%/param%]
-						[%/brand%]
-				</div>
-			</div>
-			<div class="hidden-xs col-md-4 col-lg-8">
-
-			</div>
-			<div class="col-xs-6 col-md-4 col-lg-2">
-				<div class="category-box">
-					[%content_path id:'[@inventory_id@]' type:'category' limit:'1' %]
-						[%param *body%]
-							<a href="[%url type:'cms'%][%param id%][@content_id@][%/param%][%/url%]"><h4>More from the category [@content_name@]</h4></a>
-						[%/param%]
-					[%/content_path%]
-				</div>
-			</div>
-		</div>
-	</div>
+				
 </div><!--/.row-->
