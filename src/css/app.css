@@ -12185,3 +12185,55 @@ h2.promotions-heading {
 .main-content {
   margin-left: auto;
 }
+.collapseit {
+  display: block;
+}
+@media (min-width: 992px) {
+  .collapseit {
+    display: none !important;
+    margin-left: -30%;
+  }
+}
+.page-header > span {
+  text-transform: capitalize;
+}
+@media only screen and (max-width: 1200px) {
+  .nsearchinput-pl.well {
+    top: 49px;
+  }
+  .page-header {
+    font-size: 24px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .footer-wrapper {
+    text-align: center;
+  }
+  .footer-wrapper .nav {
+    margin-bottom: 30px;
+  }
+}
+.nsearchinput-pl.well {
+  margin-top: 0px !important;
+  top: 49px;
+}
+#triggerMenu,
+#mobile-menu-toggle {
+  cursor: pointer;
+}
+@media (max-width: 767px) {
+  .product-badges {
+    top: 0;
+    right: 0;
+    width: 100%;
+    text-align: right;
+  }
+  .svg-wrapper {
+    margin-bottom: 5px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .product-image-slider img {
+    max-width: 100%;
+  }
+}
