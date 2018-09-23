@@ -12016,7 +12016,7 @@ h2.promotions-heading {
   min-height: 600px;
 }
 .thumbs-outer-wrapper {
-  padding: 30px;
+  padding: 60px 0 30px;
 }
 .home-text-wrapper {
   text-align: center;
@@ -12115,9 +12115,6 @@ h2.promotions-heading {
   .brands-heading {
     font-size: 34px;
   }
-}
-.thumbs-outer-wrapper {
-  padding: 30px 0;
 }
 .home-text-wrapper {
   padding: 20px 0;
@@ -12238,4 +12235,7 @@ h2.promotions-heading {
 }
 .modal-dialog {
   min-width: 40vw;
+}
+.brands-heading-wrapper {
+  border-left: 8px solid #d8ab64;
 }
