@@ -12224,3 +12224,6 @@ h2.promotions-heading {
     max-width: 100%;
   }
 }
+.overflow-hidden {
+  overflow: hidden;
+}

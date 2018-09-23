@@ -15,14 +15,14 @@
 		function openNav() {
 			$("#mySidenav").toggleClass("open-nav");
 			$(".bg-overlay").toggleClass("active-overlay");
-			$('body').css("overflow", "hidden");
+			$('body').toggleClass("overflow-hidden");
 		}
 
 		function closeNav() {
 			$("#mySidenav").removeClass("open-nav");
 			$(".bg-overlay").removeClass("active-overlay");
 			$('#triggerMenu').find($('.fa')).toggleClass('fa-bars fa-times');
-			$('body').css("overflow", "auto");
+			$('body').removeClass("overflow-hidden");
 		}
 
 		$('#triggerMenu').click(function(){
