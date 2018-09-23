@@ -29,7 +29,6 @@ $(document).ready(function(){
 
 [%/site_value%]
 
-
 <div id="homepageCarousel">
 	[%advert type:'text' limit:'10' ad_group:''%]
 	[%param *body%]
@@ -40,9 +39,15 @@ $(document).ready(function(){
 		
 		[%if [@headline@] or [@description@] %]
 		<div class="home-text-wrapper">
-					[%if [@headline@]%]<h1>[@headline@]</h1>[%/if%]
-					[%if [@description@]%]<p>[@description@]</p>[%/if%]
-					[%if [@linktext@]%]<p><span class="btn btn-primary btn-lg">[@linktext@]</span></p>[%/if%]
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						[%if [@headline@]%]<h1>[@headline@]</h1>[%/if%]
+						[%if [@description@]%]<p>[@description@]</p>[%/if%]
+						[%if [@linktext@]%]<p><span class="btn btn-primary btn-lg">[@linktext@]</span></p>[%/if%]
+					</div>
+				</div>	
+			</div>	
 		</div>
 		[%/if%]
 	
@@ -168,6 +173,7 @@ $(document).ready(function(){
 				
 
 	[%/if%]
+
 
 
 
