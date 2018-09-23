@@ -8,23 +8,89 @@
 <body id="n_[@config:current_page_type@]" class="n_[@CONFIG:TEMPLATELANG@]">
 <a href="#main-content" class="sr-only sr-only-focusable">Skip to main content</a>
 
-<div id="catMenuOverlay"></div>
+[%site_value id:'footer_javascript'%]
+	<script>
+		$(document).ready(function(){
 
-<!-- <div class="category-menu-slide hidden-sm hidden-xs hidden-md">
-	<div class="col-xs-12">
-			[%load_template file:'headers/categorymenu.template.html' /%]
-</div>
-</div> -->
+			function openNav() {
+				$("#mySidenav").toggleClass("open-nav");
+				$(".bg-overlay").toggleClass("active-overlay");
+			}
+
+			function closeNav() {
+				$("#mySidenav").removeClass("open-nav");
+				$(".bg-overlay").removeClass("active-overlay");
+				$('#triggerMenu').find($('.fa')).toggleClass('fa-bars fa-times');
+			}
+
+			$('#triggerMenu').click(function(){
+				openNav();
+			})
+
+			$('#closeNav').click(function(){
+				closeNav();
+			})
+
+			$(document).on("click", ".active-overlay", function(){
+				closeNav();
+			})
+		})
+	
+	</script>
+		
+	[%/site_value%]
+
+
+<div class="bg-overlay"></div>
+					<div id="mySidenav" class="sidenav">
+						<div class="header-menu-item-wrapper">
+								<div class="col-xs-12 overflow-hidden">
+										<div class="header-search mobile">
+												<form name="productsearch" method="get" action="/" role="search" aria-label="Product Search">
+													<input type="hidden" name="rf" value="kw"/>
+													<div class="input-group">
+														<input class="form-control ajax_search mob-search" value="[%nohtml%][%filter ID:'keywords'%][%/filter%][%/nohtml%]" id="name_search" autocomplete="off" name="kw" type="search" aria-label="Input search" placeholder="Search..."/>
+														<span class="input-group-btn">
+															<button type="submit" value="Search" class="btn btn-default mob-search" aria-label="Search site"><i class="fa fa-search" aria-hidden="true"></i></button>
+														</span>
+													</div>
+												</form>
+											</div>
+											
+										<div class="mobile-menu-items-wrapper desktop">
+											<div class="slide-1">
+													<h2 class="category-trigger-btn"><a href="javascript:void(0)" class="text-decoration-none">Shop by Category <i class="fa fa-chevron-right"></i></a></h2>
+													<h2 class="promo-btn-trigger"><a href="javascript:void(0)" class="text-decoration-none">Current Promotions</a></h2>
+													[%cache type:'menu' id:'header-content-menu'%]
+													[%menu id:'web_header'%]
+														[%param *level_1%]
+															<h2><a href="[@url@]" class="text-decoration-none">[@name@]</a></h2>
+														[%/param%]
+													[%/menu%]
+													[%/ cache%]
+											</div><div class="slide-2 height-100">
+													[%load_template file:'headers/categorymenu.template.html' /%]
+											</div>
+										</div>
+										
+									
+
+								</div>	
+							</div>
+					</div>
+
+
+<div id="catMenuOverlay"></div>
 <header class="wrapper-header" aria-label="Header container">
-	<div class="container-fluid">
+	<div class="container">
 			<div class="row mobile-header">
-					<div class="col-xs-3 text-center hidden-sm hidden-md hidden-lg" id="mobile-menu-toggle" data-toggle="collapse" data-target=".header-menu-item-wrapper">
+					<div class="col-xs-3 text-center hidden-sm hidden-md hidden-lg" id="mobile-menu-toggle" data-toggle="collapse" data-target=".header-menu-item-wrapper.mobile">
 							<div class="account-wrapper">
 									<i class="fa fa-bars"></i>
 									<p class="text-center">Menu</p>
 							</div>
 					</div>
-					<div class="col-xs-6 col-sm-12 col-lg-12 wrapper-logo text-center">
+					<div class="col-xs-6 col-sm-12 col-lg-3 wrapper-logo">
 						<a href="[@config:homeurl@]" title="[@config:company_name@]">
 							<img class="logo" src="[@config:imageurl@]/website_logo.png?[@config:neto_css_version@]" alt="[@config:company_name@] logo"/>
 						</a>
@@ -38,14 +104,16 @@
 									
 								</div>
 					</div>
-			</div>
-			<div class="row">
-					<div class="col-xs-12 col-sm-12 col-lg-12 text-right hidden-xs">
+					<div class="col-xs-12 col-sm-12 col-lg-9 text-right hidden-xs">
 							<div class="mobile-cart-wrapper text-center relative">
-									<div class="menu-wrapper" data-toggle="collapse" data-target=".header-menu-item-wrapper">
+									<div class="menu-wrapper hidden-lg" data-toggle="collapse" data-target=".header-menu-item-wrapper.mobile">
 											<i class="fa fa-bars"></i>
 											<p class="text-center">Menu</p>
-										</div>
+									</div>
+									<div class="menu-wrapper menu-wrapper-desktop visible-lg" id="triggerMenu">
+										<i class="fa fa-bars"></i>
+											<p class="text-center">Menu</p>
+									</div>
 									<div class="account-wrapper">
 										<a href="[%url page:'account'/%]">
 											<i class="fa fa-user"></i>
@@ -77,10 +145,10 @@
 						</div>
 					</div>
 				</div>	
-					<div class="container-fluid">
+					<div class="container">
 
-							<div class="header-menu-item-wrapper row collapse">
-								<div class="col-xs-12 col-sm-6 overflow-hidden">
+							<div class="header-menu-item-wrapper mobile row collapse">
+								<div class="col-xs-12 col-lg-6 col-lg-offset-6 overflow-hidden">
 										<div class="header-search mobile">
 												<form name="productsearch" method="get" action="/" role="search" aria-label="Product Search">
 													<input type="hidden" name="rf" value="kw"/>
@@ -108,33 +176,9 @@
 													[%load_template file:'headers/categorymenu.template.html' /%]
 											</div>
 										</div>
-										
-									
-
 								</div>
-								<div class="col-sm-6 hidden-xs">
-										[%advert type:'text' ad_group:'current_promotions' category:'0' limit:'10' allow_duplicate:'1'%]
-											[%param *body%]
-											<div class="row">
-												<div class="col-xs-12">
-													<div class="single-promotion">
-															[%if [@headline@]%]<h3>[@headline@]</h3>[%/if%]
-			
-															<a href="[@url@]"><img class="img-responsive" src="[%asset_url type:'adw' id:'[@ad_id@]' thumb:'alt_1' default:'[@config:imageurl@]/pixel.gif'/%]" alt=""></a>
-															[%if [@description@]%]<p>[@description@]</p>[%/if%]
-															[%if [@linktext@]%]<p><a href="[@url@]" class="underline">[@linktext@]</a></p>[%/if%]
-													</div>
-												</div>
-											</div>
-											[%/param%]
-											[%param *ifempty%]
-												There's no promotions right now, check back later!
-											[%/param%]
-										[%/advert%]
-								</div>	
 							</div>
-					</div>			
-	<div class="header-spacer"></div>	
+					</div>				
 
 	<div class="header-footer">
 		<ul class="list-inline list-social text-center" itemscope itemtype="http://schema.org/Organization" role="contentinfo" aria-label="Social media">

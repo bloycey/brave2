@@ -2229,3 +2229,213 @@ h2.promotions-heading{
 .logo {
     max-height: 110px;
 }
+
+
+.mobile-cart-wrapper {
+    justify-content: flex-end;
+}
+
+.mobile-cart-wrapper > div {
+    margin: 0 15px;
+}
+
+.wrapper-logo {
+    text-align: center;
+}
+
+@media only screen and (min-width: 1200px)  {
+    .wrapper-header {
+        max-height: 110px;
+    }
+}
+
+@media only screen and (min-width: 767px)  {
+    .wrapper-logo {
+        text-align: left;
+    }
+
+    .mobile-menu-items-wrapper {
+        width: 200vw;
+    }
+
+    .categoriesOpen {
+        margin-left: -100vw;
+    }
+}
+
+.logo {
+    max-height: 90px;
+    margin-top: 0;
+}
+
+.sidenav {
+height: 100%; 
+width: 0; 
+position: fixed; 
+z-index: 9100; 
+top: 0;
+width: 400px;
+right: -400px;
+background-color: #fff;
+overflow-x: hidden; 
+padding-top: 125px; 
+transition: 0.5s;
+}
+
+.sidenav .closebtn {
+position: absolute;
+top: 0;
+right: 0;
+font-size: 24px;
+}
+
+.open-nav {
+right: 0px;
+}
+
+.active-overlay {
+position: fixed;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+background-color: rgba(0,0,0,0.5);
+z-index: 9000;
+}
+
+.mobile-menu-items-wrapper.desktop {
+width: 830px;
+}
+
+.mobile-menu-items-wrapper.desktop.categoriesOpen {
+margin-left: -415px;
+}
+
+
+.homepage-bg {
+	height: 600px;
+	min-height: 600px;
+}
+
+.thumbs-outer-wrapper {
+	padding: 30px;
+}
+
+.home-text-wrapper {
+    text-align: center;
+    background-color: #58656f;
+    padding: 20px 15%;
+    width: 100%
+}
+
+@media (max-width: 767px) {
+	.home-text-wrapper {
+		padding: 20px 30px;
+		margin-top: 0px;
+	}
+}
+
+
+
+.parallax-advert {
+	height: 500px;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.home-ad-overlay {
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+    width: 100%;
+    height: 100%;
+	padding: 50px 0;
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.brand-img {
+	max-width: 100%;
+    padding: 0 10px;
+    max-height: 120px;
+    object-fit: contain;
+    object-position: center;
+    margin: 0 auto;
+}
+
+.brands-heading {
+	font-weight: 700;
+    text-transform: uppercase;
+    font-size: 65px;
+    line-height: 0.8;
+}
+
+.brands-wrapper {
+	padding-top: 45px;
+	padding-bottom: 45px;
+}
+
+.brand-img-wrapper .slick-track {
+	display: flex;
+	align-items: center;
+}
+
+#instafeed.homepage > a {
+	width: 33.33%;
+	padding:0;
+}
+
+.insta-panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+@media (max-width: 767px) {
+	.insta-panel {
+		position: relative;
+		width: 100%;
+	}
+
+	.insta-panel .insta-inner {
+		width: 100%;
+	}
+}
+
+.insta-inner {
+	width: 300px;
+    text-align: center;
+    background-color: #58656f;
+    color: #ffffff;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.25);
+	padding: 15px;
+}
+
+.insta-inner .fa {
+	font-size: 34px;
+    padding-bottom: 5px;
+}
+
+@media (max-width: 992px) {
+
+.brands-heading-wrapper {
+	margin-bottom: 30px;
+}
+
+.brands-wrapper {
+	padding-top: 60px;
+	padding-bottom: 60px;
+}
+
+.brands-heading {
+	font-size: 34px;
+}
+
+}
