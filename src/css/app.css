@@ -12156,6 +12156,9 @@ h2.promotions-heading {
     margin-left: -30%;
   }
 }
+.collapseit {
+  display: none;
+}
 .panel-title > a,
 .panel-heading > h3 {
   padding: initial;
