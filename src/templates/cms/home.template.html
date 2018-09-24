@@ -94,7 +94,7 @@ $(document).ready(function(){
 
 			[%/param%]
 			[%param *body%]
-					<div class="parallax-advert" style="background-image: url([%asset_url type:'adw' id:'[@ad_id@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%end param%][%END asset_url%]); height: 500px">
+					<div class="parallax-advert" style="background-image: url([%asset_url type:'adw' id:'[@ad_id@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%end param%][%END asset_url%]);">
 						<div class="home-ad-overlay">
 							<div class="container">
 								<h3 class="white">Advert heading</h3>
@@ -114,9 +114,11 @@ $(document).ready(function(){
 	<div class="row">
 		<div class="col-xs-12 brands-wrapper">
 			<div class="row">
-				<div class="col-md-4 brands-heading-wrapper">
-				<h3 class="brands-heading">Our Brands</h3>
-				<span>View all</span>
+				<div class="col-md-4">
+				<div class="brands-heading-wrapper">
+					<h3 class="brands-heading">Our Brands</h3>
+					<span>View all</span>
+				</div>
 				</div>
 				<div class="col-md-8 brand-img-wrapper">
 					[%thumb_list type:'content' content_type:'brand' limit:'12' sortby:'sortorder'%]
@@ -150,7 +152,7 @@ $(document).ready(function(){
 		            accessToken: '[@CONFIG:Instagram_Access_Token@]',
 		            template: '<a href="{{link}}" target="_blank"><div class="instafeed-image" style="background-image: url({{image}})"><span class="likes"><span><i class="fa fa-instagram"></i> {{model.created_at}}</span></span></div></a>',
 		            resolution: 'standard_resolution',
-		            limit: '6',
+		            limit: '8',
 		            sortBy: 'most-recent'
 		        });
 		        feed.run();

@@ -8,42 +8,6 @@
 <body id="n_[@config:current_page_type@]" class="n_[@CONFIG:TEMPLATELANG@]">
 <a href="#main-content" class="sr-only sr-only-focusable">Skip to main content</a>
 
-[%site_value id:'footer_javascript'%]
-	<script>
-	$(document).ready(function(){
-
-		function openNav() {
-			$("#mySidenav").toggleClass("open-nav");
-			$(".bg-overlay").toggleClass("active-overlay");
-			$('body').toggleClass("overflow-hidden");
-		}
-
-		function closeNav() {
-			$("#mySidenav").removeClass("open-nav");
-			$(".bg-overlay").removeClass("active-overlay");
-			$('#triggerMenu').find($('.fa')).toggleClass('fa-bars fa-times');
-			$('body').removeClass("overflow-hidden");
-		}
-
-		$('#triggerMenu').click(function(){
-			openNav();
-		})
-
-		$('#closeNav').click(function(){
-			closeNav();
-		})
-
-		$(document).on("click", ".active-overlay", function(){
-			closeNav();
-		})
-	})
-	
-	</script>
-		
-	[%/site_value%]
-
-
-
 <div class="bg-overlay"></div>
 					<div id="mySidenav" class="sidenav">
 						<div class="header-menu-item-wrapper">
