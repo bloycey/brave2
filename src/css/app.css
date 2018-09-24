@@ -12258,3 +12258,19 @@ h2.promotions-heading {
 #homepageCarousel .slick-track {
   margin: 0;
 }
+.info-title {
+  font-size: 44px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #333333 !important;
+  display: inline-block;
+  overflow: visible;
+}
+.info-title:after {
+  content: '';
+  border-bottom: 13px solid #d8ab64;
+  display: block;
+  margin-top: -16px;
+  margin-left: 21px;
+  width: 103%;
+}
