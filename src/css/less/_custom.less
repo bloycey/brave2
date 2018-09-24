@@ -2607,11 +2607,11 @@ margin-left: -30%;
     font-weight: 700;
     text-transform: uppercase;
     color: #333333 !important;
-    display: inline-block;
+    display: inline-block !important;
     overflow: visible;
 }
 
-.info-title:after {
+.info-title[aria-expanded="true"]:after {
     content: '';
     border-bottom: 13px solid #d8ab64;
     display: block;
