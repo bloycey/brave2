@@ -114,36 +114,6 @@
 		$(document).ready(function(){
 			$('.zoom').zoom();
 
-		var waypoint = new Waypoint({
-			element: $('.information-row'),
-			handler: function(direction) {
-				if($(window).width() > 1199) {
-					if(direction == "down") {
-						$('.product-footer').addClass('footer-in');
-					} else {
-						$('.product-footer').removeClass('footer-in');
-					}
-					
-				}
-			},
-			offset: 100
-		})
-
-		var buyingOptionsWaypoint = new Waypoint({
-			element: $('.extra-options'),
-			handler: function(direction) {
-				if($(window).width() < 768) {
-					if(direction == "down") {
-						$('.buying-options').addClass('buying-options-sticky');
-					} else {
-						$('.buying-options').removeClass('buying-options-sticky');
-					}
-					
-					
-				}
-			},
-			offset: 'bottom-in-view'
-		})
 
 		$(window).resize(function(){
 			if ($(window).width() > 767) {

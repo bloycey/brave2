@@ -2629,3 +2629,154 @@ margin-left: -30%;
     border-top: none !important;
 }
 
+h1.product-name {
+	font-weight: 700;
+    text-transform: uppercase;
+    color: #333;
+    font-size: 65px;
+    overflow: visible;
+    display: inline-block;
+    z-index: 100;
+    margin-bottom: 0px;
+    position: relative;
+}
+
+h1.product-name:after {
+	content: '';
+    border-bottom: 20px solid #d8ab64;
+    display: block;
+    margin-top: -25px;
+    margin-left: 21px;
+    width: 103%;
+}
+
+#_jstl__images_r {
+	margin-top: -9px;
+}
+
+.product-top-wrapper {
+	margin-top: 40px;
+}
+
+.product-flex-wrapper {
+	display: flex;
+}
+
+.flex-col {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.buying-options-wrapper {
+	align-self: flex-end;
+}
+
+.pricing-wrapper {
+	align-self: flex-end;
+	margin-top: auto;
+	text-align: right;
+}
+
+.productpromo {
+    font-size: 46px;
+}
+
+.productpromo, .productpricetext {
+    margin-bottom: 10px;
+}
+
+.product-wishlist {
+	margin-top: 20px;
+}
+
+.product-wishlist i {
+	margin-right: 10px;
+	margin-top: -3px;
+}
+
+.product-wishlist .wishlist_toggle {
+	font-weight: 600;
+}
+
+  .product-description-wrapper {
+	  margin-top: 24px;
+  }
+
+@media only screen and (max-width: 1200px)  {
+	h1.product-name {
+		font-size: 32px;
+	}
+
+	h1.product-name:after {
+		content: '';
+		border-bottom: 13px solid #d8ab64;
+		display: block;
+		margin-top: -16px;
+		margin-left: 21px;
+		width: 103%;
+	}
+}
+
+@media only screen and (max-width: 992px)  {
+	.product-flex-wrapper {
+		display: block;
+	}
+
+	#_jstl__images_r {
+    	margin-top: 30px;
+	}
+
+	.product-top-wrapper {
+		margin-top: 15px;
+	}
+
+	h1.product-name {
+		border-left: 5px solid #d8ab64;
+    	padding-left: 15px;
+	}
+
+	h1.product-name:after {
+		display: none;
+	}
+
+
+}
+
+.product-buying-btns button {
+    height: 60px;
+}
+
+#n_product .qty {
+text-align: center;
+height: 60px;
+}
+
+#n_product .qty::-webkit-outer-spin-button, #n_product .qty::-webkit-inner-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+
+.product-page-badges {
+    padding: 10px 0;
+}
+
+.product-image-slider img {
+    max-height: unset;
+    max-width: 100%;
+    width: 100%;
+}
+
+@media only screen and (min-width: 992px) {
+
+
+.product-image-slider, .product-shadow-box-wrapper {
+    height: auto;
+    align-items: unset;
+}
+
+.product-shadow-box-wrapper {
+display: flex;
+align-items: unset;
+}
+}
