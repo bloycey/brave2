@@ -12404,3 +12404,105 @@ h1.product-name:after {
     align-items: unset;
   }
 }
+.menu-row-desktop {
+  background-color: #699;
+  color: #ffffff;
+}
+@media (min-width: 768px) {
+  .navbar-nav > li {
+    position: unset;
+  }
+  .nav.header > li {
+    position: unset;
+  }
+  .dropdown {
+    position: unset;
+  }
+  .dropup,
+  .dropdown {
+    position: unset;
+  }
+  .dropdown-menu.mega-menu .mega-inner > li a {
+    color: #333333 !important;
+  }
+  .dropdown-menu.mega-menu .mega-inner {
+    column-count: 3;
+    /* Number of columns */
+    /*column-rule: 1px solid #e0e0e0; Vertical line between columns*/
+    column-gap: 30px;
+    /* Gap between columns */
+  }
+  .mega-menu .mega-inner > li {
+    width: 100%;
+    display: inline-block;
+    margin: 0 0 15px;
+  }
+  .lv2-li > ul {
+    padding-left: 0;
+    padding-top: 2px;
+    line-height: 1.5;
+  }
+  .mega-menu {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .mega-menu {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .mega-menu {
+    width: 1170px;
+  }
+}
+@media (min-width: 768px) {
+  .menu-row-desktop .navbar-nav > li > a {
+    padding-top: 18px;
+    padding-bottom: 15px;
+  }
+}
+.menu-row-desktop .nav > li > a:hover,
+.menu-row-desktop .nav > li > a:focus {
+  text-decoration: none;
+  background-color: #ffffff;
+  color: #669999 !important;
+}
+.navbar-nav > li > .dropdown-menu.mega-menu {
+  margin-top: 0px;
+  border: none;
+  padding: 30px;
+}
+.mega-category-title,
+.mega-advert,
+.mega-ad-heading {
+  color: #333;
+}
+.lv2-li > a {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.mega-product {
+  margin-top: -5px;
+  z-index: -1;
+  position: relative;
+}
+.mega-category-title {
+  padding-left: 15px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 32px;
+  margin-bottom: 0px;
+  display: inline-block;
+}
+.mega-category-title:after {
+  content: '';
+  border-bottom: 9px solid #d8ac64;
+  width: 115%;
+  display: block;
+  margin-top: -13px;
+  margin-left: 12px;
+}
+.thumbnail-product-details {
+  background-color: #f6f6f6;
+}

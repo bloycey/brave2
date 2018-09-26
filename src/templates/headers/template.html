@@ -8,45 +8,6 @@
 <body id="n_[@config:current_page_type@]" class="n_[@CONFIG:TEMPLATELANG@]">
 <a href="#main-content" class="sr-only sr-only-focusable">Skip to main content</a>
 
-<div class="bg-overlay"></div>
-					<div id="mySidenav" class="sidenav">
-						<div class="header-menu-item-wrapper">
-								<div class="col-xs-12 overflow-hidden">
-										<div class="header-search mobile">
-												<form name="productsearch" method="get" action="/" role="search" aria-label="Product Search">
-													<input type="hidden" name="rf" value="kw"/>
-													<div class="input-group">
-														<input class="form-control ajax_search mob-search" value="[%nohtml%][%filter ID:'keywords'%][%/filter%][%/nohtml%]" id="name_search" autocomplete="off" name="kw" type="search" aria-label="Input search" placeholder="Search..."/>
-														<span class="input-group-btn">
-															<button type="submit" value="Search" class="btn btn-default mob-search" aria-label="Search site"><i class="fa fa-search" aria-hidden="true"></i></button>
-														</span>
-													</div>
-												</form>
-											</div>
-											
-										<div class="mobile-menu-items-wrapper desktop">
-											<div class="slide-1">
-													<h2 class="category-trigger-btn"><a href="javascript:void(0)" class="text-decoration-none">Shop by Category <i class="fa fa-chevron-right"></i></a></h2>
-													<h2 class="promo-btn-trigger"><a href="javascript:void(0)" class="text-decoration-none">Current Promotions</a></h2>
-													[%cache type:'menu' id:'header-content-menu'%]
-													[%menu id:'web_header'%]
-														[%param *level_1%]
-															<h2><a href="[@url@]" class="text-decoration-none">[@name@]</a></h2>
-														[%/param%]
-													[%/menu%]
-													[%/ cache%]
-											</div><div class="slide-2 height-100">
-													[%load_template file:'headers/categorymenu.template.html' /%]
-											</div>
-										</div>
-										
-									
-
-								</div>	
-							</div>
-					</div>
-
-
 <div id="catMenuOverlay"></div>
 <header class="wrapper-header" aria-label="Header container">
 	<div class="container">
@@ -77,10 +38,7 @@
 											<i class="fa fa-bars"></i>
 											<p class="text-center">Menu</p>
 									</div>
-									<div class="menu-wrapper menu-wrapper-desktop visible-lg" id="triggerMenu">
-										<i class="fa fa-bars"></i>
-											<p class="text-center">Menu</p>
-									</div>
+
 									<div class="account-wrapper">
 										<a href="[%url page:'account'/%]">
 											<i class="fa fa-user"></i>
@@ -179,8 +137,64 @@
 			[%/if%]
 		</ul>
 	</div>
-
-
 </header>
+
+<div class="menu-row-desktop hidden-sm hidden-xs">
+<div class="container">
+<div class="row">
+	<div class="col-xs-12">
+<ul class="nav navbar-nav header hidden-xs">
+	[%cache type:'cmenu' id:'header_category_menu'%]
+		[%content_menu content_type:'category' sortby:'sortorder,name' show_empty:'1'%]
+			[%param header%]
+	
+			[%/param%]
+			[%param *level_1%]
+				<li class="lv1-li [%if [@next_level@] ne ''%] dropdown dropdown-hover[%/if%]"><a href="[@url@]">[@name@]</a>
+					[%if [@next_level@] ne ''%]
+						<ul class="dropdown-menu mega-menu">
+							<div class="mega-inner col-xs-9">[@next_level@]</div>
+							<div class="mega-advert col-xs-3">
+								[%advert type:'product' ad_group:'category-[@content_id@]' template:'featured' limit:'1' category:'0'%]
+								[%param *header%]
+									<h3 class="mega-category-title">Top Pick</h3>
+									<div class="mega-product">
+								[%/param%]
+								[%param *footer%]
+									</div>
+								[%/param%]
+								[%param *ifempty%]
+									<h3 class="text-center">[@name@]</h3>
+									<img src="[%asset_url type:'content' id:'[@content_id@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%end param%][%/asset_url%]" class="img-responsive">
+								[%/param%]
+								[%/advert%]
+							</div>
+						</ul>	
+					[%/if%]
+				</li>
+			[%/param%]
+			[%param *level_2%]
+				<li class="lv2-li"><a href="[@url@]">[@name@]</a>
+					[%if [@next_level@] ne ''%]
+						<ul>[@next_level@]</ul>
+					[%/if%]
+				</li>
+			[%/param%]
+			[%param *level_3%]
+				<li class="lv3-li">
+					<a href="[@url@]">[@name@]</a>
+				</li>
+			[%/param%]
+			[%param footer%]
+	
+			[%/param%]
+		[%/content_menu%]
+	[%/cache%]
+	</ul>
+	</div>
+	</div>
+	</div>
+	</div>
+
 <div id="main-content" class="main-content container clearfix" role="main">
 	<div class="row">
