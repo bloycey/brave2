@@ -34,7 +34,19 @@
 					</div>
 					<div class="col-xs-12 col-sm-12 col-lg-9 text-right hidden-xs">
 							<div class="mobile-cart-wrapper text-center relative">
-									<div class="menu-wrapper hidden-lg" data-toggle="collapse" data-target=".header-menu-item-wrapper.mobile">
+									<div class="header-search-desktop">
+										<form name="productsearch" method="get" action="/" role="search" aria-label="Product Search">
+											<input type="hidden" name="rf" value="kw"/>
+											<div class="input-group">
+												<input class="form-control ajax_search mob-search" value="[%nohtml%][%filter ID:'keywords'%][%/filter%][%/nohtml%]" id="name_search" autocomplete="off" name="kw" type="search" aria-label="Input search" placeholder="Search..."/>
+												<span class="input-group-btn">
+													<button type="submit" value="Search" class="btn btn-default mob-search" aria-label="Search site"><i class="fa fa-search" aria-hidden="true"></i></button>
+												</span>
+											</div>
+										</form>
+									</div>
+
+									<div class="menu-wrapper hidden-md hidden-lg" data-toggle="collapse" data-target=".header-menu-item-wrapper.mobile">
 											<i class="fa fa-bars"></i>
 											<p class="text-center">Menu</p>
 									</div>
