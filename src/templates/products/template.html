@@ -23,9 +23,6 @@
 <div class="col-xs-12 product-top-wrapper">
 	<div class="row product-flex-wrapper">
 		<section class="col-xs-12 col-md-6 col-lg-7" role="contentinfo" aria-label="Product images">
-			<!-- <div class="hidden-md hidden-lg text-center">
-					[%load_ajax_template id:'_header' type:'item' template:'header' preload:'1' tmpl_sku:'[@current_sku@]' tmpl_preview:'y'/%]
-			</div> -->
 			<div class="product-images-wrapper relative">
 				<h1 class="product-name">[@name@]</h1>
 				[%if [@config:show_wishlist@]%]
@@ -38,9 +35,6 @@
 
 		<section class="col-xs-12 col-md-5 col-md-offset-1 col-lg-4 col-lg-offset-1 [%if [@is_kit@]%] kitted[%/if%]">
 				<div class="row product-info product-page-main-info flex-col">
-						<!--<div class="col-md-12 hidden-sm hidden-xs">
-							[%load_ajax_template id:'_header' type:'item' template:'header' preload:'1' tmpl_sku:'[@current_sku@]' tmpl_preview:'y'/%]
-						</div>-->
 						<div class="product-tabs-wrapper col-xs-12 hidden-sm hidden-xs">
 						<div class="product-description-wrapper">
 								<div class="panel panel-default text-left">
@@ -97,16 +91,13 @@
 </div>
 </div>
 </div>
-<div class="information-row">
-<div class="container">
-<div class="row">
-<div class="col-xs-12">
-	<div class="row">
-		<section class="col-xs-12 col-lg-6" role="contentinfo" aria-label="Products information">
+
+<div class="information-row hidden-sm hidden-xs">
+		<section role="contentinfo" aria-label="Products information">
 				[%load_template file:"products/includes/product_information.template.html"/%]
 				[%if [@form:disable_scripts@] ne 'true'%][%tracking_code type:'ProductDescription' /%][%/if%]
 		</section>
-		<section class="col-xs-12 col-lg-5 col-lg-offset-1 cross-sell-section" aria-label="Cross Sell Products">
+		<!-- <section class="col-xs-12 col-lg-5 col-lg-offset-1 cross-sell-section" aria-label="Cross Sell Products">
 					[%crosssell id:'[@SKU@]' limit:'4' show_all:'1' template:'upsell'%]
 						[%param header%]
 							<div class="row">
@@ -124,12 +115,14 @@
 							</div>
 						[%/param%]
 					[%/crosssell%]
-		</section>
-	</div>
+		</section> -->
 </div>
+
+<div class="mobile-accordion-wrapper hidden-md hidden-lg">
+	[%load_template file:"products/includes/mobile_product_information.template.html"/%]
 </div>
-</div>
-</div>	
+
+
 <div id="main-content" class="main-content container clearfix" role="main">
 	<div class="row">
 <div class="container-fluid reviews-panel">

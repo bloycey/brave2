@@ -241,7 +241,9 @@ $(document).ready(function(){
 	})
 
 	$(window).resize(function(){
-		closeNav();
+		if(window.width() > 991) {
+			closeNav();
+		}
 		
 	})
 })
