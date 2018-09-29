@@ -2,15 +2,37 @@
 					<div class="tab-pane" id="reviews">
 							<div class="row">
 								<div class="col-xs-12">
-					[%thumb_list type:'product_reviews' limit:'5'%]
-                    [%param pgnum%][%if [@ajax_product_reviews@]%][@ajax_product_reviews@][%else%]1[%/if%][%/param%]
+					[%thumb_list type:'product_reviews' limit:'6'%]
 						[%param filter_1%][@SKU@][%/param%]
+
+						[%param *header%]
+						<div class="single-review-wrapper">
+						[%/param%]
 						[%param *body%]
-						<div itemprop="review" itemscope itemtype="http://schema.org/Review" class="single-review">
+						<div itemprop="review" itemscope itemtype="http://schema.org/Review" class="single-review relative">
+							<div class="big-quote">
+								<i class="fa fa-quote-left"></i>
+							</div>
+							
 							<meta itemprop="itemReviewed" content="[@name@]">
 							<meta itemprop="image" content="[%asset_url type:'product' thumb:'thumb' id:'[@SKU@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%end param%][%/asset_url%]">
-							<p>
-								<div class="star-rating">
+
+								
+								<h3 itemprop="name" class="product-review-title">[@title@]</h3>
+								<div class="product-review">
+								<span itemprop="description">[@review@]</span>
+								<span class="review-author uppercase">
+										[%if [@reviewname@]%]
+											<span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">&mdash; [@reviewname@]</span></span> 
+										[%/if%]
+								</div>
+								<br/>
+								<div itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
+									<meta itemprop="worstRating" content = "1">
+									<meta itemprop="ratingValue" content = "[@score@]">
+									<meta itemprop="bestRating" content = "5">
+								</div>
+								<div class="star-rating text-center">
 									[%set [@data:ratings-count@] = 1 /%]
 									[%while [@data:ratings-count@] <= [@data:score@]%]
 										[%set [@data:ratings-count@] = [@data:ratings-count@]+1 /%]
@@ -21,82 +43,38 @@
 										<i class="icon fa fa-star-o primary-color"></i>
 									[%/while%]
 								</div>
-
-								<h4 itemprop="name" class="product-review-title">[%nohtml%][@title@][%/nohtml%]</h4>
-								<div>
-									<strong>
-										[%if [@reviewname@]%]
-											<span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">[@reviewname@]</span></span> on 
-										[%/if%]
-										<meta itemprop="datePublished" content="[%FORMAT type:'date'%][@insert_date@][%/FORMAT%]">[%FORMAT type:'date'%][@insert_date@].[%/FORMAT%]
-									</strong>
-								</div>
-								<div class="product-review">
-								<span itemprop="description">[%nohtml%][@review@][%/nohtml%]</span><br />
-								</div>
-								<div itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
-									<meta itemprop="worstRating" content = "1">
-									<meta itemprop="ratingValue" content = "[@score@]">
-									<meta itemprop="bestRating" content = "5">
-								</div>
-					
-								[%if [@review_response@]%]
+								<!-- [%if [@review_response@]%]
 									<br /><br />
 									<blockquote>
 										<span class="review_response text-muted"><strong><i>[@config:website_name@] Response</i></strong><br /> [%nohtml%][@review_response@][%/nohtml%]</span>
 									</blockquote>
-								[%/if%]
-							</p>
+								[%/if%] -->
 						</div>
+								
+						
 						[%/param%]
 
 						[%param *footer%]
-						[%if [@reviews@] > 5%]
-                        <div class="pagination-container">
-								<div class="text-center">
-									<hr class="center-absolute">
-									[%paging limit:'3'%]
-								
-									[%PARAM *previous_page%]
-									<div class="no-padding text-left pagination-child pull-left">
-										<a href="javascript:void(0)" onclick="$.load_ajax_template('_reviews',{ajax_product_reviews: '[@PAGE@]',sku: '[@SKU@]'})"><span class="pagination-prev"><span class="pagination-label underline">Previous Reviews</span></span></a>
-									</div>
-									[%/PARAM%]
-								
-									[%PARAM *goback_pages%]
-									<div class="pagination-child number">
-										<a href="javascript:void(0)" onclick="$.load_ajax_template('_reviews',{ajax_product_reviews: '[@PAGE@]',sku: '[@SKU@]'})"><button class="pagination-center go-back btn">[@PAGE@]</button></a>
-									</div>
-									[%/PARAM%]
-								
-									[%PARAM *current_page%]
-									<div class="active pagination-child number">
-										<a href="javascript:void(0)" onclick="$.load_ajax_template('_reviews',{ajax_product_reviews: '[@PAGE@]',sku: '[@SKU@]'})"><button class="pagination-center btn">[@PAGE@]</button></a>
-									</div>
-								
-									[%/PARAM%]
-									[%PARAM *gonext_pages%]
-									<div class="pagination-child number">
-										<a href="javascript:void(0)" onclick="$.load_ajax_template('_reviews',{ajax_product_reviews: '[@PAGE@]',sku: '[@SKU@]'})"><button class="pagination-center go-forward btn">[@PAGE@]</button></a>
-									</div>
-									[%/PARAM%]
-									
-									[%PARAM *next_page%]
-									<div class="no-padding text-right pagination-child pull-right">
-										<a href="javascript:void(0)" onclick="$.load_ajax_template('_reviews',{ajax_product_reviews: '[@PAGE@]',sku: '[@SKU@]'})"><span class="pagination-next"><span class="pagination-label underline">More Reviews</span></span></a>
-									</div>
-									[%/PARAM%]
-									
-								[%/paging%]
-								</div>
 						</div>
-						[%/if%]
                         [%/param%]
 
 						[%param *ifempty%] 
+
+						<div class="single-review relative">
+						<div class="big-quote">
+							<i class="fa fa-quote-left"></i>
+						</div>		
+						<h3 itemprop="name" class="product-review-title">No reviews yet</h3>
+						<div class="product-review no-reviews">
+							<span>Why not <a href="[%URL page:'account' type:'write_review' qs:'item=[@SKU@]'%][%/URL%]">leave a review?</a></span>
+							
+							<br/>
+						</div>
+						</div>
+
 						[%/param%]
 					[%/thumb_list%]
+						</div>
 					</div><!--/.tab-pane-->
 				</div>
-		</div>
 [%/if%]

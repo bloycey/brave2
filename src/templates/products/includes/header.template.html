@@ -1,11 +1,1 @@
-<div class="product-page-title">
-	<h1 itemprop="name" aria-label="Product Name">[@name@]</h1>
-</div>
-[%brand id:'[@brand@]'%]
-	[%param *body%]
-		[%set [@brand_thumb@] %][%asset_url type:'content' id:'[@content_id@]' thumb:'thumb' /%][%/set%]
-		[%if [@brand_thumb@] %]
-			<div class="productpage-brand"><a title="[@brand@]" href="[%url type:'brand' id:'[@brand@]'/%]"><img src="[@brand_thumb@]"></a></div>
-		[%/if%]
-	[%/param%]
-[%/brand%]
+<h1 itemprop="name" aria-label="Product Name" class="brave-heading main-product-title uppercase">[@name@]</h1>

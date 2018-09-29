@@ -21,13 +21,14 @@
 </div>
 
 <div class="col-xs-12 product-top-wrapper">
+	<div class="row">
+		<div class="col-xs-12">
+				[%load_template file:"products/includes/header.template.html"/%]
+		</div>
+	</div>
 	<div class="row product-flex-wrapper">
 		<section class="col-xs-12 col-md-6 col-lg-7" role="contentinfo" aria-label="Product images">
 			<div class="product-images-wrapper relative">
-				<h1 class="product-name">[@name@]</h1>
-				[%if [@config:show_wishlist@]%]
-					
-				[%/if%]
 				[%load_ajax_template id:'_images' type:'item' template:'images' preload:'1' tmpl_sku:'[@current_sku@]' tmpl_preview:'y'/%]
 			</div>
 			
@@ -37,17 +38,17 @@
 				<div class="row product-info product-page-main-info flex-col">
 						<div class="product-tabs-wrapper col-xs-12 hidden-sm hidden-xs">
 						<div class="product-description-wrapper">
-								<div class="panel panel-default text-left">
-									<div role="tab" id="headingDescription">
-										<h4 class="panel-title panel-title-mob">
-										<a class="active info-title" aria-expanded="true">
-											Description
-										</a>
-										</h4>
-									</div>
-									<div id="collapseDescription" class="panel-collapse collapsemob collapse in">
-										<div class="panel-body">
+								<div class="text-left">
+										<h4 class="brave-subheading uppercase">Description</h4>
 										<div class="productdetails">[@short_description@]</div>
+										[%brand id:'[@brand@]'%]
+											[%param *body%]
+												[%set [@brand_thumb@] %][%asset_url type:'content' id:'[@content_id@]' thumb:'thumb' /%][%/set%]
+												[%if [@brand_thumb@] %]
+													<div class="productpage-brand"><a title="[@brand@]" href="[%url type:'brand' id:'[@brand@]'/%]"><img src="[@brand_thumb@]"></a></div>
+												[%/if%]
+											[%/param%]
+										[%/brand%]
 										<div class="product-wishlist">
 												[%IN_WISHLIST id:'[@SKU@]' %]
 												[%param if_true%]
@@ -58,9 +59,7 @@
 												[%/ param%]
 												[%/ IN_WISHLIST%]
 										</div>
-										[%tracking_code type:'ProductDescription' /%]
-										</div>
-									</div>
+										[%tracking_code type:'ProductDescription' /%]	
 								</div>
 						</div>
 						</div>
@@ -97,25 +96,6 @@
 				[%load_template file:"products/includes/product_information.template.html"/%]
 				[%if [@form:disable_scripts@] ne 'true'%][%tracking_code type:'ProductDescription' /%][%/if%]
 		</section>
-		<!-- <section class="col-xs-12 col-lg-5 col-lg-offset-1 cross-sell-section" aria-label="Cross Sell Products">
-					[%crosssell id:'[@SKU@]' limit:'4' show_all:'1' template:'upsell'%]
-						[%param header%]
-							<div class="row">
-								<div class="col-xs-12">
-									<h4 class="inline-block info-title bundle-title">Bundle with purchase:</h4>
-								</div>
-							</div>
-							<div class="row">
-						[%/param%]
-
-						[%param *ifempty%]
-							PRODUCT USPS GO HERE
-						[%/param%]
-						[%param footer%]
-							</div>
-						[%/param%]
-					[%/crosssell%]
-		</section> -->
 </div>
 
 <div class="mobile-accordion-wrapper hidden-md hidden-lg">
@@ -123,45 +103,28 @@
 </div>
 
 
-<div id="main-content" class="main-content container clearfix" role="main">
-	<div class="row">
-<div class="container-fluid reviews-panel">
-	<div class="row">
-		<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
-			<div class="clearfix">
-			<div class="text-center">
-				<div class="star-rating">
-						<a class="reviews" href="#reviews" data-toggle="tab">
-								[%set [@data:ratings-count@] = 1 /%]
-								[%while [@data:ratings-count@] <= [@data:rating@]%]
-									[%set [@data:ratings-count@] = [@data:ratings-count@]+1 /%]
-									<i class="fa fa-star secondary-color" aria-hidden="true"></i>
-								[%/while%]
-								[%while [@data:ratings-count@] <= 5%]
-									[%set [@data:ratings-count@] = [@data:ratings-count@]+1 /%]
-									<i class="fa fa-star-o secondary-color" aria-hidden="true"></i>
-								[%/while%]
-							</a>
-						
+<div class="main-content container clearfix" role="main">
+	<div class="row reviews-row">
+		<div class="col-md-6 reviews-title-inner-wrapper">
+			<h2 class="reviews-heading uppercase">Our<br>Reviews</h2>
+			[%if [@reviews@] > 0%]
+				<div class="leave-review-wrapper hidden-sm hidden-xs">
+					<p>We value your opinion.</p>
+					<a href="[%URL page:'account' type:'write_review' qs:'item=[@SKU@]'%][%/URL%]">Leave a review</a>
 				</div>
-				<h3 class="reviews-title"> 
-				[%if [@reviews@] > 0%]	Rated <span itemprop="ratingValue">[@rating@]</span>/<span itemprop="bestRating">5</span> based on <span itemprop="ratingCount">[@reviews@]</span> review[%if [@reviews@] > 1%]s[%/if%]. <i class="fa fa-thumbs-o-up review-thumbs-up"></i> [%else%] No reviews yet. Leave your review below. [%/if%]
-				</h3>
-				<a href="[%URL page:'account' type:'write_review' qs:'item=[@SKU@]'%][%/URL%]"><button class="btn btn-primary">Add your review</button></a>
-			</div>
-			</div>
+			[%/if%]
+			
 		</div>
-		</div>
-</div>
-
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
-				[%load_ajax_template id:'_reviews' type:'item' template:'product_reviews' preload:'1' tmpl_preview:'y'/%]
+		<div class="col-md-6">
+			[%load_template file:"products/includes/product_reviews.template.html"/%]
+			[%if [@reviews@] > 0%]
+			<div class="leave-review-wrapper hidden-md hidden-lg">
+				<p>We value your opinion.</p>
+				<a href="[%URL page:'account' type:'write_review' qs:'item=[@SKU@]'%][%/URL%]">Leave a review</a>
+			</div>
+			[%/if%]
 		</div>
 	</div>
-</div>
-
 
 	
 <div class="col-xs-12">
@@ -195,7 +158,6 @@
 [%/discount_products%]
 [%free_gifts id:'[@SKU@]'%]
 	[%param *header%]
-		
 		<div class="alert alert-success">
 			<h3>FREEBIES! <small>Buy [@name@] Today &amp; Choose From One Of These FREE Gifts!</small></h3>
 				<div class="row">
@@ -221,36 +183,62 @@
 
 	[%/param%]
 [%/free_gifts%]
-<div class="upsells-container">
-	[%upsell_products id:'[@SKU@]' limit:'[@config:upsell_limit@]' template:'' show_all:'1'%]
+
+
+	</div><!--closing main container row-->
+</div><!--closing main container-->
+
+<div class="upsells-outer-wrapper">
+	[%upsell_products id:'[@SKU@]' limit:'6' template:'' show_all:'1'%]
 		[%param header%]
-		<h3 class="inline-block secondary-title">We Also Recommend</h3>
-		<div class="row upsell-row">
+		<div class="upsell-bg">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<h3 class="brave-heading uppercase">We Also Recommend</h3>
+					</div>
+				</div>
+				<div class="row upsell-row">
 		[%/param%]
 		[%param footer%]
+				</div>
+			</div>
 		</div>
 		[%/param%]
 	[%/upsell_products%]
-	[%related_products id:'[@SKU@]' limit:'[@config:upsell_limit@]' template:'' show_all:'1'%]
+	[%related_products id:'[@SKU@]' limit:'6' template:'' show_all:'1'%]
 		[%param header%]
-		<h3 class="inline-block secondary-title">Others Also Bought</h3>
-		<div class="row upsell-row">
+		<div class="upsell-bg">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<h3 class="brave-heading uppercase">Others Also Bought</h3>
+					</div>
+				</div>
+				<div class="row upsell-row">
 		[%/param%]
 		[%param footer%]
+				</div>
+			</div>
 		</div>
 		[%/param%]
 	[%/related_products%]
-	[%thumb_list type:'products' sortby:'random' filter_category:'[@content_id@]' template:'' filter_exsku1:'[@sku@]' limit:'[@config:upsell_limit@]'%]
+	[%thumb_list type:'products' sortby:'random' filter_category:'[@content_id@]' template:'' filter_exsku1:'[@sku@]' limit:'6'%]
 		[%param *header%]
-		<h3 class="inline-block secondary-title">More From This Category</h3>
-		<div class="row upsell-row">
+		<div class="upsell-bg">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<h3 class="brave-heading uppercase">More From This Category</h3>
+					</div>
+				</div>
+				<div class="row upsell-row">
 		[%/param%]
 		[%param footer%]
+				</div>
+			</div>
 		</div>
 		[%/param%]
 	[%/thumb_list%]
-[%/CACHE%]
-</div><!--/.col-xs-12-->
 </div>
-
-</div><!--/.row-->
+[%/CACHE%]

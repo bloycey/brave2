@@ -241,7 +241,7 @@ $(document).ready(function(){
 	})
 
 	$(window).resize(function(){
-		if(window.width() > 991) {
+		if(window.width > 991) {
 			closeNav();
 		}
 		
@@ -270,8 +270,6 @@ $(document).ready(function(){
 	function toggleCatMenu(){
 		$('.mobile-menu-items-wrapper').toggleClass('categoriesOpen');
 	}
-
-
 
 	$('.category-trigger-btn').click(function(){
 			toggleCatMenu();
