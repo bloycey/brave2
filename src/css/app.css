@@ -12975,3 +12975,46 @@ h1.product-name:after {
 .btn {
   font-size: 18px;
 }
+.menu-row-desktop .nav > li:hover > a,
+.menu-row-desktop .nav > li:focus > a {
+  text-decoration: none;
+  background-color: #ffffff;
+  color: #669999 !important;
+}
+.mega-advert .brave-subheading {
+  margin-left: 15px;
+  margin-bottom: 15px;
+}
+@media (min-width: 768px) {
+  .dropdown-menu.mega-menu .mega-inner,
+  .lv1-li > a {
+    font-size: 16px;
+  }
+}
+.mega-inner a {
+  transition: all 0.3s ease;
+}
+.mega-inner .lv3-li a:hover {
+  margin-left: 5px;
+}
+.buying-options-wrapper {
+  margin-bottom: 30px;
+}
+.product-images-wrapper .product-page-badges {
+  position: absolute;
+  top: 0px;
+  z-index: 99;
+  right: 10px;
+  width: 75px;
+}
+.leave-review-wrapper {
+  margin-top: 30px;
+}
+@media only screen and (min-width: 992px) {
+  .buying-options-wrapper {
+    margin-bottom: 0;
+  }
+  .pricing-wrapper {
+    margin-top: 15px;
+  }
+}

@@ -44,22 +44,10 @@
 </a>
 		<div class="thumbnail-product-details">
 				<div class="row">
-						<div class="col-xs-12 col-sm-9">
-								
+						<div class="col-xs-12">	
 								<div class="product-name">
 									<a href="[@URL@]">[%format type:'text' truemaxlength:'50' rmhtml:'1'%][@model@][%/FORMAT%]</a>
 								</div>
-
-						</div>
-						<div class="hidden-xs col-sm-3">
-							[%brand id:'[@brand@]'%]
-								[%param *body%]
-									[%set [@brand_thumb@] %][%asset_url type:'content' id:'[@content_id@]' thumb:'thumb' /%][%/set%]
-									[%if [@brand_thumb@] %]
-										<div class="thumbnail-brand"><a title="[@brand@]" href="[%url type:'brand' id:'[@brand@]'/%]"><img src="[@brand_thumb@]" class="img-responsive" /></a></div>
-									[%/if%]
-								[%/param%]
-							[%/brand%]
 						</div>
 				</div>
 					
