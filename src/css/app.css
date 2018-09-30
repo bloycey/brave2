@@ -12852,3 +12852,126 @@ h1.product-name:after {
 .product-name {
   font-size: 18px;
 }
+.footer-wrapper {
+  background-color: #334452;
+  color: #fff;
+}
+.thumbnail-price {
+  background-color: transparent;
+  padding: 0;
+}
+.thumbnail-price > .price {
+  background-color: #59656f;
+  padding: 10px 20px;
+}
+.badge-wrapper {
+  position: relative;
+  width: auto;
+  height: auto;
+  margin-bottom: 5px;
+}
+.badge-wrapper br,
+.badge-wrapper svg,
+.badge-wrapper i {
+  display: none;
+}
+.badge-wrapper p {
+  position: relative;
+  top: auto;
+  left: auto;
+  transform: none;
+  width: 100%;
+  text-align: center;
+  background-color: #333;
+  color: #fff;
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 1;
+  padding: 5px;
+}
+.product-badges {
+  position: relative;
+  top: 0;
+  right: 0;
+  margin-top: 5px;
+  width: auto;
+  text-align: right;
+}
+.badge-wrapper p.featured {
+  background-color: #ef6b6b;
+}
+.badge-wrapper p.inpromo {
+  background-color: #699;
+}
+.badge-wrapper p.percentoff {
+  background-color: #df928e;
+}
+.badge-wrapper p.rrp {
+  background-color: #d8ac69;
+}
+.sort_container form {
+  margin-bottom: 0;
+}
+@media only screen and (max-width: 767px) {
+  .brave-heading {
+    font-size: 37px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .reviews-row {
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+  .upsell-bg .brave-heading {
+    margin-top: 60px;
+    margin-bottom: 30px;
+  }
+  .upsell-row {
+    margin: 15px 0 45px;
+  }
+}
+.variation-name {
+  text-align: left;
+}
+@media only screen and (max-width: 992px) {
+  .variation-name {
+    text-align: right;
+  }
+}
+.variation-name > label {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 18px;
+}
+.n-wrapper-form-control select {
+  font-size: 18px;
+  height: 40px;
+}
+.thumbnail.components-thumbnail {
+  padding: 0;
+}
+.buying-options-wrapper {
+  margin-top: auto;
+}
+.product-info-inner-wrapper {
+  text-align: right;
+}
+.brave-subheading-right {
+  font-weight: 700;
+  font-size: 28px;
+  border-right: 5px solid #d8ac64;
+  padding-right: 20px;
+}
+.productpage-brand {
+  text-align: right;
+}
+.mobile-pricing {
+  margin-top: 15px;
+}
+.product-image-slider .slick-list {
+  width: 100%;
+}
+.btn {
+  font-size: 18px;
+}

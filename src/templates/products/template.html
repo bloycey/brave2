@@ -1,4 +1,5 @@
 [%load_template file:"products/includes/product_scripts.template.html"/%]
+
 [%cache type:'display' id:'[@inventory_id@]'%]
 
 <div class="col-xs-12">
@@ -38,9 +39,17 @@
 				<div class="row product-info product-page-main-info flex-col">
 						<div class="product-tabs-wrapper col-xs-12 hidden-sm hidden-xs">
 						<div class="product-description-wrapper">
-								<div class="text-left">
-										<h4 class="brave-subheading uppercase">Description</h4>
-										<div class="productdetails">[@short_description@]</div>
+								[%if ![@has_child@] || [@has_variation@]%]	
+									<div class="pricing-wrapper">
+										[%load_ajax_template id:'_pricing' type:'item' template:'pricing' preload:'1' tmpl_sku:'[@current_sku@]' tmpl_preview:'y'/%]
+									</div>
+									<hr>
+								[%/if%]	
+								<div class="product-info-inner-wrapper">
+										[%if [@short_description@] ne ''%]
+											<h4 class="brave-subheading-right uppercase">At a glance</h4>
+											<div class="productdetails">[@short_description@]</div>
+										[%/if%]
 										[%brand id:'[@brand@]'%]
 											[%param *body%]
 												[%set [@brand_thumb@] %][%asset_url type:'content' id:'[@content_id@]' thumb:'thumb' /%][%/set%]
@@ -49,7 +58,7 @@
 												[%/if%]
 											[%/param%]
 										[%/brand%]
-										<div class="product-wishlist">
+										<!-- <div class="product-wishlist">
 												[%IN_WISHLIST id:'[@SKU@]' %]
 												[%param if_true%]
 													<a class="wishlist_toggle" href="javascript:void(0)" role="button" title="Remove From Wishlist" rel="[@SKU@]"><span class="remove" rel="wishlist_text[@SKU@]"><i class="fa fa-heart" aria-hidden="true"></i>Remove from wishlist</span></a>
@@ -58,20 +67,25 @@
 													<a class="wishlist_toggle" href="javascript:void(0)" role="button" title="Add To Wishlist" rel="[@SKU@]"><span class="add" rel="wishlist_text[@SKU@]"><i class="fa fa-heart-o" aria-hidden="true"></i>Add to wishlist</span></a>
 												[%/ param%]
 												[%/ IN_WISHLIST%]
-										</div>
+										</div> -->
 										[%tracking_code type:'ProductDescription' /%]	
 								</div>
 						</div>
 						</div>
-						[%if ![@has_child@] || [@has_variation@]%]	
-							<div class="col-md-12 pricing-wrapper">
-								[%load_ajax_template id:'_pricing' type:'item' template:'pricing' preload:'1' tmpl_sku:'[@current_sku@]' tmpl_preview:'y'/%]
-							</div>
-						[%/if%]	
+						<div class="col-xs-12 hidden-md hidden-lg mobile-pricing">
+								[%if ![@has_child@] || [@has_variation@]%]	
+								<div class="pricing-wrapper">
+									[%load_ajax_template id:'_pricing' type:'item' template:'pricing' preload:'1' tmpl_sku:'[@current_sku@]' tmpl_preview:'y'/%]
+								</div>
+							[%/if%]	
+							<hr>
+						</div>
 						<div class="col-xs-12 child-products-wrapper">
 							<!-- child products -->
 							[%load_template file:"products/includes/child_products.template.html"/%]
 						</div>
+						
+					
 						[%if [@has_components@]%]
 							<div class="col-xs-12 kit-components-wrapper">
 								<!-- kit components -->
@@ -106,7 +120,7 @@
 <div class="main-content container clearfix" role="main">
 	<div class="row reviews-row">
 		<div class="col-md-6 reviews-title-inner-wrapper">
-			<h2 class="reviews-heading uppercase">Our<br>Reviews</h2>
+			<h2 class="brave-heading uppercase">Our<br>Reviews</h2>
 			[%if [@reviews@] > 0%]
 				<div class="leave-review-wrapper hidden-sm hidden-xs">
 					<p>We value your opinion.</p>
@@ -240,5 +254,24 @@
 		</div>
 		[%/param%]
 	[%/thumb_list%]
+	[%/CACHE%]
+	[%if [@config:phistory_limit@]%]
+		[%product_history limit:'6' template:''%]
+			[%param header%]
+			<div class="upsell-bg">
+					<div class="container">
+						<div class="row">
+							<div class="col-xs-12">
+								<h3 class="brave-heading uppercase">Your Browsing History</h3>
+							</div>
+						</div>
+						<div class="row upsell-row">
+			[%/param%]
+			[%param footer%]
+					</div>
+				</div>
+			</div>
+			[%/param%]
+		[%/product_history%]
+	[%/if%]
 </div>
-[%/CACHE%]

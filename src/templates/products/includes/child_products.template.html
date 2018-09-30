@@ -5,7 +5,7 @@
     <div class="row" role="contentinfo" aria-label="Product variation selection">
     [%/param%]
     [%param *variation_header%]
-        <div class="_itmspec_listopt col-xs-8 col-xs-offset-2" ref="[@specific_id@]" role="group" aria-label="[@specific_name@] variation selection">
+        <div class="_itmspec_listopt col-xs-12" ref="[@specific_id@]" role="group" aria-label="[@specific_name@] variation selection">
           <div class="variation-name" aria-label="[@specific_name@] variation">
             <strong>[@specific_name@]</strong>
           </div>
@@ -48,7 +48,7 @@
         </div>
   [%/param%]
   [%param *variation_header_select%]
-        <div class="_itmspec_listopt col-xs-8 col-xs-offset-2" ref="[@specific_id@]" aria-label="[@specific_name@] variation selection">
+        <div class="_itmspec_listopt col-xs-12" ref="[@specific_id@]" aria-label="[@specific_name@] variation selection">
           <div class="variation-name">
             <label for="[@specific_id@]_itmspec_opt">[@specific_name@]</label>
           </div>
@@ -132,8 +132,8 @@
     					</tbody>
     				</table>
     			</div>
-    			<div class="cta-area">
-    				<a href="#" onclick="javascript:if ($.checkValidQty()) { $.addMultipleCartItems('multiitemadd'); return false; }" rel="nofollow" class="multi-add btn btn-success" title="Add [@model@] to Cart"><i class="fa fa-shopping-cart"></i> Add Selected to Cart</a>
+    			<div class="cta-area product-buying-btns text-right">
+    				<button href="#" onclick="javascript:if ($.checkValidQty()) { $.addMultipleCartItems('multiitemadd'); return false; }" rel="nofollow" class="multi-add btn btn-success" title="Add [@model@] to Cart"><i class="fa fa-shopping-cart"></i> Add Selected to Cart</button>
     				<span id="a2c_loading"></span>
     			</div>
     		</div>

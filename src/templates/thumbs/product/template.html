@@ -1,6 +1,6 @@
 [%CACHE type:'gallery' id:'[@inventory_id@]'%]
 
-<article class="wrapper-thumbnail col-xs-6 col-sm-6 col-md-4" role="article" aria-label="Product Thumbnail">
+<article class="wrapper-thumbnail col-xs-12 col-sm-6 col-md-4" role="article" aria-label="Product Thumbnail">
 	
 	<div class="thumbnail" itemscope itemtype="http://schema.org/Product">
 		<meta itemprop="brand" content="[@brand@]"/>
@@ -8,7 +8,8 @@
 		<a href="[@URL@]">
 <div class="thumbnail-image-wrapper relative">
 		<img src="[%asset_url type:'product' thumb:'thumbL' id:'[@SKU@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%end param%][%/asset_url%]" data-original="[%asset_url type:'product' thumb:'thumbL' id:'[@SKU@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%end param%][%/asset_url%]" itemprop="image" class="product-image" alt="[@model@]" rel="itmimg[@SKU@]" data-alt="[%asset_url type:'product' thumb:'alt_1' id:'[@SKU@]' %][%param default%] [%end param%][%/asset_url%]">
-		<div class="thumbnail-price">
+		<div class="thumbnail-price text-right">
+			<div class="price">
 				<a href="[@URL@]">
 				[%if [@inpromo@]%]
 					Now [%if [@has_child@]%]from&nbsp;[%/if%]
@@ -20,36 +21,25 @@
 				[%/if%]
 				</a>
 			</div>
-	<div class="product-badges">
-		[%if [@inpromo@]%]
-			<div class="svg-wrapper">
-				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
-					<polygon class="inpromo" points="25,47 22.4,49.6 20.5,46.5 17.4,48.5 16.1,45.1 12.7,46.4 12.1,42.8 8.5,43.4 8.7,39.7 5.1,39.5 6.1,36 2.5,35.1 4.2,31.8 0.9,30.1 3.3,27.3 0.4,25 3.3,22.7 0.9,19.9 4.2,18.2 2.5,14.9 6.1,14 5.1,10.5 8.7,10.3 8.5,6.6 12.1,7.2 12.7,3.6 16.1,4.9 17.4,1.5 20.5,3.5 22.4,0.4 25,3 27.6,0.4 29.5,3.5 32.6,1.5 33.9,4.9 37.3,3.6 37.9,7.2 41.5,6.6 41.3,10.3 44.9,10.5 43.9,14 47.5,14.9 45.8,18.2 49.1,19.9 46.7,22.7 49.6,25 46.7,27.3 49.1,30.1 45.8,31.8 47.5,35.1 43.9,36 44.9,39.5 41.3,39.7 41.5,43.4 37.9,42.8 37.3,46.4 33.9,45.1 32.6,48.5 29.5,46.5 27.6,49.6"
-					/>
-				</svg>
-				  <p class="inpromo"><i class="fa fa-tag"></i><br>On Sale</p>
-			</div>
-		[%/if%]
-		[%if [@save@] > 0 AND ![@has_child@] %]
-
-		<div class="svg-wrapper">
-				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
-					<polygon class="percentoff" points="25,47 22.4,49.6 20.5,46.5 17.4,48.5 16.1,45.1 12.7,46.4 12.1,42.8 8.5,43.4 8.7,39.7 5.1,39.5 6.1,36 2.5,35.1 4.2,31.8 0.9,30.1 3.3,27.3 0.4,25 3.3,22.7 0.9,19.9 4.2,18.2 2.5,14.9 6.1,14 5.1,10.5 8.7,10.3 8.5,6.6 12.1,7.2 12.7,3.6 16.1,4.9 17.4,1.5 20.5,3.5 22.4,0.4 25,3 27.6,0.4 29.5,3.5 32.6,1.5 33.9,4.9 37.3,3.6 37.9,7.2 41.5,6.6 41.3,10.3 44.9,10.5 43.9,14 47.5,14.9 45.8,18.2 49.1,19.9 46.7,22.7 49.6,25 46.7,27.3 49.1,30.1 45.8,31.8 47.5,35.1 43.9,36 44.9,39.5 41.3,39.7 41.5,43.4 37.9,42.8 37.3,46.4 33.9,45.1 32.6,48.5 29.5,46.5 27.6,49.6"
-					/>
-				</svg>
-				  <p class="percentoff"><i class="fa fa-hand-o-down"></i><br>[%format type:'percent'%][@save@][%/format%] OFF</p>
-			</div>
-		[%/if%]
-		[%if [@save@] > 0%]
-		<div class="svg-wrapper">
-				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
-					<polygon class="rrp" points="25,47 22.4,49.6 20.5,46.5 17.4,48.5 16.1,45.1 12.7,46.4 12.1,42.8 8.5,43.4 8.7,39.7 5.1,39.5 6.1,36 2.5,35.1 4.2,31.8 0.9,30.1 3.3,27.3 0.4,25 3.3,22.7 0.9,19.9 4.2,18.2 2.5,14.9 6.1,14 5.1,10.5 8.7,10.3 8.5,6.6 12.1,7.2 12.7,3.6 16.1,4.9 17.4,1.5 20.5,3.5 22.4,0.4 25,3 27.6,0.4 29.5,3.5 32.6,1.5 33.9,4.9 37.3,3.6 37.9,7.2 41.5,6.6 41.3,10.3 44.9,10.5 43.9,14 47.5,14.9 45.8,18.2 49.1,19.9 46.7,22.7 49.6,25 46.7,27.3 49.1,30.1 45.8,31.8 47.5,35.1 43.9,36 44.9,39.5 41.3,39.7 41.5,43.4 37.9,42.8 37.3,46.4 33.9,45.1 32.6,48.5 29.5,46.5 27.6,49.6"
-					/>
-				</svg>
-				  <p class="rrp"><i class="fa fa-usd"></i><br>RRP [%format type:'currency'%][@retail@][%/format%]</p>
-			</div>
-		[%/if%]		  
-	</div>
+				<div class="product-badges">
+					[%if [@inpromo@]%]
+						<div class="badge-wrapper">
+							  <p class="inpromo"><i class="fa fa-tag"></i><br>On Sale</p>
+						</div>
+					[%/if%]
+					[%if [@save@] > 0 AND ![@has_child@] %]
+			
+					<div class="badge-wrapper">
+							  <p class="percentoff"><i class="fa fa-hand-o-down"></i><br>[%format type:'percent'%][@save@][%/format%] OFF</p>
+						</div>
+					[%/if%]
+					[%if [@save@] > 0%]
+					<div class="badge-wrapper">
+							  <p class="rrp"><i class="fa fa-usd"></i><br>RRP [%format type:'currency'%][@retail@][%/format%]</p>
+						</div>
+					[%/if%]		  
+				</div>
+		</div>
 </div>
 </a>
 		<div class="thumbnail-product-details">

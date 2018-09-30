@@ -171,7 +171,7 @@
     [%CACHE type:'cmenu' id:'sidebar'%]
     [%CATEGORYMENU sortby:'sortorder,selected,name' show_empty:'1'%]
         [%PARAM header%]
-            <div class="panel panel-default hidden-xs">
+            <div class="panel panel-default hidden-xs hidden-sm">
                 <div class="panel-heading"><h3 class="panel-title">Categories</h3></div>
                 <ul class="list-group">
                 [%/PARAM%]
@@ -208,7 +208,7 @@
     [%CONFIG id:'phistory_limit' if:'ne' value:'0'%]
         [%PRODUCT_HISTORY limit:'[@config:phistory_limit@]' template:'box'%]
             [%PARAM header%]
-                <div class="panel panel-default hidden-xs">
+                <div class="panel panel-default hidden-xs hidden-sm">
                     <div class="panel-heading panel-heading-thumbnails"><h3 class="panel-title">Browsing History</h3></div>
                     <ul class="nav list-group">
             [%/PARAM%]
@@ -220,7 +220,7 @@
     [%/CONFIG%]
     [%MENU id:'web_information'%]
         [%PARAM header%]
-        <div class="panel panel-default hidden-xs">
+        <div class="panel panel-default hidden-xs hidden-sm">
             <div class="panel-heading"><h3 class="panel-title">Information</h3></div>
             <ul class="list-group">
                 [%/PARAM%]
