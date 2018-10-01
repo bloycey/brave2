@@ -14,8 +14,8 @@ $(document).ready(function(){
 	});
 
 	$('.brand-img-wrapper').slick({
-		slidesToShow: 2,
-		slidesToScroll: 2,
+		slidesToShow: 3,
+		slidesToScroll: 1,
 		autoplay: true,
 		autoplaySpeed: 2000,
 		infinite: true,
@@ -31,34 +31,71 @@ $(document).ready(function(){
 
 </div>
 </div>
+
 <div id="homepageCarousel">
 	[%advert type:'text' limit:'10' ad_group:''%]
 	[%param *body%]
-	<div class="">
+	<div>
 		<a href="[@linkurl@]">
-			<img src="[%asset_url type:'adw' id:'[@ad_id@]' default:'https://source.unsplash.com/random/1920x600'/%]" alt="[@headline@]" />
+			<img src="[%asset_url type:'adw' id:'[@ad_id@]' default:'https://source.unsplash.com/random/1920x700'/%]" alt="[@headline@]" class="home-carousel-img" />
 		</a>
-		
 		[%if [@headline@] or [@description@] %]
 		<div class="home-text-wrapper">
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12">
-						[%if [@headline@]%]<h1>[@headline@]</h1>[%/if%]
+					<div class="home-carousel-text-wrapper">
+						[%if [@headline@]%]<h1 class="uppercase">[@headline@]</h1>[%/if%]
 						[%if [@description@]%]<p>[@description@]</p>[%/if%]
-						[%if [@linktext@]%]<p><span class="btn btn-primary btn-lg">[@linktext@]</span></p>[%/if%]
+						[%if [@linktext@]%]<a href="[@url@]"><button class="btn btn-white-ghost btn-lg">[@linktext@]</button></a>[%/if%]
+					</div>
+
 					</div>
 				</div>	
 			</div>	
 		</div>
 		[%/if%]
-	
 	</div>
-[%/param%]
+	[%/param%]
 [%/advert%]
 </div>
 <div class="main-content container clearfix" role="main">
 	<div class="row">
+
+		<div class="col-xs-12">
+			<div class="home-advert-grid">
+				<div class="row">
+				[%advert type:'text' limit:'4' ad_group:'home-advert-grid' template:'home-advert-grid' sortby:'sortorder-desc' category:'0'%][%/advert%]
+				</div>
+			</div>
+		</div>
+
+
+		
+					[%thumb_list type:'content' content_type:'brand' limit:'12' sortby:'sortorder'%]
+						[%param *header%]
+						<div class="col-xs-12 brands-wrapper">
+							<div class="row">
+								<div class="col-md-4">
+								<div class="brands-heading-wrapper">
+									<h3 class="brands-heading">Our Brands</h3>
+									<span>View all</span>
+								</div>
+								</div>
+								<div class="col-md-8 brand-img-wrapper">
+						[%/param%]
+						[%param *body%]
+						<div class="col-md-6 text-center">
+							<a href="[@URL@]"><img src="[%ASSET_URL type:'content' id:'[@content_id@]' default:'[@config:imageurl@]/pixel.gif'%][%/ASSET_URL%]" alt="[@content_name@]" class="brand-img"/></a>
+						</div>
+						[%/param%]
+						[%param *footer%]
+									</div>
+							</div>
+						</div>
+						[%/param%]
+					[%/thumb_list%]
+
 
 
 		<div class="col-xs-12">
@@ -85,64 +122,10 @@ $(document).ready(function(){
 	[%/if%]
 		</div>
 	</div>
-
-
-</div>
-</div>
-			[%advert type:'text' limit:'10' ad_group:'home-advert'%]
-			[%param *header%]
-
-			[%/param%]
-			[%param *body%]
-					<div class="parallax-advert" style="background-image: url([%asset_url type:'adw' id:'[@ad_id@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%end param%][%END asset_url%]);">
-						<div class="home-ad-overlay">
-							<div class="container">
-								<h3 class="white">Advert heading</h3>
-								<h5 class="white">Advert Subtitle</h5>
-								<p class="white">Advert description Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere harum magnam voluptatum, amet, itaque eligendi eveniet consectetur debitis ea, fuga ipsam beatae nam. Voluptates ea labore vel, illum facere reiciendis.</p>
-								<span class="btn btn-primary btn-lg">Check it out!</span>
-							</div>	
-						</div>
-					</div>
-			[%/param%]
-			[%param *footer%]
-
-			[%/param%]
-		[%/advert%]
-
-<div class="main-content container clearfix" role="main">
-	<div class="row">
-		<div class="col-xs-12 brands-wrapper">
-			<div class="row">
-				<div class="col-md-4">
-				<div class="brands-heading-wrapper">
-					<h3 class="brands-heading">Our Brands</h3>
-					<span>View all</span>
-				</div>
-				</div>
-				<div class="col-md-8 brand-img-wrapper">
-					[%thumb_list type:'content' content_type:'brand' limit:'12' sortby:'sortorder'%]
-						[%param *header%]
-						[%/param%]
-						[%param *body%]
-						<div class="col-md-6 text-center">
-							<a href="[@URL@]"><img src="[%ASSET_URL type:'content' id:'[@content_id@]' default:'[@config:imageurl@]/pixel.gif'%][%/ASSET_URL%]" alt="[@content_name@]" class="brand-img"/></a>
-						</div>
-						[%/param%]
-						[%param *footer%]
-						[%/param%]
-					[%/thumb_list%]
-				</div>
-				
-
-			</div>
-		</div>
-
-
+		
 
 [%if [@CONFIG:instagram_userID@] && [@CONFIG:Instagram_Access_Token@]%]
 	<!-- Instagram Feed -->
-
 	[%site_value id:'footer_javascript'%]
 			<script type="text/javascript">
 		    $(document).ready(function(){
@@ -150,24 +133,36 @@ $(document).ready(function(){
 		            get: 'user',
 		            userId: '[@CONFIG:instagram_userID@]',
 		            accessToken: '[@CONFIG:Instagram_Access_Token@]',
-		            template: '<a href="{{link}}" target="_blank"><div class="instafeed-image" style="background-image: url({{image}})"><span class="likes"><span><i class="fa fa-instagram"></i> {{model.created_at}}</span></span></div></a>',
+		            template: '<a href="{{link}}" target="_blank"><div class="instafeed-image" style="background-image: url({{image}})"><span class="likes"><span><i class="fa fa-heart-o"></i> {{model.created_at}}</span></span><span class="insta-overlay"></span></div></a>',
 		            resolution: 'standard_resolution',
-		            limit: '8',
-		            sortBy: 'most-recent'
+		            limit: '12',
+		            sortBy: 'most-recent',
+					after: function(){
+						$('#instafeed').slick({
+							slidesToShow: 3,
+							slidesToScroll: 1,
+							autoplay: true,
+							autoplaySpeed: 4000,
+							infinite: true,
+							arrows: false
+						});
+					}
 		        });
 		        feed.run();
 		    });
 			</script>
 		[%/site_value%]
-
-				<div class="col-xs-12">
-					<div id="instafeed" class="homepage relative clearfix"></div>
-					<div class="insta-panel">
-						<div class="insta-inner">
-							<i class="fa fa-instagram"></i>
-							<h3>Connect on Instagram</h3>
-							<div class="insta-tag">[@CONFIG:instagram_tag@]</div>
-						</div>
-					</div>
-				</div>	
+		<div class="col-xs-12 social-wrapper">
+			<div class="row">
+				<div class="col-md-4">
+				<div class="brands-heading-wrapper">
+					<h3 class="brands-heading">Lets get<br/> social</h3>
+					<span class="insta-tag">[@CONFIG:instagram_tag@]</span>
+				</div>
+				</div>
+				<div class="col-md-8">
+					<div id="instafeed" class="relative clearfix"></div>
+				</div>
+			</div>
+		</div>
 	[%/if%]

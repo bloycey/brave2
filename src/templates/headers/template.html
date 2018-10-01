@@ -5,12 +5,54 @@
 	<link class="theme-selector" rel="stylesheet" type="text/css" href="[%ntheme_asset%]css/app.css[%/ntheme_asset%]" media="all"/>
 	<link rel="stylesheet" type="text/css" href="[%ntheme_asset%]css/style.css[%/ntheme_asset%]" media="all"/>
 </head>
-
 <body id="n_[@config:current_page_type@]" class="n_[@CONFIG:TEMPLATELANG@]">
 	<a href="#main-content" class="sr-only sr-only-focusable">Skip to main content</a>
 	
 	<div id="catMenuOverlay"></div>
+	<div class="top-bar">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-md-8">
+						<div class="announcement">
+								[%advert type:'text' template:'' limit:'1' ad_group:'announcement' category:'0'%]
+								[%param *header%]
+									[%/param%]
+									[%param *body%]
+												<a href="[@url@]">
+													<span>[%if [@linktext@]%]<i class="fa [@linktext@]"></i>[%/if%][@description@]</span> 
+												</a>
+									[%/param%]
+									[%param *footer%]
+								[%/param%]
+								[%/advert%]
+						</div>
+						
+					</div>
+					<div class="col-xs-12 col-md-4 hidden-xs hidden-sm">
+						<div class="header-utility-menu text-right">
+								<ul class="list-inline">
+										[%menu id:'utility'%] 
+										[%param *level_1%]
+											<li class="utility-parent [%if [@next_level@]%]dropdown dropdown-toggle dropdown-hover[%/if%]"> <a href="[@url@]" [%if [@next_level@]%]class="dropdown-toggle" [%/if%]>[@name@] [%if [@next_level@]%]<i class="fa fa-caret-down"></i>[%/if%]</a> 
+												[%if [@next_level@]%]
+												<ul class="dropdown-menu">
+													[@next_level@]
+												</ul>
+												[%/if%]
+											</li>
+											[%/param%] 
+											[%param *level_2%]
+											<li><a href="[@url@]">[@name@]</a></li>
+											[%/param%]  
+										[%/menu%]
+								</ul>
+						</div>	
+					</div>
+				</div>
+			</div>
+		</div>
 	<header class="wrapper-header" aria-label="Header container">
+		
 		<div class="container">
 				<div class="row mobile-header">
 						<div class="col-xs-3 text-center hidden-sm hidden-md hidden-lg" id="mobile-menu-toggle" data-toggle="collapse" data-target=".header-menu-item-wrapper.mobile">
@@ -19,7 +61,7 @@
 										<p class="text-center">Menu</p>
 								</div>
 						</div>
-						<div class="col-xs-6 col-sm-12 col-lg-3 wrapper-logo">
+						<div class="col-xs-6 col-sm-4 col-lg-4 wrapper-logo">
 							<a href="[@config:homeurl@]" title="[@config:company_name@]">
 								<img class="logo" src="[@config:imageurl@]/website_logo.png?[@config:neto_css_version@]" alt="[@config:company_name@] logo"/>
 							</a>
@@ -33,7 +75,7 @@
 										
 									</div>
 						</div>
-						<div class="col-xs-12 col-sm-12 col-lg-9 text-right hidden-xs">
+						<div class="col-xs-12 col-sm-12 col-md-4 text-right hidden-xs hidden-sm">
 								<div class="mobile-cart-wrapper text-center relative">
 										<div class="header-search-desktop hidden-xs hidden-sm">
 											<form name="productsearch" method="get" action="/" role="search" aria-label="Product Search">
@@ -46,38 +88,41 @@
 												</div>
 											</form>
 										</div>
-	
-										<div class="menu-wrapper hidden-md hidden-lg" data-toggle="collapse" data-target=".header-menu-item-wrapper.mobile">
-												<i class="fa fa-bars"></i>
-												<p class="text-center">Menu</p>
-										</div>
-	
-										<div class="account-wrapper">
-											<a href="[%url page:'account'/%]">
-												<i class="fa fa-user"></i>
-												<p class="text-center">Account</p>
-											</a>
-										</div>
-										<div class="wishlist-wrapper">
-											<a href="[%url page:'account' type:'wishlist'/%]">
-												<i class="fa fa-heart"></i>
-												<p class="text-center">Wishlist</p>
-											</a>
-										</div>
-										<div class="checkout-wrapper relative">
-											<div class="checkout-inner" id="cartcontentsheader">
-													<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-														<i class="fa fa-shopping-cart"></i><span class="cart-count" rel="a2c_item_count">[%format type:'number' dp:'0'%][%CART id:'total_items'%][%/CART%][%/format%]</span>
-													<span class="checkout-label">Cart</span>
-													</a>
-													<ul class="dropdown-menu">
-														<li class="box" id="neto-dropdown">
-															<div class="body padding" id="cartcontents"></div>
-															<div class="footer"></div>
-														</li>
-													</ul>
-												</div>
-										</div>	
+								</div>		
+							</div>
+							<div class="col-sm-6 col-sm-offset-2 col-md-3 col-md-offset-1 header-icons-wrapper hidden-xs">
+								<div class="menu-wrapper text-center hidden-md hidden-lg" data-toggle="collapse" data-target=".header-menu-item-wrapper.mobile">
+										<i class="fa fa-bars"></i>
+										<p class="text-center">Menu</p>
+								</div>
+								<div class="account-wrapper text-center">
+										<a href="[%url page:'account'/%]">
+											<i class="fa fa-user"></i>
+											<p class="text-center">Account</p>
+										</a>
+									</div>
+									<div class="wishlist-wrapper text-center">
+										<a href="[%url page:'account' type:'wishlist'/%]">
+											<i class="fa fa-heart"></i>
+											<p class="text-center">Wishlist</p>
+										</a>
+									</div>
+									<div class="checkout-wrapper relative text-center">
+										<div class="checkout-inner" id="cartcontentsheader">
+												<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+													<i class="fa fa-shopping-cart"></i><span class="cart-count" rel="a2c_item_count">[%format type:'number' dp:'0'%][%CART id:'total_items'%][%/CART%][%/format%]</span>
+												<span class="checkout-label">Cart</span>
+												</a>
+												<ul class="dropdown-menu">
+													<li class="box" id="neto-dropdown">
+														<div class="body padding" id="cartcontents"></div>
+														<div class="footer"></div>
+													</li>
+												</ul>
+											</div>
+									</div>
+							</div>
+											
 								</div>
 		
 							</div>
@@ -102,7 +147,6 @@
 											<div class="mobile-menu-items-wrapper">
 												<div class="slide-1">
 														<h2 class="category-trigger-btn"><a href="javascript:void(0)" class="text-decoration-none">Shop by Category <i class="fa fa-chevron-right"></i></a></h2>
-														<h2 class="promo-btn-trigger"><a href="javascript:void(0)" class="text-decoration-none">Current Promotions</a></h2>
 														[%cache type:'menu' id:'header-content-menu'%]
 														[%menu id:'web_header'%]
 															[%param *level_1%]
@@ -163,7 +207,7 @@
 		
 				[%/param%]
 				[%param *level_1%]
-					<li class="lv1-li [%if [@next_level@] ne ''%] dropdown dropdown-hover[%/if%]"><a href="[@url@]">[@name@]</a>
+					<li class="lv1-li [%if [@next_level@] ne ''%] dropdown dropdown-hover[%/if%]"><a href="[@url@]">[@name@]  [%if [@next_level@] ne ''%]<i class="fa fa-caret-down"></i>[%/if%]</a>
 						[%if [@next_level@] ne ''%]
 							<ul class="dropdown-menu mega-menu">
 								<div class="mega-inner col-xs-9">[@next_level@]</div>
