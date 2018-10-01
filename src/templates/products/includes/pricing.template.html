@@ -3,18 +3,6 @@
     <meta itemprop="priceCurrency" content="[@config:defaultcurrency@]">
     <input class="hidden" id="product_price" value="[%if ![@inpromo@]%][@store_price@][%else%][@promo_price@][%/if%]">
     [%if ![@inpromo@]%]
-    [%if [@save@] > 0%]
-    <span class="specials-pricing">
-        <div class="productrrp text-muted" aria-label="RRP Price">
-                RRP [%FORMAT type:'currency'%][@retail@][%/FORMAT%]
-            </div>
-            <div class="productsave" aria-label="Save Price">
-                SAVE [%format type:'currency'%][@save_price@][%/format%] ([%format type:'percent'%][@save@][%/format%])
-            </div>
-    </span>
-
-        
-    [%/if%]
         <div class="productprice productpricetext" itemprop="price" content="[@store_price@]" aria-label="Store Price">
             $<span class="finalprice">[@store_price@]</span>
         </div>
