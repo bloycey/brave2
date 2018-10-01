@@ -12203,6 +12203,7 @@ h2.promotions-heading {
 .nsearchinput-pl.well {
   margin-top: 0px !important;
   top: 49px;
+  text-align: left;
 }
 #triggerMenu,
 #mobile-menu-toggle {
