@@ -12411,8 +12411,9 @@ h1.product-name:after {
   }
 }
 .menu-row-desktop {
-  background-color: #6d9cb0;
-  color: #ffffff;
+  background-color: transparent;
+  color: #333;
+  box-shadow: 5px 0 1px rgba(0, 0, 0, 0.12);
 }
 @media (min-width: 768px) {
   .navbar-nav > li {
