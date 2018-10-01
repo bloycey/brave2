@@ -9807,7 +9807,7 @@ header {
   bottom: 0;
   left: 0;
   width: 330px;
-  background-color: #59656f;
+  background-color: #41515e;
   color: #fff;
   padding: 6px 0px;
 }
@@ -9870,7 +9870,7 @@ a:focus {
   margin-bottom: 10px;
   text-transform: uppercase;
   border-left: 5px solid #d8ac64;
-  background: linear-gradient(to right, #59656F 50%, #efefef 50%);
+  background: linear-gradient(to right, #41515e 50%, #efefef 50%);
   background-size: 200% 100%;
   background-position: right bottom;
   transition: all 0.3s ease;
@@ -9986,7 +9986,7 @@ a:focus {
   background-color: #699;
 }
 .category-overlay-2 {
-  background-color: #59656f;
+  background-color: #41515e;
 }
 .category-overlay-3 {
   background-color: #d8ac64;
@@ -10001,7 +10001,7 @@ a:focus {
   background-color: #699;
 }
 .category-overlay-7 {
-  background-color: #59656f;
+  background-color: #41515e;
 }
 .category-overlay-8 {
   background-color: #d8ac64;
@@ -10016,7 +10016,7 @@ a:focus {
   background-color: #699;
 }
 .category-overlay-12 {
-  background-color: #59656f;
+  background-color: #41515e;
 }
 .category-overlay-13 {
   background-color: #d8ac64;
@@ -10031,7 +10031,7 @@ a:focus {
   background-color: #699;
 }
 .category-overlay-17 {
-  background-color: #59656f;
+  background-color: #41515e;
 }
 .category-overlay-18 {
   background-color: #d8ac64;
@@ -10046,7 +10046,7 @@ a:focus {
   background-color: #699;
 }
 .category-overlay-22 {
-  background-color: #59656f;
+  background-color: #41515e;
 }
 .category-overlay-23 {
   background-color: #d8ac64;
@@ -10471,7 +10471,7 @@ a:focus {
   border-color: #333;
 }
 .product-page-title h1 {
-  color: #59656f;
+  color: #41515e;
   font-size: 35px;
   font-weight: 400;
 }
@@ -10721,7 +10721,7 @@ a:focus {
 }
 .thumbnail-product-details {
   background-color: #efefef;
-  border-left: 5px solid #59656F;
+  border-left: 5px solid #41515e;
   color: #333;
   padding: 10px 15px 5px;
   position: absolute;
@@ -10922,7 +10922,7 @@ a:focus {
 }
 .btn-primary,
 .label-primary {
-  background-color: #59656F;
+  background-color: #41515e;
   border-color: #4d5860;
 }
 .btn-primary:hover,
@@ -10962,8 +10962,8 @@ a:focus {
 }
 .label-default {
   background-color: #fff;
-  color: #59656F;
-  border: 1px solid #59656F;
+  color: #41515e;
+  border: 1px solid #41515e;
 }
 .cart-count {
   position: absolute;
@@ -11006,9 +11006,9 @@ a:focus {
   margin-bottom: 10px;
 }
 .btn.mob-search {
-  background-color: #59656f;
+  background-color: #41515e;
   color: #fff;
-  border: 1px solid #59656f;
+  border: 1px solid #41515e;
 }
 h2.promotions-heading {
   color: #fff;
@@ -11623,7 +11623,7 @@ h2.promotions-heading {
 @media (max-width: 767px) {
   .thumbnail-product-details.upsell {
     background-color: #efefef;
-    border-left: 5px solid #59656F;
+    border-left: 5px solid #41515e;
   }
   .productrrp,
   .productsave,
@@ -12619,10 +12619,10 @@ h1.product-name:after {
   margin-top: 120px;
 }
 .tabbable .nav-tabs {
-  border-bottom: 1px solid #59656f;
+  border-bottom: 1px solid #41515e;
 }
 .information-row .tabbable .tabs-bg {
-  background-color: #59656f;
+  background-color: #41515e;
   color: #ffffff;
 }
 .information-row .tabbable {
@@ -12695,7 +12695,7 @@ h1.product-name:after {
   border-left: 5px solid #d8ac64;
 }
 #product-info-accordion .panel-title > a[aria-expanded="false"] {
-  border-left: 5px solid #59656f;
+  border-left: 5px solid #41515e;
 }
 #product-info-accordion.panel-group .panel {
   border: 0;
@@ -12840,7 +12840,7 @@ h1.product-name:after {
   position: absolute;
   top: 0;
   right: 0;
-  background-color: #59656f;
+  background-color: #41515e;
   padding: 10px 20px;
   color: #fff;
 }
@@ -12853,7 +12853,7 @@ h1.product-name:after {
   font-size: 18px;
 }
 .footer-wrapper {
-  background-color: #334452;
+  background-color: #41515e;
   color: #fff;
 }
 .thumbnail-price {
@@ -12861,7 +12861,7 @@ h1.product-name:after {
   padding: 0;
 }
 .thumbnail-price > .price {
-  background-color: #59656f;
+  background-color: #41515e;
   padding: 10px 20px;
 }
 .badge-wrapper {
