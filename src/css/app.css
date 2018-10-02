@@ -10386,7 +10386,6 @@ a:focus {
   color: #4d5860;
   background-color: transparent;
 }
-/**** WORK IN PROGRESS********/
 .breadcrumb {
   margin-bottom: 15px;
 }
@@ -10450,6 +10449,7 @@ a:focus {
   width: 33.33%;
   padding: 0;
 }
+/*** WORK IN PROGRESS ***/
 @media (max-width: 992px) {
   .brands-heading-wrapper {
     margin-bottom: 30px;
