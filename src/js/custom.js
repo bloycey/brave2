@@ -201,27 +201,12 @@ $(document).ready(function(){
 		}, 3000);
 	})
 
-	// $('.product-wish-wrapper').click(function(){
-	// 	$('.wishlist-wrapper').addClass('animated tada');
-	// 	setTimeout(function(){ 
-	// 		$('.wishlist-wrapper').removeClass('animated tada');
-	// 	}, 3000);
-	// })
-
-	//Initialise NiceSelect
-
-	// $('select.nice').niceSelect();
-
 
 	function openNav() {
-		$("#mySidenav").toggleClass("open-nav");
-		$(".bg-overlay").toggleClass("active-overlay");
 		$('body').toggleClass("overflow-hidden");
 	}
 
 	function closeNav() {
-		$("#mySidenav").removeClass("open-nav");
-		$(".bg-overlay").removeClass("active-overlay");
 		$('.menu-wrapper').find($('.fa')).removeClass('fa-times').addClass('fa-bars');
 		$('#mobile-menu-toggle').find('.fa').removeClass('fa-times').addClass('fa-bars');
 		$('.header-menu-item-wrapper').removeClass('in');
