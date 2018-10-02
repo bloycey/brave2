@@ -11854,11 +11854,6 @@ h2.promotions-heading {
     width: 100%;
   }
 }
-@media only screen and (min-width: 992px) {
-  .buying-options {
-    margin-bottom: 30px;
-  }
-}
 @media only screen and (max-width: 767px) {
   .upsell-text-wrapper,
   .upsell-text,
