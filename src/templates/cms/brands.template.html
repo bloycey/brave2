@@ -15,7 +15,7 @@
 			</ul>
 		[%/PARAM%]
 	[%/breadcrumb%]
-	<h1 class="page-header">[@content_name@]</h1>
+	<h1 class="page-header brave-heading brands-heading">[@content_name@]</h1>
 	[%if ![@form:pgnum@] OR [@form:pgnum@] eq '1'%]
 		<div class="n-responsive-content">
 			[@content_short_description1@]
@@ -31,6 +31,7 @@
 		</div>
 	[%/if%]
 </div>
+<div class="col-xs-12">
 <ul class="pager">
 	[%a2z%]
 		[%PARAM *body%]

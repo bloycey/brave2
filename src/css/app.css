@@ -11485,7 +11485,7 @@ h2.promotions-heading {
   display: block;
 }
 .thumbnail-brand {
-  height: 50px;
+  height: 125px;
   display: flex;
   align-items: center;
 }
@@ -12055,11 +12055,8 @@ h2.promotions-heading {
 }
 .brand-img {
   max-width: 100%;
+  max-height: 100px;
   padding: 0 10px;
-  max-height: 120px;
-  object-fit: contain;
-  object-position: center;
-  margin: 0 auto;
 }
 .brands-heading {
   font-weight: 700;
@@ -13622,4 +13619,16 @@ li.lv3-li {
     padding-top: 5px;
     padding-bottom: 10px;
   }
+}
+#_cpy_info_msgs + .btn-stack button {
+  margin-bottom: 15px;
+}
+label {
+  font-weight: normal;
+}
+ul.pager {
+  margin-bottom: 30px;
+}
+.brands-heading {
+  margin-bottom: 45px;
 }
