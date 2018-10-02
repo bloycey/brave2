@@ -95,44 +95,32 @@
 
 	[%param *footer%]
 
-                        <div class="pagination-container">
-								<div class="text-center">
-									<hr class="center-absolute">
-									[%paging limit:'3'%]
-								
-									[%PARAM *previous_page%]
-									<div class="no-padding text-left pagination-child pull-left">
-										<a href="[@url@]"><span class="pagination-prev"><span class="pagination-label underline">Previous Page</span></span></a>
-									</div>
-									[%/PARAM%]
-								
-									[%PARAM *goback_pages%]
-									<div class="pagination-child number">
-										<a href="[@url@]"><button class="pagination-center go-back btn">[@PAGE@]</button></a>
-									</div>
-									[%/PARAM%]
-								
-									[%PARAM *current_page%]
-									<div class="active pagination-child number">
-										<a href="[@url@]"><button class="pagination-center btn">[@PAGE@]</button></a>
-									</div>
-								
-									[%/PARAM%]
-									[%PARAM *gonext_pages%]
-									<div class="pagination-child number">
-										<a href="[@url@]"><button class="pagination-center go-forward btn">[@PAGE@]</button></a>
-									</div>
-									[%/PARAM%]
-									
-									[%PARAM *next_page%]
-									<div class="no-padding text-right pagination-child pull-right">
-										<a href="[@url@]"><span class="pagination-next"><span class="pagination-label underline">Next Page</span></span></a>
-									</div>
-									[%/PARAM%]
-									
-								[%/paging%]
-								</div>
-						</div>
+	<div class="pagination-container">
+			<div class="text-center">
+				[%paging limit:'3'%]
+			
+				[%PARAM *goback_pages%]
+				<div class="pagination-child number">
+					<a href="[@url@]"><button class="pagination-center go-back btn">[@PAGE@]</button></a>
+				</div>
+				[%/PARAM%]
+			
+				[%PARAM *current_page%]
+				<div class="active pagination-child number">
+					<a href="[@url@]"><button class="pagination-center btn">[@PAGE@]</button></a>
+				</div>
+			
+				[%/PARAM%]
+				[%PARAM *gonext_pages%]
+				<div class="pagination-child number">
+					<a href="[@url@]"><button class="pagination-center go-forward btn">[@PAGE@]</button></a>
+				</div>
+				[%/PARAM%]
+			
+				
+			[%/paging%]
+			</div>
+	</div>
 
 	[%/param%]
 [%/thumb_list%]

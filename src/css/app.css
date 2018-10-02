@@ -9885,19 +9885,6 @@ a:focus {
   margin-left: 10px;
   padding: 15px;
 }
-.wrapper-category-image,
-.wrapper-gallery-image {
-  background-size: cover;
-  background: no-repeat center center;
-  position: relative;
-  transition: all 0.3s ease;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 4px solid #fff;
-}
 .category-thumbnail,
 .gallery-thumbnail {
   width: 25%;
@@ -10696,12 +10683,6 @@ a:focus {
   }
   .content-type-title h4 {
     font-size: 30px;
-  }
-  .main-image .slick-right {
-    right: 15px;
-  }
-  .main-image .slick-left {
-    left: 15px;
   }
   .breadcrumb {
     font-size: 12px;
@@ -13631,4 +13612,7 @@ ul.pager {
 }
 .brands-heading {
   margin-bottom: 45px;
+}
+.npopup .btn {
+  font-size: 16px;
 }
