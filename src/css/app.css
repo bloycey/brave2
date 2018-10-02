@@ -10037,7 +10037,6 @@ a:focus {
   min-height: 20px;
   font-size: 15px;
 }
-/* WORK IN PROGRESS */
 .category.next-level {
   width: 85%;
   display: flex;
@@ -10071,8 +10070,6 @@ a:focus {
   transform: rotate(180deg);
 }
 .top-lvl-cat {
-  margin-bottom: 5px;
-  background-color: #efeff0;
   border-left: 5px solid #6d9cb0;
   border-top: 0;
   border-bottom: 0;
@@ -10097,21 +10094,6 @@ a:focus {
 .top-lvl-title-wrapper,
 .second-lvl-title-wrapper {
   display: flex;
-}
-#catMenuOverlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-}
-@media only screen and (min-width: 1200px) {
-  .active-menu {
-    background-position: left bottom!important;
-    color: #fff !important;
-  }
 }
 .top-lvl-cat.close-menu-wrapper {
   background-color: #6d9cb0;
@@ -10177,27 +10159,6 @@ a:focus {
     width: 100vw;
   }
 }
-.gallery-name {
-  pointer-events: initial;
-  z-index: 1000;
-}
-.image-gallery {
-  padding: 0;
-  margin-top: 25px;
-}
-.image-gallery li {
-  display: none;
-  list-style: none;
-}
-.image-gallery li:first-child {
-  display: block;
-}
-.wrapper-gallery-image {
-  border: none;
-}
-#gallery-page {
-  padding: 0;
-}
 .fancybox-navigation .fancybox-button--arrow_right,
 .fancybox-navigation .fancybox-button--arrow_left {
   background-color: #fff;
@@ -10205,57 +10166,6 @@ a:focus {
 .fancybox-caption {
   font-size: 16px;
   text-align: right;
-}
-.gallery-title {
-  font-size: 33px;
-  color: #fff;
-  font-weight: 700;
-  text-transform: uppercase;
-  background-color: rgba(255, 255, 255, 0);
-  padding: 10px;
-  transition: all 0.3s ease;
-}
-.wrapper-gallery-image:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.4);
-  transition: all 0.3s ease;
-}
-.wrapper-gallery-image:hover:before {
-  background-color: rgba(0, 0, 0, 0);
-}
-.wrapper-gallery-image:hover .gallery-title {
-  background-color: #333333;
-}
-.view-gallery {
-  font-size: 14px;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  border-left: 5px solid #d8ac64;
-  background: #efefef;
-  transition: all 0.3s ease;
-  padding: 12px 15px 12px 20px;
-  font-weight: 600;
-  margin-top: 20px;
-}
-@media only screen and (max-width: 1200px) {
-  .gallery-thumbnail {
-    width: 50%!important;
-    height: 350px !important;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .gallery-thumbnail {
-    width: 100%!important;
-    height: 350px !important;
-  }
-}
-.single-promotion img {
-  margin: 20px 0;
 }
 @media (max-width: 767px) {
   .thumbnail-price {
@@ -10359,29 +10269,6 @@ a:focus {
 .information-row #accordion {
   margin-top: 0;
 }
-.primary-title,
-.secondary-title {
-  font-size: 16px;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  background: #efefef;
-  background-size: 200% 100%;
-  background-position: right bottom;
-  transition: all 0.3s ease;
-  padding: 20px;
-}
-.primary-title {
-  border-left: 5px solid #d8ac64;
-}
-.secondary-title {
-  border-left: 5px solid #6d9cb0;
-}
-.upsell-panel-title {
-  margin-right: 15px;
-}
-.category-outer-wrapper {
-  padding: 0 30px;
-}
 #homepageCarousel.slick-initialized {
   visibility: visible;
   opacity: 1;
@@ -10402,22 +10289,9 @@ a:focus {
   z-index: 1000;
   transform: scale(1.5);
 }
-@media (min-width: 992px) {
-  #filters {
-    height: auto!important;
-    overflow: auto;
-    max-height: 400px;
-    display: block;
-  }
-}
 .thumbnail-price > a,
 .product-name > h3 {
   display: block;
-}
-.thumbnail-brand {
-  height: 125px;
-  display: flex;
-  align-items: center;
 }
 @media only screen and (min-width: 767px) {
   .thumbnail-product-details {
@@ -10428,36 +10302,6 @@ a:focus {
   .wrapper-thumbnail {
     margin-bottom: 100px;
   }
-}
-.crosssell-section-title {
-  font-size: 16px;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  transition: all 0.3s ease;
-  padding: 20px 0px;
-  color: #333;
-}
-.modal-img-wrapper {
-  text-align: center;
-}
-.modal-img-wrapper > img {
-  display: inline-block;
-}
-.cross-sell-section {
-  margin-bottom: 30px;
-}
-.nCrossSellItem label {
-  cursor: pointer;
-  display: block;
-  width: 100%;
-  margin-bottom: 0;
-  padding: 10px 0;
-}
-.thumbnail-product-details.upsell {
-  position: relative;
-  margin-bottom: 15px;
-  height: auto;
-  padding: 10px;
 }
 @media only screen and (min-width: 992px) {
   .product-image-slider img {
@@ -10471,78 +10315,13 @@ a:focus {
 @media only screen and (min-width: 992px) {
   .product-image-slider,
   .product-shadow-box-wrapper {
-    height: 550px;
     display: flex;
     align-items: center;
   }
-  .reviews-panel {
-    margin: 15px 0;
-  }
-  .cross-sell-section {
-    margin-bottom: 30px;
-  }
-}
-.upsell-checkbox-wrapper {
-  padding: 0px 20px 0px 10px;
-  font-size: 15px;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-}
-.upsell-checkbox-wrapper input {
-  width: 18px;
-  height: 18px;
-  min-width: 18px;
-  margin-right: 8px;
-  margin-top: -3px;
-  vertical-align: middle;
-}
-.upsell-checkbox-wrapper span {
-  height: auto;
-}
-.upsell-quickview:hover {
-  cursor: pointer;
-}
-.added-wrapper {
-  position: absolute;
-  top: -21px;
-  right: -13px;
-  border-radius: 50%;
-}
-.upsell-checkbox-wrapper .added-wrapper button {
-  transform: translateY(50px);
-  opacity: 0;
-  pointer-events: none;
-  border-radius: 50%;
-  height: 45px;
-  width: 45px;
-  padding: 0;
-  font-size: 10px;
-  transition: all 0.3s ease;
-}
-.upsell-checkbox-wrapper.added .added-wrapper button {
-  transform: translateY(0px);
-  opacity: 1;
-  pointer-events: all;
-  border-radius: 50%;
-  height: 45px;
-  width: 45px;
-  padding: 0;
-  font-size: 10px;
 }
 @media (max-width: 1350px) {
   .product-page-main-info {
     padding: 0;
-  }
-}
-@media (max-width: 992px) {
-  .product-shadow-box-wrapper {
-    display: block;
-  }
-  .specials-pricing {
-    margin-top: 30px;
-    display: block;
   }
 }
 @media (max-width: 991px) {
@@ -10551,101 +10330,21 @@ a:focus {
     margin-top: 0;
   }
 }
-@media (max-width: 767px) {
-  .thumbnail-product-details.upsell {
-    background-color: #efefef;
-    border-left: 5px solid #41515e;
-  }
-  .productrrp,
-  .productsave,
-  .productwasprice {
-    font-size: 12px;
-  }
-}
-.quickview-icon {
-  display: none;
-}
-@media (max-width: 1700px) {
-  .quickview-icon {
-    display: inline-block;
-  }
-  .quickview-text {
-    display: none;
-  }
-}
-.buying-options-sticky {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: #fff;
-  z-index: 1000;
-  padding: 15px;
-  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
-}
 #instafeed .instafeed-image:after {
   content: "";
   display: block;
   padding-bottom: 100%;
 }
-#instafeed > a {
-  margin: 0;
-  width: 16.66%;
-  position: relative;
-  display: block;
-  float: left;
-  padding: 7.5px;
-  transition: all 0.3s ease;
-}
 #instafeed .instafeed-image {
-  width: 100%;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  overflow: hidden;
-}
-#instafeed > a span.likes {
-  position: absolute;
-  color: #fff;
-  right: 10px;
-  left: 10px;
-  bottom: 42%;
-  display: none;
-  z-index: 50;
-  font-size: 20px;
-  text-align: center;
-}
-.product-footer {
-  padding: 7px 8px;
-  position: fixed;
-  bottom: 0;
-  width: calc(100% - 330px);
-  opacity: 0;
-  transition: all 0.75s ease;
-  pointer-events: none;
-}
-.brand-box,
-.category-box {
-  width: 100%;
-  border: 2px solid #48a2a2;
-  background-color: #ffffff;
-  color: #48a2a2;
+  width: 80%;
+  margin-left: 20%;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 54px;
-  text-align: center;
-  pointer-events: all;
-}
-.brand-box h4,
-.category-box h4 {
-  margin-bottom: 0;
-  font-size: 15px;
-  padding: 10px;
-  text-transform: uppercase;
-}
-.footer-in {
-  opacity: 1;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
 }
 .upsell-row .slick-list {
   margin-left: -15px;
@@ -10654,9 +10353,6 @@ a:focus {
   .productpromo,
   .productpricetext {
     font-size: 45px;
-  }
-  .product-footer {
-    width: 100%;
   }
 }
 .product-tabs-wrapper .panel {
@@ -10680,62 +10376,6 @@ a:focus {
 .inline-block {
   display: inline-block;
 }
-.upsell-checkbox-wrapper {
-  padding: unset;
-  font-size: unset;
-  font-weight: unset;
-  display: unset;
-  align-items: unset;
-  overflow: unset;
-}
-.upsell-quickview:hover {
-  cursor: pointer;
-}
-.upsell-title,
-.upsell-price {
-  height: auto;
-  font-size: 16px;
-}
-.upsell-price {
-  font-weight: 600;
-}
-.upsell-img-wrapper {
-  position: relative;
-  border-left: 5px solid #48a2a2;
-  display: inline-block;
-  height: 120px;
-}
-.upsell-quickview {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  display: inline-flex;
-  background-color: #d8ac64;
-  width: 25px;
-  height: 25px;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-}
-.upsell-img-wrapper:hover .upsell-quickview {
-  width: 100%;
-  height: 100%;
-  opacity: 0.7;
-}
-.upsell-quickview i {
-  transition: all 0.3s ease;
-}
-.upsell-img-wrapper:hover .upsell-quickview i {
-  font-size: 35px;
-}
-.quickview-icon {
-  display: inline-block;
-}
-.upsell-section-title {
-  font-size: 26px;
-  color: #41515e;
-  padding: 15px 0 20px;
-}
 .btn-primary-ghost {
   border-color: #49a2a2;
   color: #49a2a2;
@@ -10746,29 +10386,7 @@ a:focus {
   color: #4d5860;
   background-color: transparent;
 }
-@media only screen and (max-width: 767px) {
-  .upsell-text-wrapper,
-  .upsell-text,
-  .upsell-cart {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    width: 100%;
-  }
-  .upsell-title,
-  .upsell-price {
-    font-size: 14px;
-    margin-bottom: 0;
-    text-align: center;
-    display: block;
-  }
-  .upsell-cart button {
-    width: 100%;
-    margin-bottom: 15px;
-  }
-}
+/**** WORK IN PROGRESS********/
 @media only screen and (min-width: 992px) {
   .product-image-slider img {
     max-width: 90%;
@@ -12145,14 +11763,6 @@ li.lv3-li {
 .advert-grid-4:hover .caption-backdrop {
   left: 0;
 }
-#instafeed .instafeed-image {
-  width: 80%;
-  margin-left: 20%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
 #instafeed .instafeed-image:after {
   content: "";
   display: block;
@@ -12484,4 +12094,12 @@ ul.pager {
   bottom: 0;
   right: 35px;
   z-index: 9999;
+}
+.social-wrapper {
+  margin-bottom: 45px;
+}
+@media only screen and (max-width: 767px) {
+  .social-wrapper {
+    margin-bottom: 15px;
+  }
 }

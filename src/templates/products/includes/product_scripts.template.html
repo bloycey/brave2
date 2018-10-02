@@ -77,29 +77,6 @@
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$('.zoom').zoom();
-
-
-		$(window).resize(function(){
-			if ($(window).width() > 767) {
-				$('.buying-options').removeClass('buying-options-sticky');
-			} else {
-				$('.product-footer').removeClass('footer-in');
-			} 
-		})
-
-		// Cross-sell add to cart
-		$(document).on('click', '.addMultipleCartItems', function(){
-			$.addMultipleCartItems('multiitemadd');
-		});
- 
-		//Add cross-sell from the modal 
-		function closeModals () {
-			$('.modal').modal('hide');
-		}
-
-		$('.upsell-modal .upsell-btn').click(function(){
-			closeModals();
-		})
 	});
 	</script>
 	<script type="text/javascript" src="//cdn.neto.com.au/assets/neto-cdn/jcountdown/1.4/jquery.jcountdown.min.js"></script>
