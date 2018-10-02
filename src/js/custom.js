@@ -201,16 +201,16 @@ $(document).ready(function(){
 		}, 3000);
 	})
 
-	$('.product-wish-wrapper').click(function(){
-		$('.wishlist-wrapper').addClass('animated tada');
-		setTimeout(function(){ 
-			$('.wishlist-wrapper').removeClass('animated tada');
-		}, 3000);
-	})
+	// $('.product-wish-wrapper').click(function(){
+	// 	$('.wishlist-wrapper').addClass('animated tada');
+	// 	setTimeout(function(){ 
+	// 		$('.wishlist-wrapper').removeClass('animated tada');
+	// 	}, 3000);
+	// })
 
 	//Initialise NiceSelect
 
-	$('select.nice').niceSelect();
+	// $('select.nice').niceSelect();
 
 
 	function openNav() {
