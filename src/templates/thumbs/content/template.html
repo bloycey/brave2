@@ -1,26 +1,28 @@
-<article itemtype="http://schema.org/Article" role="article" aria-label="[@content_name@]">
-	<span itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-		<meta itemprop="url" content="[@config:homeurl@]"/>
-		<span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-			<meta itemprop="url" content="[@config:homeurl@][@config:imageurl@]/website_logo.png">
-		</span>
-		<meta itemprop="name" content="[@config:company_name@]"/>
-	</span>
-	<div class="content-type-title">
-			<h4 itemprop="headline" content="[@content_name@]">
-					<a href="[@URL@]" itemprop="url" class="text-decoration-none">[@content_name@]</a>
-				</h4>
-				<p class="text-muted">
-					[%IF [@content_author@]%]
-					<span itemprop="author" itemscope itemtype="https://schema.org/Person">
-						Author: <span itemprop="name">[@content_author@]</span>
-					</span>&nbsp;
-					[%/ IF%]
-					[%IF [@date_posted@] != 0000-00-00 00:00:00%]
-					<meta itemprop="datePublished" content="[%format type:'date' format:'#Y-#M-#d'%][@date_posted@][%/format%]"/>
-					Date Posted: [%FORMAT type:'date'%][@date_posted@][%END FORMAT%]
-					[%/ IF%]
-				</p>
-	</div>
 
-</article>
+<div class="col-xs-12">
+		<article itemtype="http://schema.org/Article" role="article" aria-label="[@content_name@]" class="content-thumb-wrapper">
+			<a href="[@url@]">
+				<meta itemprop="url" content="[@config:homeurl@]"/>
+				<span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+					<meta itemprop="url" content="[@config:homeurl@][@config:imageurl@]/website_logo.png">
+				</span>
+				<meta itemprop="name" content="[@config:company_name@]"/>
+		
+				<div class="row">
+					<div class="col-md-1 hidden-xs hidden-sm">
+						<div class="date-posted">
+							[%format type:'date' format:'<span class="date">#D</span><span class="month">#k</span>%][@date_posted@][%/format%]
+						</div>
+					</div>
+					<div class="col-md-9">
+						<h3 class="blog-title">[@content_name@]</h3>
+						<p class="blog-short-desc">[@content_short_description2@]...<span class="blog-read-more"> Read More</span></p>
+					</div>
+					<div class="col-md-2">
+							<img src="[%asset_url type:'content' id:'[@content_id@]' default:'[@config:imageurl@]/pixel.gif'%][%END ASSET_URL%]" alt="[@name@] image" class="img-responsive"/>
+					</div>
+				</div>
+			</a>
+		</article>
+		<hr>
+		</div>
