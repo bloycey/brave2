@@ -350,25 +350,30 @@ fieldset[disabled] .btn-info.active {
     fill:#ef6b6b /*{featured-product-badge-colour}*/;
 }
 
-.svg-wrapper p.featured {
-    background-color:#ef6b6b /*{featured-product-badge-colour}*/;
+
+@media only screen and (max-width: 992px)  {
+	.svg-wrapper p.featured {
+		background-color:#ef6b6b /*{featured-product-badge-colour}*/;
+	}
+	
+	.svg-wrapper p.inpromo {
+		background-color:#6d9cb0 /*{promo-product-badge-colour}*/;
+	}
+	
+	.svg-wrapper p.percentoff{
+		background-color:#e8746d /*{percent-off-badge-colour}*/;
+	}
 }
+
 
 .svg-wrapper svg polygon.inpromo {
     fill:#6d9cb0 /*{promo-product-badge-colour}*/;
-}
-
-.svg-wrapper p.inpromo {
-    background-color:#6d9cb0 /*{promo-product-badge-colour}*/;
 }
 
 .svg-wrapper svg polygon.percentoff {
     fill:#e8746d /*{percent-off-badge-colour}*/;
 }
 
-.svg-wrapper p.percentoff{
-    background-color:#e8746d /*{percent-off-badge-colour}*/;
-}
 
 .svg-wrapper svg polygon.rrp {
     fill:#d8ac69 /*{rrp-badge-colour}*/;

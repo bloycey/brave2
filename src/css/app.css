@@ -10689,7 +10689,7 @@ h1.product-name {
 }
 .information-row {
   padding: 0 0 60px;
-  margin-top: 120px;
+  margin-top: 90px;
 }
 .information-row .tabbable .tabs-bg {
   color: #ffffff;
@@ -10769,7 +10769,7 @@ h1.product-name {
   border-bottom: none;
   border-top: none;
 }
-#product-info-accordion .panel-title > a[aria-expanded="false"] .reviews-row {
+.reviews-row {
   display: flex;
   padding-top: 120px;
   padding-bottom: 120px;
@@ -11266,6 +11266,9 @@ li.lv3-li {
 .lv1-li i {
   font-size: 75%;
 }
+.home-carousel-img {
+  width: 100%;
+}
 @media only screen and (max-width: 767px) {
   .home-carousel-img {
     object-fit: cover;
@@ -11718,4 +11721,7 @@ ul.pager {
     margin-bottom: 15px;
     margin-top: 15px;
   }
+}
+.advert-grid-wrapper h3 {
+  color: #fff;
 }
