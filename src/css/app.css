@@ -10453,9 +10453,6 @@ a:focus {
 }
 /*** WORK IN PROGRESS ***/
 @media (max-width: 992px) {
-  .brands-heading-wrapper {
-    margin-bottom: 30px;
-  }
   .brands-wrapper {
     padding-top: 60px;
     padding-bottom: 60px;
@@ -11923,7 +11920,7 @@ ul.pager {
   margin-bottom: 30px;
 }
 .brands-heading {
-  margin-bottom: 45px;
+  margin-bottom: 15px;
 }
 .npopup .btn {
   font-size: 16px;
