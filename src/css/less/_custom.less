@@ -702,11 +702,11 @@ a:hover,a:focus{
 .upsell-row .slick-list{
     margin-left:-15px
 }
-@media (max-width:1200px){
-    .productpromo,.productpricetext{
-        font-size:45px
-    }
+
+.productpromo,.productpricetext{
+    font-size:45px
 }
+
 .product-tabs-wrapper .panel{
     background-color:transparent;
     border:none;
@@ -810,15 +810,13 @@ a:hover,a:focus{
 
 
 @media (max-width: 992px) {
+    .brands-heading-wrapper {
+        margin-bottom: 30px;
+    }
 
-.brands-heading-wrapper {
-	margin-bottom: 30px;
-}
-
-.brands-heading {
-	font-size: 34px;
-}
-
+    .brands-heading {
+        font-size: 34px;
+    }
 }
 
 
@@ -1135,12 +1133,6 @@ align-items: unset;
     color: #333333 !important;
 }
 
-.dropdown-menu.mega-menu .mega-inner {
-    column-count: 3; /* Number of columns */
-    /*column-rule: 1px solid #e0e0e0; Vertical line between columns*/
-    column-gap: 30px; /* Gap between columns */
-}
-
 .mega-menu .mega-inner > li {
     width: 100%;
     display: inline-block;
@@ -1152,7 +1144,6 @@ align-items: unset;
     padding-top: 2px;
     line-height: 1.5;
 }
-
 
 .mega-menu {
     width: 750px;
@@ -1285,19 +1276,12 @@ align-items: unset;
     }
 }
 
-/*WORK IN PROGRESS*/
-
 .information-row {
     padding: 0 0 60px;
     margin-top: 120px;
   }
 
-  .tabbable .nav-tabs {
-    border-bottom: 1px solid #41515e;
-  }
-
   .information-row .tabbable .tabs-bg {
-    background-color: #41515e;
     color: #ffffff;
   }
 
@@ -1307,7 +1291,6 @@ align-items: unset;
   }
   
   .tabbable .nav-tabs > li.active > a, .tabbable .nav-tabs > li.active > a:hover, .tabbable .nav-tabs > li.active > a:focus {
-    background-color: #d8ac64;
     border: none;
 }
 
@@ -1321,9 +1304,6 @@ align-items: unset;
 
 .tabbable .nav-tabs > li > a:hover {
   border: none;
-}
-.tabbable .nav > li > a:hover, .tabbable .nav > li > a:focus, .tabbable .nav > .nav-item[aria-selected="true"] {
-  background-color: #d8ac64;
 }
 
 .tabbable .tab-pane {
@@ -1377,14 +1357,6 @@ line-height: 1.4;
     padding: 0;
 }
 
-#product-info-accordion .panel-title > a[aria-expanded="true"] {
-    border-left: 5px solid #d8ac64;
-}
-
-#product-info-accordion .panel-title > a[aria-expanded="false"] {
-    border-left: 5px solid #41515e;
-}
-
 #product-info-accordion.panel-group .panel {
     border: 0;
     padding-top: 5px;
@@ -1393,6 +1365,16 @@ line-height: 1.4;
 .information-row {
     margin-bottom: 0;
 }
+
+#product-info-accordion .panel-title > a[aria-expanded="true"], #product-info-accordion .panel-title > a[aria-expanded="false"]{
+	border-style: solid;
+	border-width: 5px;
+	border-right: none;
+	border-bottom: none;
+	border-top: none;
+}
+
+#product-info-accordion .panel-title > a[aria-expanded="false"]
 
 .reviews-row {
 display: flex;
@@ -1404,7 +1386,11 @@ padding-bottom: 120px;
 font-weight: 700;
 font-size: 60px;
 line-height: 0.9;
-border-left: 10px solid #d8ac64;
+border-style: solid;
+border-width: 10px;
+border-right: none;
+border-top: none;
+border-bottom: none;
 padding-left: 30px;
 margin-bottom: auto;
 margin-top: 12px;
@@ -1422,7 +1408,6 @@ margin-top: 25px;
 }
 
 .star-rating i {
-color: #d8ac64;
 font-size: 22px;
 padding: 0 2px;
 }
@@ -1468,7 +1453,11 @@ margin-bottom: 5px;
 }
 
 .leave-review-wrapper a, .no-reviews a {
-border-bottom: 2px solid #d8ac64;
+border-style: solid;
+border-width: 2px;
+border-right: none;
+border-right: none;
+border-top: none;
 font-weight: 600;
 }
 
@@ -1547,7 +1536,8 @@ margin-top: 0px;
 .brave-subheading {
 font-weight: 700;
 font-size: 28px;
-border-left: 5px solid #d8ac64;
+border-left-style: solid;
+border-left-width: 5px;
 padding-left: 20px;
 }
 
@@ -1575,7 +1565,6 @@ font-size: 18px;
 }
 
 .footer-wrapper {
-    background-color: #41515e;
     color: #fff;
 }
 
@@ -1896,25 +1885,18 @@ margin-bottom: 0;
 	}
 }
 
-.menu-row-desktop {
-    background-color: #fdfdfd;
-    color: #333333;
-}
 
 .menu-row-desktop .nav > li > a:hover, .menu-row-desktop .nav > li > a:focus {
     text-decoration: none;
-    background-color: #41515e;
     color: #fff !important;
 }
 
 .menu-row-desktop .nav > li:hover > a, .menu-row-desktop .nav > li:focus > a {
     text-decoration: none;
-    background-color: #41515e;
     color: #fff !important;
 }
 
 .top-bar {
-    background: #41515e;
     color: #fff;
     border-bottom: 1px solid #d8d8d8;
 }
@@ -1923,7 +1905,6 @@ margin-bottom: 0;
 .top-bar .announcement {
     font-size: 14px;
     line-height: 28px;
-    background-color: #41515e;
 }
 
 .announcement span {
@@ -1981,9 +1962,6 @@ header {
 }
 
 @media only screen and (max-width: 992px)  {
-    .top-bar {
-        background: #41515e;
-    }
 
     .top-bar .announcement {
         line-height: unset;
@@ -2025,7 +2003,8 @@ li.lv3-li {
 }
 
 .home-carousel-text-wrapper {
-    border-left: 10px solid #d8ac64;
+    border-left-style: solid;
+    border-left-width: 10px;
     padding-left: 30px;
 }
 
@@ -2094,7 +2073,6 @@ li.lv3-li {
     top: 0;
     bottom: 0;
     width: 40%;
-    background-color: #669999;
 }
 
 .advert-grid-1:hover .caption-backdrop {
@@ -2206,12 +2184,14 @@ li.lv3-li {
 .footer-heading {
 font-weight: 800;
 font-size: 45px;
+color: #ffffff;
 }
 
 .footer-heading:after {
 content: '';
 display: block;
-border-bottom: 5px solid #d8ab64;
+border-bottom-style: solid;
+border-bottom-width: 5px;
 width: 20%;
 padding-top: 15px;
 margin-bottom: 30px;
@@ -2396,7 +2376,8 @@ padding-left: 0;
     overflow: visible;
     margin-bottom: 45px;
     background-color: #ffffff;
-    border-left: solid 15px #d8ab64;
+    border-left-style: solid;
+    border-left-width: 15px;
     padding-left: 45px;
     line-height: 0.9;
     padding-top: 20px;
@@ -2417,7 +2398,7 @@ padding-left: 0;
         font-size: 34px;
         margin-bottom: 15px;
         padding-right: 20px;
-        border-left: solid 5px #d8ab64;
+        border-left-width: 5px;
         padding-left: 15px;
     }
 
@@ -2471,6 +2452,8 @@ padding-left: 0;
 @media only screen and (max-width: 767px)  {
     .blog-title {
         font-size: 28px;
+        border-left-width: 5px;
+        border-left-style: solid;
         border-left: 5px solid #6d9cb0;
         padding-left: 10px;
     }

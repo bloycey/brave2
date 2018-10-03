@@ -213,6 +213,12 @@ $(document).ready(function(){
 		$('body').removeClass("overflow-hidden");
 	}
 
+	$(window).resize(function(){
+		if($(window).width() > 992) {
+		 closeNav();
+		}
+	})
+
 	$('#triggerMenu').click(function(){
 		openNav();
 	})
