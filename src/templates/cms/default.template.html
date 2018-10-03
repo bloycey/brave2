@@ -67,10 +67,33 @@
 						<hr aria-hidden="true"/>
 					[%/param%]
 				[%/advert%]
+
+			[%if ![@form:pgnum@] OR [@form:pgnum@] eq '1'%]
+				[%if [@content_short_description1@] ne ''%]
+				<div class="content-type-content-wrapper">[@content_short_description1@]</div>
+				[%/if%]
+				[%if [@content_short_description2@] ne ''%]
+				<div class="content-type-content-wrapper">[@content_short_description2@]</div>
+				[%/if%]
+				[%if [@content_short_description3@] ne ''%]
+				<div class="content-type-content-wrapper">[@content_short_description3@]</div>
+				[%/if%]
 				[%if [@content_description1@] ne ''%]
 				<div class="content-type-content-wrapper">[@content_description1@]</div>
 				[%/if%]
-				
+				[%if [@content_description2@] ne ''%]
+				<div class="content-type-content-wrapper">[@content_description2@]</div>
+				[%/if%]
+				[%if [@content_description3@] ne ''%]
+				<div class="content-type-content-wrapper">[@content_description3@]</div>
+				[%/if%]
+				[%if [@content_wufoo_form@] ne ''%]
+				<div class="content-type-content-wrapper">[@content_wufoo_form@]</div>
+				[%/if%]
+			[%/if%]
+					
+
+				</div>
 				</div>
 </div>
 </div>

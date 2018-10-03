@@ -10409,7 +10409,7 @@ a:focus {
     max-height: 110px;
   }
 }
-@media only screen and (min-width: 767px) {
+@media only screen and (min-width: 768px) {
   .wrapper-logo {
     text-align: left;
   }
@@ -11487,6 +11487,7 @@ header {
     line-height: unset;
     padding-top: 5px;
     padding-bottom: 6px;
+    text-align: center;
   }
 }
 li.lv3-li {
@@ -11499,6 +11500,7 @@ li.lv3-li {
   .home-carousel-img {
     object-fit: cover;
     height: 250px;
+    width: 100%;
   }
 }
 .home-text-wrapper {
@@ -11944,4 +11946,13 @@ ul.pager {
 }
 .social-wrapper {
   margin-bottom: 15px;
+}
+.form-inline.buying-options {
+  color: #ffffff;
+}
+@media only screen and (max-width: 992px) {
+  #n_checkout .btn-success {
+    margin-bottom: 15px;
+    margin-top: 15px;
+  }
 }
