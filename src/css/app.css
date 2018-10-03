@@ -10835,9 +10835,10 @@ h1.product-name {
 }
 .leave-review-wrapper a,
 .no-reviews a {
-  border-style: solid;
-  border-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
   border-right: none;
+  border-left: none;
   border-top: none;
   font-weight: 600;
 }
