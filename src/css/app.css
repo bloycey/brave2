@@ -9777,6 +9777,8 @@ a:focus {
 .mobile-header {
   display: flex;
   align-items: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 .mobile-header i {
   font-size: 25px;
@@ -10267,11 +10269,6 @@ a:focus {
 }
 .wrapper-logo {
   text-align: center;
-}
-@media only screen and (min-width: 1200px) {
-  .wrapper-header {
-    max-height: 110px;
-  }
 }
 @media only screen and (min-width: 768px) {
   .wrapper-logo {
@@ -11725,4 +11722,7 @@ ul.pager {
 }
 .advert-grid-wrapper h3 {
   color: #fff;
+}
+#category-content {
+  margin-bottom: 30px;
 }
