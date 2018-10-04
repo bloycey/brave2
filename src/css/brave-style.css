@@ -363,6 +363,10 @@ fieldset[disabled] .btn-info.active {
 	.svg-wrapper p.percentoff{
 		background-color:#e8746d /*{percent-off-badge-colour}*/;
 	}
+
+	.svg-wrapper p.rrp{
+		background-color:#d8ac69 /*{rrp-badge-colour}*/;
+	}
 }
 
 
@@ -379,9 +383,6 @@ fieldset[disabled] .btn-info.active {
     fill:#d8ac69 /*{rrp-badge-colour}*/;
 }
 
-.svg-wrapper p.rrp{
-    background-color:#d8ac69 /*{rrp-badge-colour}*/;
-}
 
 .cart-count {
 	background-color:#6d9cb0 /*{cart-counter-bg-colour}*/;
