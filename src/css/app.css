@@ -11635,7 +11635,7 @@ li.lv3-li {
   }
 }
 .date-posted {
-  margin-top: -13px;
+  margin-top: -16px;
 }
 .date-posted .date {
   font-size: 55px;
@@ -11733,6 +11733,9 @@ ul.pager {
 }
 .mob-search {
   height: 50px;
+}
+.padding-left-0 {
+  padding-left: 0;
 }
 @media (max-width: 768px) {
   #shipbox input,
