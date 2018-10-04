@@ -11079,9 +11079,6 @@ h1.product-name {
   .buying-options-wrapper {
     margin-bottom: 0;
   }
-  .pricing-wrapper {
-    margin-top: 15px;
-  }
 }
 @media only screen and (max-width: 767px) {
   #n_product h1 {
