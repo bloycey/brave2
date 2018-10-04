@@ -18,8 +18,6 @@
         <div class="top-lvl-title-wrapper">
                 <a href="[@url@]" class="category [%IF [@next_level@] %] next-level[%/if%]">[@name@]</a>[%IF [@next_level@] %]<span class="category-toggle" data-target=".cat-menu-[@id@]" data-toggle="collapse"><i class="fa fa-chevron-down"></i></span>[%/if%]
         </div>
-    
-        
         [%if [@next_level@]%]
         <div class="collapse cat-menu-[@id@]">
                 <div class="category-lvl-wrapper">
@@ -33,20 +31,17 @@
     [%param *level_2%]
     <div class="relative second-lvl-cat">
             <div class="second-lvl-title-wrapper">
-                    <a href="[@url@]" class="category [%IF [@next_level@] %] next-level[%/if%]">[@name@]</a>[%IF [@next_level@] %]<span class="category-toggle" data-target=".cat-menu-[@id@]" data-toggle="collapse"><i class="fa fa-chevron-down"></i></span>[%/if%]
+                <a href="[@url@]" class="category [%IF [@next_level@] %] next-level[%/if%]">[@name@]</a>[%IF [@next_level@] %]<span class="category-toggle" data-target=".cat-menu-[@id@]" data-toggle="collapse"><i class="fa fa-chevron-down"></i></span>[%/if%]
             </div>
-        
-                
-            
             [%if [@next_level@]%]
-            <div id="cat-menu-[@id@]" class="collapse cat-menu-[@id@]">
-                [@next_level@]
-            </div>
+                <div id="cat-menu-[@id@]" class="collapse cat-menu-[@id@]">
+                    [@next_level@]
+                </div>
             [%/if%]
         </div>
     [%/param%] 
     [%param *level_3%]
         <a href="[@url@]" class="third-lvl-cat"> &mdash; [@name@]</a>
     [%/param%] 
-    [%/content_menu%] 
-    [%/ cache%]
+[%/content_menu%] 
+[%/ cache%]

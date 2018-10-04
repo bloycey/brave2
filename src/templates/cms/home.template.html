@@ -1,6 +1,5 @@
 [%site_value id:'footer_javascript'%]
-	<script>
-
+<script>
 $(document).ready(function(){
 	$('#homepageCarousel').slick({
 		infinite: true,
@@ -21,12 +20,8 @@ $(document).ready(function(){
 		infinite: true,
 		arrows: false
 	});
-
 })
-
-	
-	</script>
-
+</script>
 [%/site_value%]
 
 </div>
@@ -66,7 +61,6 @@ $(document).ready(function(){
 </div>
 <div class="main-content container clearfix" role="main">
 	<div class="row">
-
 		<div class="col-xs-12">
 			<div class="home-advert-grid">
 				<div class="row">
@@ -74,61 +68,54 @@ $(document).ready(function(){
 				</div>
 			</div>
 		</div>
-
-
-		
-					[%thumb_list type:'content' content_type:'brand' limit:'12' sortby:'sortorder'%]
-						[%param *header%]
-						<div class="col-xs-12 brands-wrapper">
-							<div class="row">
-								<div class="col-md-4">
-								<div class="brands-heading-wrapper">
-									<h3 class="brands-heading">Our Brands</h3>
-									<span><a href="/brands">View all</a></span>
-								</div>
-								</div>
-								<div class="col-md-8 brand-img-wrapper">
-						[%/param%]
-						[%param *body%]
-						<div class="col-md-6 text-center">
-							<a href="[@URL@]"><img src="[%ASSET_URL type:'content' id:'[@content_id@]' default:'[@config:imageurl@]/pixel.gif'%][%/ASSET_URL%]" alt="[@content_name@]" class="brand-img"/></a>
-						</div>
-						[%/param%]
-						[%param *footer%]
-									</div>
-							</div>
-						</div>
-						[%/param%]
-					[%/thumb_list%]
-
-
-
-		<div class="col-xs-12">
-				<div class="thumbs-outer-wrapper">
-			[%if [@config:show_home_ads@]%]
-		[%advert type:'product' limit:'6' template:'' ad_group:''%]
+		[%thumb_list type:'content' content_type:'brand' limit:'12' sortby:'sortorder'%]
 			[%param *header%]
-				<section class="row products-row" aria-label="Featured products">
+			<div class="col-xs-12 brands-wrapper">
+				<div class="row">
+					<div class="col-md-4">
+					<div class="brands-heading-wrapper">
+						<h3 class="brands-heading">Our Brands</h3>
+						<span><a href="/brands">View all</a></span>
+					</div>
+					</div>
+					<div class="col-md-8 brand-img-wrapper">
 			[%/param%]
-			[%param footer%]
-				</section>
+			[%param *body%]
+			<div class="col-md-6 text-center">
+				<a href="[@URL@]"><img src="[%ASSET_URL type:'content' id:'[@content_id@]' default:'[@config:imageurl@]/pixel.gif'%][%/ASSET_URL%]" alt="[@content_name@]" class="brand-img"/></a>
+			</div>
 			[%/param%]
-			[%param *ifempty%]
-				[%random_products filter_category:'' template:'' limit:'6'%]
+			[%param *footer%]
+						</div>
+				</div>
+			</div>
+			[%/param%]
+		[%/thumb_list%]
+		<div class="col-xs-12">
+			<div class="thumbs-outer-wrapper">
+			[%if [@config:show_home_ads@]%]
+				[%advert type:'product' limit:'6' template:'' ad_group:''%]
 					[%param *header%]
 						<section class="row products-row" aria-label="Featured products">
 					[%/param%]
-					[%param *footer%]
+					[%param footer%]
 						</section>
 					[%/param%]
-				[%/random_products%]
-			[%/param%]
-		[%/advert%]
-	[%/if%]
+					[%param *ifempty%]
+						[%random_products filter_category:'' template:'' limit:'6'%]
+							[%param *header%]
+								<section class="row products-row" aria-label="Featured products">
+							[%/param%]
+							[%param *footer%]
+								</section>
+							[%/param%]
+						[%/random_products%]
+					[%/param%]
+				[%/advert%]
+			[%/if%]
 		</div>
 	</div>
 		
-
 [%if [@CONFIG:instagram_userID@] && [@CONFIG:Instagram_Access_Token@]%]
 	<!-- Instagram Feed -->
 	[%site_value id:'footer_javascript'%]
