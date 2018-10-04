@@ -509,6 +509,10 @@ fieldset[disabled] .btn-info.active {
     border-left-color: #d8ab64 /*{content-type-title-border-colour}*/;
 }
 
+.content-page-wrapper {
+	background-color: #efeff0 /*{content-page-background-color}*/;
+}
+
 @media only screen and (max-width: 767px)  {
     .blog-title {
         border-left-color: #6d9cb0 /*{mobile-blog-title-border}*/;
