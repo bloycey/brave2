@@ -11731,7 +11731,7 @@ ul.pager {
 .form-control {
   height: 39px;
 }
-.ajax_search.mob-search {
+.mob-search {
   height: 50px;
 }
 @media (max-width: 768px) {
