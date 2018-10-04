@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-xs-12">
           <ul class="nav nav-tabs" role="tablist">
-            <li class="nav-item" id="tabDescription" role="tab" aria-controls="description" aria-selected="true">
+              <li class="nav-item" id="tabDescription" role="tab" aria-controls="description" aria-selected="true">
                 <a class="nav-link active" href="#description" data-toggle="tab">Description</a>
               </li>
               [%if [@warranty@]%]
@@ -24,6 +24,11 @@
                 <li class="nav-item" id="tabTermsConditions" role="tab" aria-controls="termsConditions" aria-selected="false">
                   <a class="nav-link" href="#termsConditions" data-toggle="tab">Terms and Conditions</a>
                 </li>
+              [%/if%]
+              [%if [@config:show_shipping_calc@]%]
+              <li class="nav-item" id="tabShipping" role="tab" aria-controls="shipping" aria-selected="false">
+                <a class="nav-link" href="#shipping" data-toggle="tab">Shipping Calculator</a>
+              </li>
               [%/if%]
             </ul>
         </div>
@@ -46,6 +51,11 @@
                     [@features@]
                   </div>
                 </div>
+              [%/if%]
+              [%if [@config:show_shipping_calc@]%]
+              <div role="tabpanel" aria-labelledby="tabShipping" class="tab-pane" id="shipping">
+                [%load_ajax_template id:'_shipping' type:'item' template:'shipping_calc' preload:'1' tmpl_preview:'y'/%]
+              </div>
               [%/if%]
               [%if [@tnc@]%]
                 <div role="tabpanel" aria-labelledby="tabTermsConditions" class="tab-pane" id="termsConditions">

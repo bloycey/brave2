@@ -34,30 +34,35 @@ $(document).ready(function(){
 
 <div id="homepageCarousel">
 	[%advert type:'text' limit:'10' ad_group:''%]
-	[%param *body%]
-	<div>
-		<a href="[@linkurl@]">
-			<img src="[%asset_url type:'adw' id:'[@ad_id@]' default:'https://source.unsplash.com/random/1920x700'/%]" alt="[@headline@]" class="home-carousel-img" />
-		</a>
-		[%if [@headline@] or [@description@] %]
-		<div class="home-text-wrapper">
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12">
-					<div class="home-carousel-text-wrapper">
-						[%if [@headline@]%]<h1 class="uppercase">[@headline@]</h1>[%/if%]
-						[%if [@description@]%]<p>[@description@]</p>[%/if%]
-						[%if [@linktext@]%]<a href="[@url@]"><button class="btn btn-white-ghost btn-lg">[@linktext@]</button></a>[%/if%]
-					</div>
+		[%param *body%]
+		<div>
+			<a href="[@linkurl@]">
+				<img src="[%asset_url type:'adw' id:'[@ad_id@]' default:'https://source.unsplash.com/random/1920x700'/%]" alt="[@headline@]" class="home-carousel-img" />
+			</a>
+			[%if [@headline@] or [@description@] %]
+			<div class="home-text-wrapper">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-12">
+						<div class="home-carousel-text-wrapper">
+							[%if [@headline@]%]<h1 class="uppercase">[@headline@]</h1>[%/if%]
+							[%if [@description@]%]<p>[@description@]</p>[%/if%]
+							[%if [@linktext@]%]<a href="[@url@]"><button class="btn btn-white-ghost btn-lg">[@linktext@]</button></a>[%/if%]
+						</div>
 
-					</div>
+						</div>
+					</div>	
 				</div>	
-			</div>	
+			</div>
+			[%/if%]
 		</div>
-		[%/if%]
-	</div>
-	[%/param%]
-[%/advert%]
+		[%/param%]
+		[%param *ifempty%]
+			<a class="neto-placeholder neto-placeholder-rotator btn-loads" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>" href="[@config:home_url@]/_cpanel?item=adw&page=view&id=New&plan_id=1">
+				Click to add a banner<br/>
+			</a>
+		[%/param%]
+	[%/advert%]
 </div>
 <div class="main-content container clearfix" role="main">
 	<div class="row">
