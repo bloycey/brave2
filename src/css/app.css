@@ -11738,6 +11738,9 @@ ul.pager {
   max-width: 100%;
   height: auto !important;
 }
+.content-type-wrapper hr {
+  border-color: #ffffff;
+}
 @media (max-width: 768px) {
   #shipbox input,
   #shipbox select {
