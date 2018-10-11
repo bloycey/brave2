@@ -75,7 +75,10 @@ $(document).ready(function(){
 					<div class="col-md-4">
 					<div class="brands-heading-wrapper">
 						<h3 class="brands-heading">Our Brands</h3>
-						<span><a href="/brands">View all</a></span>
+						[%if [@CONFIG:brand_page_url@] ne ''%]
+							<span><a href="[@CONFIG:brand_page_url@]">View all</a></span>
+						[%/if%]
+						
 					</div>
 					</div>
 					<div class="col-md-8 brand-img-wrapper">
