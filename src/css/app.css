@@ -9202,7 +9202,7 @@ h1.product-name {
     margin-top: 15px;
   }
 }
-.product-buying-btns button {
+.product-buying-btns .btn {
   height: 60px;
 }
 #n_product .qty {
