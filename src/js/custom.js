@@ -192,16 +192,6 @@ $(document).ready(function(){
 
 $(document).ready(function(){
 
-	//Add to cart bounce
-
-	$('.addtocart').click(function(){
-		$('.checkout-inner').addClass('animated tada');
-		setTimeout(function(){ 
-			$('.checkout-inner').removeClass('animated tada');
-		}, 3000);
-	})
-
-
 	function openNav() {
 		$('body').toggleClass("overflow-hidden");
 	}
@@ -238,7 +228,6 @@ $(document).ready(function(){
 		
 	})
 })
-
 
 	
 	//Toggle Menu open and close btns
@@ -284,17 +273,19 @@ $(document).ready(function(){
 		return false;
 	});
 
-	$('.product-image').mouseenter(function(){
+	$('.thumbnail-image-wrapper').mouseenter(function(){
 		if($(window).width() > 1199) {
-		var alt = $(this).data('alt');
-		var original = $(this).data('original');
+		var img = $(this).find("img");
+		var alt = $(img).data('alt');
+		var original = $(img).data('original');
 		if(alt !== '') {
-			$(this).attr('src', alt);
+			$(img).attr('src', alt);
 		}
 	}
 	}).mouseleave(function(){
 		if($(window).width() > 1199) {
-		var original = $(this).data('original');
-		$(this).attr('src', original);
+		var img = $(this).find("img");
+		var original = $(img).data('original');
+		$(img).attr('src', original);
 		}
 	})
