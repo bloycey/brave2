@@ -9793,6 +9793,9 @@ h1.product-name {
   .productpromo {
     font-size: 28px;
   }
+  .lots-of {
+    padding-bottom: 5px;
+  }
   .product-buying-btns button,
   #n_product .qty {
     height: 48px;

@@ -89,15 +89,18 @@
 				<hr aria-hidden="true" class="hidden-xs"/>
 				[%END PARAM%]
 			[%END extra_options%]
-			[%data id:'multiplier_qty' if:'ne' value:'0' %]
-			Order In Lots Of <strong>[@multiplier_qty@]</strong>
-			[%end data%]
-			[%data id:'min_qty' if:'ne' value:'0' %]
-			Minimum Order Quantity <strong>[@min_qty@]</strong>
-			[%end data%]
-			[%data id:'max_qty' if:'ne' value:'0' %]
-			Maximum Order Quantity <strong>[@max_qty@]</strong>
-			[%end data%]
+			<div class="lots-of text-right">
+				[%data id:'multiplier_qty' if:'ne' value:'0' %]
+				Order In Lots Of <strong>[@multiplier_qty@]</strong>
+				[%end data%]
+				[%data id:'min_qty' if:'ne' value:'0' %]
+				Minimum Order Quantity <strong>[@min_qty@]</strong>
+				[%end data%]
+				[%data id:'max_qty' if:'ne' value:'0' %]
+				Maximum Order Quantity <strong>[@max_qty@]</strong>
+				[%end data%]
+			</div>
+			
 			<form class="buying-options" autocomplete="off" role="form" aria-label="Product purchase form">
 				<input type="hidden" id="model[@rndm@][@SKU@]" name="model" value="[@model@]">
 				<input type="hidden" id="thumb[@rndm@][@SKU@]" name="thumb" value="[@thumb@]">
@@ -115,7 +118,7 @@
 						[%ELSEIF [@store_quantity@] < 1 AND [@config:ALLOW_NOSTOCK_CHECKOUT@] %]
 						<button type="button" title="Add [@model@] to Cart" class="addtocart btn btn-warning btn-block btn-lg btn-loads" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>" rel="[@rndm@][@SKU@]"><i class="fa fa-clock-o icon-white" aria-hidden="true"></i> Backorder</button>
 						[%ELSE%]
-						<span class="btn btn-info btn-lg btn-block" title="Notify Me When [@model@] Is Back In Stock" data-toggle="modal" data-target="#notifymodal"><i class="fa fa-envelope" aria-hidden="true"></i> Notify Me</span>
+						<a class="btn btn-info btn-lg btn-block" title="Notify Me When [@model@] Is Back In Stock" data-toggle="modal" href="#notifymodal"><i class="fa fa-envelope" aria-hidden="true"></i> Notify Me</a>
 						[%END IF%]
 
 					</div>
