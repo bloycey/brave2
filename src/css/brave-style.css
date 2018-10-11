@@ -447,8 +447,12 @@ fieldset[disabled] .btn-info.active {
 }
 
 .dropdown-menu.mega-menu .mega-inner {
+	-webkit-column-count: 3 /*{number-of-columns-in-mega-menu}*/;
+	-moz-column-count: 3 /*{number-of-columns-in-mega-menu}*/;
 	column-count: 3 /*{number-of-columns-in-mega-menu}*/;
-	column-gap: 30px /*{gap-in-pixels-between-mega-menu-columns}*/
+	-webkit-column-gap: 30px /*{gap-in-pixels-between-mega-menu-columns}*/;
+	-moz-column-gap: 30px /*{gap-in-pixels-between-mega-menu-columns}*/;
+	column-gap: 30px /*{gap-in-pixels-between-mega-menu-columns}*/;
 }
 
 .menu-row-desktop {
