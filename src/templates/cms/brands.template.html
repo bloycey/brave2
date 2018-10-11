@@ -70,33 +70,39 @@
 			[%param *footer%]
 			</div>
 		</div>
-			<div class="row">
-				<div class="col-xs-12">
-						<div class="pagination-container">
-				
-							<ul>
+		
+		<div class="row">
+			<div class="col-xs-12">
+				<hr />
+				<div class="pagination-container">
+							<div class="text-center">
 								[%paging limit:'3'%]
-									[%param *previous_page%]
-										<li><a href="[@URL@]">Previous Page</a></li>
-									[%/param%]
-									[%param *goback_pages%]
-										<li><a href="[@URL@]">[@page@]</a></li>
-									[%/param%]
-									[%param *current_page%]
-										<li class="active"><a href="[@URL@]">[@page@]</a></li>
-									[%/param%]
-									[%param *gonext_pages%]
-										<li><a href="[@URL@]">[@page@]</a></li>
-									[%/param%]
-									[%param *next_page%]
-										<li><a href="[@URL@]">Next Page</a></li>
-									[%/param%]
-								[%/paging%]
-							</ul>
-			
-						</div>
-				</div>
+							
+								[%PARAM *goback_pages%]
+								<div class="pagination-child number">
+									<a href="[@url@]"><button class="pagination-center go-back btn">[@PAGE@]</button></a>
+								</div>
+								[%/PARAM%]
+							
+								[%PARAM *current_page%]
+								<div class="active pagination-child number">
+									<a href="[@url@]"><button class="pagination-center btn">[@PAGE@]</button></a>
+								</div>
+							
+								[%/PARAM%]
+								[%PARAM *gonext_pages%]
+								<div class="pagination-child number">
+									<a href="[@url@]"><button class="pagination-center go-forward btn">[@PAGE@]</button></a>
+								</div>
+								[%/PARAM%]
+							
+								
+							[%/paging%]
+							</div>
+					</div>
+				<hr />
 			</div>
+		</div>
 	
 		[%/param%]
 	[%/thumb_list%]
