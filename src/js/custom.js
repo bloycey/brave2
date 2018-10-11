@@ -47,7 +47,7 @@
 				}
 			});
 			if (found == 0) {
-				$.fancybox("Please specify a quantity before adding to cart");
+				$.fancybox.open('<div>Please specify a quantity before adding to cart</div>');
 				return false;
 			}
 			return true;
