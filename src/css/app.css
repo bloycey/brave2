@@ -10430,3 +10430,9 @@ ul.pager {
     margin-bottom: 6px;
   }
 }
+/* Fixes fancybox console error on mobile */
+.fancybox-container,
+.fancybox-image,
+.fancybox-spaceball {
+  touch-action: manipulation;
+}
