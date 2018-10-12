@@ -289,3 +289,29 @@ $(document).ready(function(){
 		$(img).attr('src', original);
 		}
 	})
+
+/*******/
+
+$('#_jstl__buying_options').on('click', '.js-notifymodal-in-stock', function(e){
+    e.preventDefault();
+    // Get values
+    var sku = $(this).attr('data-sku');
+    var $wrapper = $('#notifymodal .checkbox');
+    var $terms = $('#notifymodal .terms_box');
+    var $helpText = $('#notifymodal .checkbox .help-block');
+    // Validate form
+    if(!$.isChecked($terms)){
+        $wrapper.addClass('has-error');
+        $helpText.removeClass('hidden');
+        return false;
+    }else{
+        $wrapper.removeClass('has-error');
+        $helpText.addClass('hidden');
+        // Dismiss modal
+        $('#notifymodal').modal('hide');
+        // Send information
+        $.addNotifyBackInStock(sku, '');
+        $terms.attr('checked', false);
+        return true;
+    }
+});
