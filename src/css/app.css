@@ -9899,7 +9899,9 @@ h1.product-name {
 }
 .top-bar {
   color: #fff;
-  border-bottom: 1px solid #d8d8d8;
+}
+.top-bar .col-xs-12 {
+  min-height: 0;
 }
 .top-bar .announcement {
   font-size: 14px;
