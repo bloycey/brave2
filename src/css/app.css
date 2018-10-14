@@ -9279,12 +9279,14 @@ h1.product-name {
 }
 @media (min-width: 992px) {
   .mega-menu {
-    width: 970px;
+    width: 955px;
+    margin-left: 15px;
   }
 }
 @media (min-width: 1200px) {
   .mega-menu {
-    width: 1170px;
+    width: 1155px;
+    margin-left: 15px;
   }
 }
 @media (min-width: 768px) {
@@ -9296,7 +9298,7 @@ h1.product-name {
 .navbar-nav > li > .dropdown-menu.mega-menu {
   margin-top: 0px;
   border: none;
-  padding: 30px;
+  padding: 30px 20px;
 }
 .mega-category-title,
 .mega-advert,
