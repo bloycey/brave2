@@ -9207,9 +9207,13 @@ h1.product-name {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #fff !important;
 }
 .btn .fa {
   margin-right: 5px;
+}
+.viewby .btn .fa {
+  margin-right: 0;
 }
 .account-summary .btn-lg,
 .account-summary .btn-group-lg > .btn {
@@ -10424,6 +10428,7 @@ ul.pager {
 .content-type-content-wrapper img {
   max-width: 100%;
   height: auto !important;
+  /* Important to override WYSIWYG */
 }
 .content-type-wrapper hr {
   border-color: #ffffff;

@@ -1073,10 +1073,15 @@ h1.product-name {
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #fff !important;
 }
 
 .btn .fa {
     margin-right: 5px;
+}
+
+.viewby .btn .fa {
+    margin-right: 0;
 }
 
 .account-summary .btn-lg, .account-summary .btn-group-lg > .btn {
@@ -1882,7 +1887,7 @@ margin-bottom: 0;
 
 .menu-row-desktop .nav > li > a:hover, .menu-row-desktop .nav > li > a:focus {
     text-decoration: none;
-    color: #fff !important;
+    color: #fff !important; 
 }
 
 .menu-row-desktop .nav > li:hover > a, .menu-row-desktop .nav > li:focus > a {
@@ -2535,7 +2540,7 @@ ul.pager {
 
 .content-type-content-wrapper img {
     max-width: 100%;
-    height: auto !important;
+    height: auto !important; /* Important to override WYSIWYG */
 }
 
 .content-type-wrapper hr {
