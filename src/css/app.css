@@ -10355,7 +10355,6 @@ li.lv3-li {
     font-size: 28px;
     border-left-width: 5px;
     border-left-style: solid;
-    border-left: 5px solid #6d9cb0;
     padding-left: 10px;
   }
   .blog-short-desc {
@@ -10432,6 +10431,15 @@ ul.pager {
   #shipbox select {
     margin-bottom: 6px;
   }
+}
+#n_customer_account .btn {
+  font-size: 14px;
+}
+#n_customer_account article button {
+  margin-bottom: 5px;
+}
+#n_customer_account .form-inline .btn {
+  white-space: unset;
 }
 /* Fixes fancybox console error on mobile */
 .fancybox-container,
