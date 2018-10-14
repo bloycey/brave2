@@ -54,8 +54,13 @@ h5,
 	font-size: 14px /*{Headings|header-5-font-size}*/;
 }
 
-.brave-subheading {
-	border-left-color: #d8ac64 /*{Headings|main-subheading-colour}*/;
+
+.brave-heading, .brave-subheading {
+	border-left-color: #d8ac64 /*{Headings|main-heading-border-colour}*/;
+}
+
+.brave-subheading-right {
+	border-right-color: #d8ac64 /*{Headings|main-heading-border-colour}*/;
 }
 
 /**** BUTTON STYLES ******/
@@ -337,6 +342,18 @@ fieldset[disabled] .btn-info.active {
     background-color: #41515e /*{Thumbnails|thumbnail-price-background}*/;
 }
 
+.badge-wrapper p.featured {
+	background-color: #ef6b6b /*{Thumbnails|thumbnail-featured-badge-colour}*/;
+}
+.badge-wrapper p.inpromo {
+	background-color: #6d9cb0 /*{Thumbnails|thumbnail-inpromo-badge-colour}*/;
+}
+.badge-wrapper p.percentoff {
+	background-color: #e8746d /*{Thumbnails|thumbnail-percentoff-badge-colour}*/;
+}
+.badge-wrapper p.rrp {
+	background-color: #d8ac69 /*{Thumbnails|thumbnail-rrp-badge-colour}*/;
+}
 
 /*****PAGINATION STYLES *******/
 
