@@ -537,3 +537,7 @@ fieldset[disabled] .btn-info.active {
 .footer-heading:after {
 	border-bottom-color: #d8ab64 /*{Footer|footer-headings-underline-colour}*/;
 }
+
+.footer-bottom {
+	background-color: #374550 /*{Footer|footer-bottom-bg-colour}*/;
+}
