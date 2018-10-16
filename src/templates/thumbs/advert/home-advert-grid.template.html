@@ -1,6 +1,5 @@
-[%if [@count@] eq '0'%]
-<div class="col-md-8">
-    <div class="advert-grid-wrapper advert-grid-1 relative" style="background-image:url('[%asset_url type:'adw' id:'[@ad_id@]'%][%/asset_url%]')">
+<div class="[%if [@count@] eq '0' OR [@count@] eq '3'%] col-md-8 [%else%] col-md-4 [%/if%]">
+    <div class="advert-grid-wrapper relative advert-grid-[%calc [@count@] + 1 /%]" style="background-image:url('[%asset_url type:'adw' id:'[@ad_id@]'%][%/asset_url%]')">
         <div class="caption-backdrop">
             <h3 class="uppercase">[@headline@]</h3>
             <p class="hidden-xs">[@description@]</p>
@@ -8,37 +7,3 @@
         </div>
     </div>
 </div>
-[%/if%]
-[%if [@count@] eq '1'%]
-<div class="col-md-4">
-    <div class="advert-grid-wrapper advert-grid-2 relative" style="background-image:url('[%asset_url type:'adw' id:'[@ad_id@]'%][%/asset_url%]')">
-        <div class="caption-backdrop">
-            <h3 class="uppercase">[@headline@]</h3>
-            <p class="hidden-xs">[@description@]</p>
-            <a href="[@url@]"><button class="btn btn-lg btn-white-ghost">[@linktext@]</button></a>
-        </div>
-    </div>
-</div>
-[%/if%]
-[%if [@count@] eq '2'%]
-<div class="col-md-4">
-    <div class="advert-grid-wrapper advert-grid-3 relative" style="background-image:url('[%asset_url type:'adw' id:'[@ad_id@]'%][%/asset_url%]')">
-        <div class="caption-backdrop">
-            <h3 class="uppercase">[@headline@]</h3>
-            <p class="hidden-xs">[@description@]</p>
-            <a href="[@url@]"><button class="btn btn-lg btn-white-ghost">[@linktext@]</button></a>
-        </div>
-    </div>
-</div>
-[%/if%]
-[%if [@count@] eq '3'%]
-<div class="col-md-8">
-    <div class="advert-grid-wrapper advert-grid-4 relative" style="background-image:url('[%asset_url type:'adw' id:'[@ad_id@]'%][%/asset_url%]')">
-        <div class="caption-backdrop">
-            <h3 class="uppercase">[@headline@]</h3>
-            <p class="hidden-xs">[@description@]</p>
-            <a href="[@url@]"><button class="btn btn-lg btn-white-ghost">[@linktext@]</button></a>
-        </div>
-    </div>
-</div>
-[%/if%]
