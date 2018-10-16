@@ -59,7 +59,20 @@ $(document).ready(function(){
 		[%/param%]
 	[%/advert%]
 </div>
+
+[%set [@homepage_image@] %][%asset_url type:'content' id:'[@content_id@]' default:'[@config:imageurl@]/pixel.gif'/%][%/set%]
+
 <div class="main-content container clearfix" role="main">
+	[%if [@page_content@] ne ''%]
+		<div class="row home-text-row">
+			<div class="col-xs-12 col-lg-4 [%if [@homepage_image@] like 'pixel.gif'%]hidden[%/if%]">
+				<img src="[%asset_url type:'content' id:'[@content_id@]' default:'[@config:imageurl@]/pixel.gif'/%]" class="img-responsive" />
+			</div>
+			<div class="col-xs-12 [%if [@homepage_image@] like 'pixel.gif'%] col-md-12[%else%] col-lg-8[%/if%]">
+				<section id="homepage-content" class="n-responsive-content" aria-label="Main description">[@page_content@]</section>
+			</div>
+		</div>
+	[%/if%]
 	<div class="row">
 		<div class="col-xs-12">
 			<div class="home-advert-grid">
@@ -84,7 +97,7 @@ $(document).ready(function(){
 					<div class="col-md-8 brand-img-wrapper">
 			[%/param%]
 			[%param *body%]
-			<div class="col-md-6 text-center">
+			<div class="text-center">
 				<a href="[@URL@]"><img src="[%ASSET_URL type:'content' id:'[@content_id@]' default:'[@config:imageurl@]/pixel.gif'%][%/ASSET_URL%]" alt="[@content_name@]" class="brand-img"/></a>
 			</div>
 			[%/param%]
