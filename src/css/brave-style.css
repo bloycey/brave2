@@ -190,7 +190,7 @@ fieldset[disabled] .btn-warning.active {
 .btn-danger:active,
 .btn-danger.active,
 .open .dropdown-toggle.btn-danger {
-	color: #ffffff /*{Buttons|btn-danger-text-colour-hover}*/;
+	color: #ffffff !important /*{Buttons|btn-danger-text-colour-hover}*/;
 	background-color: #e85c54 /*{Buttons|btn-danger-bg-colour-hover}*/;
 	border-color: #e54b43 /*{Buttons|btn-danger-border-colour-hover}*/;
 }
