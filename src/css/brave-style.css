@@ -419,7 +419,7 @@ fieldset[disabled] .btn-info.active {
 /**** PRODUCT PAGE STYLES ********/
 
 
-@media only screen and (max-width: 992px)  {
+@media only screen and (max-width: 767px)  {
 	.svg-wrapper p.featured {
 		background-color:#ef6b6b /*{Product Page|featured-product-badge-colour}*/;
 	}
