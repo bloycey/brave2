@@ -383,11 +383,11 @@ fieldset[disabled] .btn-info.active {
 }
 
 .wishlist-wrapper i{
-    color:#6d9cb0 /*{Header|wishlist-icon-colour}*/
+    color:#d8ac64 /*{Header|wishlist-icon-colour}*/
 }
 
 .cart-count {
-	background-color:#6d9cb0 /*{Header|cart-counter-bg-colour}*/;
+	background-color:#d8ac64 /*{Header|cart-counter-bg-colour}*/;
 }
 
 .btn.mob-search{
@@ -414,6 +414,10 @@ fieldset[disabled] .btn-info.active {
 .top-lvl-cat.close-menu-wrapper{
     background-color:#6d9cb0 /*{Header|mobile-menu-close-category-menu-button-bg-colour}*/;
 	border-color:#6d9cb0 /*{Header|mobile-menu-close-category-menu-button-bg-colour}*/;
+}
+
+.header-utility-menu {
+	color: #333333 /*{Header|header-utility-menu-text-colour}*/
 }
 
 /**** PRODUCT PAGE STYLES ********/
@@ -508,16 +512,18 @@ fieldset[disabled] .btn-info.active {
 }
 
 .menu-row-desktop {
-    background-color: #fdfdfd /*{Homepage|desktop-mega-menu-row-bg-colour}*/;
-    color: #333333 /*{Homepage|desktop-mega-menu-row-text-colour}*/;
+    background-color: #41515e /*{Homepage|desktop-mega-menu-row-bg-colour}*/;
+    color: #fff /*{Homepage|desktop-mega-menu-row-text-colour}*/;
 }
 
 .menu-row-desktop .nav > li > a:hover, .menu-row-desktop .nav > li > a:focus, .menu-row-desktop .nav > li:hover > a, .menu-row-desktop .nav > li:focus > a {
-    background-color: #41515e /*{Homepage|active-mega-menu-item-bg}*/;
+	background-color: #ffffff /*{Homepage|active-mega-menu-item-bg}*/;
+	color: #41515e !important /*{Homepage|active-mega-menu-item-text-colour}*/
 }
 
 .top-bar, .top-bar .announcement {
-	background-color: #41515e /*{Homepage|announcement-bar-background-colour}*/;
+	background-color: #efefef /*{Homepage|announcement-bar-background-colour}*/;
+	color: #333333 /*{Homepage|announement text colour}*/ ;
 }
 
 .advert-grid-1 .caption-backdrop {
