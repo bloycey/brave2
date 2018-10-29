@@ -9943,9 +9943,7 @@ header {
 }
 @media only screen and (max-width: 992px) {
   .top-bar .announcement {
-    line-height: unset;
-    padding-top: 5px;
-    padding-bottom: 6px;
+    line-height: 25px;
     text-align: center;
   }
 }
