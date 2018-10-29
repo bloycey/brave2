@@ -3,7 +3,7 @@
         <div class="caption-backdrop">
             <h3 class="uppercase">[@headline@]</h3>
             <p class="hidden-xs">[@description@]</p>
-            <a href="[@url@]"><button class="btn btn-lg btn-white-ghost">[@linktext@]</button></a>
+            [%if [@linktext@] ne ""%]<a href="[@url@]"><button class="btn btn-lg btn-white-ghost">[@linktext@]</button></a>[%/if%]
         </div>
     </div>
 </div>
