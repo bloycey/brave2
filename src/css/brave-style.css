@@ -190,7 +190,7 @@ fieldset[disabled] .btn-warning.active {
 .btn-danger:active,
 .btn-danger.active,
 .open .dropdown-toggle.btn-danger {
-	color: #ffffff !important /*{Buttons|btn-danger-text-colour-hover}*/;
+	color: #ffffff /*{Buttons|btn-danger-text-colour-hover}*/ !important;
 	background-color: #e85c54 /*{Buttons|btn-danger-bg-colour-hover}*/;
 	border-color: #e54b43 /*{Buttons|btn-danger-border-colour-hover}*/;
 }
@@ -518,7 +518,7 @@ fieldset[disabled] .btn-info.active {
 
 .menu-row-desktop .nav > li > a:hover, .menu-row-desktop .nav > li > a:focus, .menu-row-desktop .nav > li:hover > a, .menu-row-desktop .nav > li:focus > a {
 	background-color: #ffffff /*{Homepage|active-mega-menu-item-bg}*/;
-	color: #41515e !important /*{Homepage|active-mega-menu-item-text-colour}*/
+	color: #41515e /*{Homepage|active-mega-menu-item-text-colour}*/ !important;
 }
 
 .top-bar, .top-bar .announcement {
