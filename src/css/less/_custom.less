@@ -610,7 +610,8 @@ a:hover,a:focus{
 .kit-title{
     text-align:left;
     font-size:18px;
-    font-weight:400
+    font-weight:400;
+    margin-top: 25px;
 }
 .variation-name{
     margin-bottom:-10px
@@ -2627,4 +2628,20 @@ ul.pager {
     width: auto;
     margin: 0 auto;
     max-width: 100%;
+}
+
+/*****Fix kitted products thumnails *****/
+
+.wrapper-components-thumbnail {
+    padding-bottom: 30px;
+}
+
+
+/***Fix alt images overflowing on hover **/
+@media (min-width: 992px) {
+    .thumbnail .product-image {
+        object-fit: contain;
+        width: 360px;
+        height: 360px;
+    }
 }
