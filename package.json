@@ -17,9 +17,9 @@
   },
   "homepage": "https://github.com/NetoECommerce/Skeletal",
   "devDependencies": {
-    "gulp": "3.9.0",
-    "gulp-less": "3.0.3",
-    "Skeletal": "git://github.com/NetoECommerce/Skeletal.git"
+    "Skeletal": "git://github.com/NetoECommerce/Skeletal.git",
+    "gulp": "^3.9.1",
+    "gulp-less": "3.0.3"
   },
   "dependencies": {
     "bootstrap": "3.3.6"
