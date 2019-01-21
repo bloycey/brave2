@@ -74,6 +74,16 @@
   [%/param%]
 [%/list_item_variations%]
 [%if ![@has_variation@]%]
+
+[%item_specifics id:'[@sku@]'%]
+[%param *body%]
+<div class="listopt-wrapper _itmspec_listopt">
+  <p>[@itmspec_name@]:</p>
+  <p class="specific w-600">&nbsp; [@itmspecval_value@]</p>
+</div>
+[%/param%]
+[%/item_specifics%]
+
   [%DISPLAY_CHILD_PRODUCTS id:'[@SKU@]' sortby:'sortorder,name'%]
     [%PARAM *header%]
       <hr />
