@@ -71,7 +71,7 @@
 						<div class="col-xs-12 hidden-md hidden-lg mobile-pricing">
 								[%if ![@has_child@] || [@has_variation@]%]	
 								<div class="pricing-wrapper">
-									[%load_ajax_template id:'_pricing' type:'item' template:'pricing' preload:'1' tmpl_sku:'[@current_sku@]' tmpl_preview:'y'/%]
+									[%load_ajax_template id:'_mobile_pricing' type:'item' template:'mobile_pricing' preload:'1' tmpl_sku:'[@current_sku@]' tmpl_preview:'y'/%]
 								</div>
 							[%/if%]	
 						</div>
