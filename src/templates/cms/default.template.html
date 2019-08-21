@@ -1,5 +1,23 @@
 </div>
 </div>
+
+[%site_value id:'footer_javascript'%]
+<script>
+$(document).ready(function(){
+	$('#homepageCarousel').slick({
+		infinite: true,
+		slidesToShow: 1,
+		arrows: true,
+		autoplay: true,
+		autoplaySpeed: 5000,
+		fade: true,
+		cssEase: 'linear',
+		slidesToScroll: 1
+	});
+})
+</script>
+[%/site_value%]
+
 <div class="content-page-wrapper" style="background-image: url([%asset_url type:'content' id:'[@content_id@]' thumb:'alt_1' /%]);">
 	<div class="container">
 		<div class="row">
