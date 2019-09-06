@@ -1,23 +1,5 @@
 </div>
 </div>
-
-[%site_value id:'footer_javascript'%]
-<script>
-$(document).ready(function(){
-	$('#homepageCarousel').slick({
-		infinite: true,
-		slidesToShow: 1,
-		arrows: true,
-		autoplay: true,
-		autoplaySpeed: 5000,
-		fade: true,
-		cssEase: 'linear',
-		slidesToScroll: 1
-	});
-})
-</script>
-[%/site_value%]
-
 <div class="content-page-wrapper" style="background-image: url([%asset_url type:'content' id:'[@content_id@]' thumb:'alt_1' /%]);">
 	<div class="container">
 		<div class="row">
@@ -51,23 +33,12 @@ $(document).ready(function(){
 						<div>
 							[%advert type:'text' template:'carousel' limit:'10' ad_group:''%]
 								[%param *header%]
-									<section id="homepageCarousel" class="carousel slide" aria-label="Banner images">
-										[%if [@total_showing@] > 1%]
-											<ol class="carousel-indicators">
-												[%site_value id:'counter' type:'load'/%]
-											</ol>
-										[%/if%]
-										<div class="carousel-inner">
+									<section class="carousel slide default-advert-container" aria-label="Banner images">
+										<div class="carousel-inner-wrapper">
 								[%/param%]
 								[%param *footer%]
 										</div>
 										[%if [@total_showing@] > 1%]
-											<a class="left carousel-control" href="#homepageCarousel" data-slide="prev">
-												<span class="fa fa-chevron-left"></span>
-											</a>
-											<a class="right carousel-control" href="#homepageCarousel" data-slide="next">
-												<span class="fa fa-chevron-right"></span>
-											</a>
 										[%/if%]
 									</section>
 									<hr aria-hidden="true"/>
