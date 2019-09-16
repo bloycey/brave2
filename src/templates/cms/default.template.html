@@ -1,5 +1,21 @@
 </div>
 </div>
+[%site_value id:'footer_javascript'%]
+<script>
+$(document).ready(function(){
+	$('.default-carousel').slick({
+		infinite: true,
+		slidesToShow: 1,
+		arrows: true,
+		autoplay: true,
+		autoplaySpeed: 5000,
+		fade: true,
+		cssEase: 'linear',
+		slidesToScroll: 1
+	});
+})
+</script>
+[%/site_value%]
 <div class="content-page-wrapper" style="background-image: url([%asset_url type:'content' id:'[@content_id@]' thumb:'alt_1' /%]);">
 	<div class="container">
 		<div class="row">
@@ -34,7 +50,7 @@
 							[%advert type:'text' template:'carousel' limit:'10' ad_group:''%]
 								[%param *header%]
 									<section class="carousel slide default-advert-container" aria-label="Banner images">
-										<div class="carousel-inner-wrapper">
+										<div class="carousel-inner-wrapper default-carousel">
 								[%/param%]
 								[%param *footer%]
 										</div>

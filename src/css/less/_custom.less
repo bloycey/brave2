@@ -643,27 +643,35 @@ a:focus {
   margin-top: 0;
 }
 
-#homepageCarousel.slick-initialized {
+.default-carousel {
+  margin-bottom: 30px;
+}
+
+#homepageCarousel.slick-initialized, .default-carousel.slick-initialized {
   visibility: visible;
   opacity: 1;
 }
-#homepageCarousel {
+#homepageCarousel, .default-carousel {
   opacity: 0;
   visibility: hidden;
   transition: opacity 1s ease;
   -webkit-transition: opacity 1s ease;
 }
-#homepageCarousel .slick-next {
+#homepageCarousel .slick-next, .default-carousel .slick-next {
   top: 35%;
   right: 35px;
   z-index: 1000;
   transform: scale(1.5);
 }
-#homepageCarousel .slick-prev {
+#homepageCarousel .slick-prev, .default-carousel .slick-prev {
   top: 35%;
   left: 35px;
   z-index: 1000;
   transform: scale(1.5);
+}
+
+.default-carousel .slick-next, .default-carousel .slick-prev {
+  top: 47%;
 }
 
 .thumbnail-price > a,

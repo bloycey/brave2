@@ -11,7 +11,20 @@
 			$("#left-sidebar").toggleClass("collapseit");
 			$("#category-content").toggleClass("col-sm-12 col-md-9");
 			$(".wrapper-thumbnail").toggleClass("col-md-4 col-md-6");
-		})
+		});
+
+		$(document).ready(function(){
+			$('.default-carousel').slick({
+				infinite: true,
+				slidesToShow: 1,
+				arrows: true,
+				autoplay: true,
+				autoplaySpeed: 5000,
+				fade: true,
+				cssEase: 'linear',
+				slidesToScroll: 1
+			});
+		});
 	</script>
 [%/site_value%]
 
@@ -66,19 +79,21 @@
 [%if ![@form:pgnum@] OR [@form:pgnum@] eq '1'%]
 	[%advert type:'text' template:'carousel' limit:'10' ad_group:''%]
 		[%param *header%]
+		<div class="col-xs-12">
 			<section class="carousel slide default-advert-container" aria-label="Banner images">
-				<div class="carousel-inner-wrapper">
+				<div class="carousel-inner-wrapper default-carousel">
 		[%/param%]
 		[%param *footer%]
 				</div>
 				[%if [@total_showing@] > 1%]
 				[%/if%]
 			</section>
+		</div>
 			<hr aria-hidden="true"/>
 		[%/param%]
 		[%param *ifempty%]
 		[%/param%]
-	[%/advert%]
+	[%/advert%]	
 	[%advert type:'product' limit:'8' template:'' inherit:'n' ad_group:''%]
 		[%param *header%]
 			<div class="row">
