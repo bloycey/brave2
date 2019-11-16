@@ -115,8 +115,7 @@
             class="tab-pane"
             id="shipping"
           >
-            [%load_ajax_template id:'_shipping' type:'item'
-            template:'shipping_calc' preload:'1' tmpl_preview:'y'/%]
+          [%load_template file:'products/includes/shipping_calc.template.html'/%]
           </div>
           [%/if%] [%if [@tnc@]%]
           <div
