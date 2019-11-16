@@ -154,12 +154,12 @@
 </div>
 <div class="row">
 	<div class="col-xs-12 product-buying-btns text-right">
-		[%if [@preorder@]%]
+		[%if [@available_preorder_quantity@] > 0 AND [@preorder@] AND [@config:WEBSTORE_USE_PREORDER_QUANTITY@]%]
 			<button type="button" title="Add to Cart" class="addtocart btn btn-block btn-warning btn-lg" rel="[@rndm@][@SKU@]"><i class="icon-time icon-white"></i> Pre-Order Now</button>
-		[%else%]
-			[%if [@store_quantity@] >= '1'%]
+		[%elseif [@store_quantity@] > 0 AND [@preorder@] AND ![@config:WEBSTORE_USE_PREORDER_QUANTITY@]%]
+			<button type="button" title="Add to Cart" class="addtocart btn btn-block btn-warning btn-lg" rel="[@rndm@][@SKU@]"><i class="icon-time icon-white"></i> Pre-Order Now</button>
+		[%elseifif [@store_quantity@] >= '1'%]
 				<button type="button" title="Add to Cart" class="addtocart btn btn-success btn-block btn-lg" rel="[@rndm@][@SKU@]"><i class="icon-shopping-cart icon-white"></i> Add to Cart</button>
-			[%/if%]
 		[%/if%]
 	</div>
 </div>
