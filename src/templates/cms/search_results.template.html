@@ -17,21 +17,23 @@
 
 <div class="col-xs-12">
 	[%breadcrumb%]
-		[%PARAM *header%]
-			<ul class="breadcrumb">
-				<li>
-					<a href="[@config:home_url@]">Home</a>
+		[%param *header%]
+			<ul class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList" role="navigation" aria-label="Breadcrumb">
+				<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+					<a href="[@config:home_url@]" itemprop="item"><span itemprop="name">Home</span></a>
+					<meta itemprop="position" content="0" />
 				</li>
-		[%/PARAM%]
-		[%PARAM *body%]
-			<li>
-				<a href="[@url@]">[@name@]</a>
-			</li>
-		[%/PARAM%]
-		[%PARAM *footer%]
+		[%/param%]
+		[%param *body%]
+				<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+					<a href="[@url@]" itemprop="item"><span itemprop="name">[@name@]</span></a>
+					<meta itemprop="position" content="[%calc [@count@] + 1 /%]" />
+				</li>
+		[%/param%]
+		[%param *footer%]
 			</ul>
-		[%/PARAM%]
-	[%/breadcrumb%]	
+		[%/param%]
+	[%/breadcrumb%]
 </div>
 
 
