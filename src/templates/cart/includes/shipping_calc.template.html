@@ -1,8 +1,8 @@
-<div class="card shipbox-cart" role="contentinfo" aria-label="Calculate shipping">
-	<div class="card-header">
-		<h2 class="card-title mb-0 h4">Shipping Calculator</h2>
+<div class="panel panel-default shipbox-cart" role="contentinfo" aria-label="Calculate shipping">
+	<div class="panel-heading">
+		<h2 class="panel-title">Shipping Calculator</h2>
 	</div>
-	<div class="card-body">
+	<div class="panel-body">
 		<form method="post" action="[%URL page:'checkout'/%]">
 			[%if [@config:shipping_calculator_type@] eq 'suburb_selector'%]
 				<!-- suburb selector -->
@@ -18,7 +18,7 @@
 					<span id="ship_selector"></span>
 					<input type="text"  class="form-control" id="ship_city" name="ship_city"  value="[%session id:'ship_city'/%]" size="50" maxlength="50"/>
 				</div>
-				<input type="submit" class="btn btn-outline-secondary btn-block" value="Calculate Shipping" />
+				<input type="submit" class="btn btn-block btn-default" value="Calculate Shipping" />
 				[%site_value id:'footer_javascript'%]
 					<script>
 						$(document).ready(function() {
@@ -44,7 +44,7 @@
 					<input type="text" class="form-control" id="ship_selector" value="[%session id:'ship_city'/%]" size="50" maxlength="50" autocomplete="off" />
 				</div>
 				<div class="form-group">
-					<input type="submit" class="btn btn-outline-secondary btn-block" id="suburb_search_btn" value="Calculate Shipping" />
+					<input type="submit" class="btn btn-block btn-default" id="suburb_search_btn" value="Calculate Shipping" />
 				</div>
 				[%site_value id:'footer_javascript'%]
 					<script>
@@ -80,7 +80,7 @@
 					[%/countries%]
 					</select>
 				</div>
-				<input type="submit" class="btn btn-outline-secondary btn-block" value="Calculate Shipping" />
+				<input type="submit" class="btn btn-block btn-default" value="Calculate Shipping" />
 			[%else%]
 				<!-- postcode search -->
 				<p>Enter your postal code to calculate.</p>
@@ -97,7 +97,7 @@
 					<label for="ship_zip">Post Code</label>
 					<input class="form-control" type="text" size="5" name="ship_zip" id="ship_zip" value="[@ship_zip@]" />
 				</div>
-				<input type="submit" class="btn btn-outline-secondary btn-block" value="Calculate Shipping" />
+				<input type="submit" class="btn btn-block btn-default" value="Calculate Shipping" />
 			[%/if%]
 		</form>
 	</div>
