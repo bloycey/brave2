@@ -63,7 +63,9 @@
                 >Terms and Conditions</a
               >
             </li>
-            [%/if%] [%if [@config:show_shipping_calc@]%]
+            [%/if%] 
+            [%if [@has_variation@] || ![@has_child@] AND ![@has_components@]%]
+            [%if [@config:show_shipping_calc@] and [@service_only@] eq 'n'%]
             <li
               class="nav-item"
               id="tabShipping"
@@ -75,6 +77,7 @@
                 >Shipping Calculator</a
               >
             </li>
+            [%/if%]
             [%/if%]
           </ul>
         </div>
@@ -108,7 +111,9 @@
           >
             <div class="productdetails n-responsive-content">[@features@]</div>
           </div>
-          [%/if%] [%if [@config:show_shipping_calc@]%]
+          [%/if%] 
+          [%if [@has_variation@] || ![@has_child@] AND ![@has_components@]%]
+          [%if [@config:show_shipping_calc@] and [@service_only@] eq 'n'%]
           <div
             role="tabpanel"
             aria-labelledby="tabShipping"
@@ -117,7 +122,9 @@
           >
           [%load_template file:'products/includes/shipping_calc.template.html'/%]
           </div>
-          [%/if%] [%if [@tnc@]%]
+          [%/if%]
+          [%/if%] 
+          [%if [@tnc@]%]
           <div
             role="tabpanel"
             aria-labelledby="tabTermsConditions"
