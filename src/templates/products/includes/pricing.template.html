@@ -1,4 +1,3 @@
-
 <div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="wrapper-pricing">
     <meta itemprop="priceCurrency" content="[@config:defaultcurrency@]">
     <input class="hidden" id="product_price" value="[%if ![@inpromo@]%][@store_price@][%else%][@promo_price@][%/if%]">
@@ -10,5 +9,8 @@
         <div class="productpromo" itemprop="price" content="[@promo_price@]" aria-label="Promo Price">
             NOW $<span class="finalprice">[@promo_price@]</span>
         </div>
+    [%/if%]
+    [%if [@form:disable_scripts@] ne 'true'%]
+        [%tracking_code type:'BuyingOptions' /%]
     [%/if%]
 </div>

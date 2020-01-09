@@ -10645,3 +10645,16 @@ ul.pager {
 .shipbox-cart {
   margin-bottom: 30px;
 }
+/****Fix afterpay****/
+.wrapper-thumbnail {
+  margin-bottom: 140px;
+}
+.product-name {
+  margin-bottom: 10px;
+}
+.buying-options-wrapper {
+  align-self: unset;
+}
+.modal-dialog {
+  margin-top: 15% !important;
+}
