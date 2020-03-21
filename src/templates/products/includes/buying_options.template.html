@@ -100,7 +100,18 @@
 				Maximum Order Quantity <strong>[@max_qty@]</strong>
 				[%end data%]
 			</div>
-			
+			[%if [@availability_description@]%]
+				<div class="badge-wrapper">
+					[@availability_description@]
+				</div>
+			[%/if%]
+			<div class="badge-wrapper">
+				[%if [@available_preorder_quantity@] > 0 AND [@preorder@] AND [@config:WEBSTORE_USE_PREORDER_QUANTITY@]%]
+				<p itemprop="availability" content="http://schema.org/PreOrder">Pre-order - Released [%format type:'date'%][@arrival_date@][%/format%]</p>
+				[%elseif [@store_quantity@] > 0 AND [@preorder@] AND ![@config:WEBSTORE_USE_PREORDER_QUANTITY@]%]
+				<p itemprop="availability" content="http://schema.org/PreOrder">Pre-order - Released [%format type:'date'%][@arrival_date@][%/format%]</p>
+				[%/if%]
+			</div>
 			<form class="buying-options" autocomplete="off" role="form" aria-label="Product purchase form">
 				<input type="hidden" id="model[@rndm@][@SKU@]" name="model" value="[@model@]">
 				<input type="hidden" id="thumb[@rndm@][@SKU@]" name="thumb" value="[@thumb@]">
