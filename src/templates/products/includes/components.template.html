@@ -54,7 +54,7 @@
 										<div class="components-thumbnail thumbnail component[@group_count@]">
 											<img class="component-var-thumb" component-id="[@component_count@]" src="[%asset_url type:'product' id:'[@SKU@]' thumb:'thumb'%][%/asset_url%]" alt="[@model@]" border="0" id="main-image">
 												<div class="caption">
-													<h4 class="title">[%format type:'text' maxlength:'50' rmhtml:'1'%][@model@][%/FORMAT%]</h4>
+													<p class="title">[%format type:'text' maxlength:'50' rmhtml:'1'%][@model@][%/FORMAT%]</p>
 													<p class="price">
 														[%if [@itm_price@] AND [@itm_price@] >= 0 %]
 															[%format type:'currency'%][@itm_price@][%END format%]
@@ -166,8 +166,8 @@
 			<button type="button" title="Add to Cart" class="addtocart btn btn-block btn-warning btn-lg" rel="[@rndm@][@SKU@]"><i class="icon-time icon-white"></i> Pre-Order Now</button>
 		[%elseif [@store_quantity@] > 0 AND [@preorder@] AND ![@config:WEBSTORE_USE_PREORDER_QUANTITY@]%]
 			<button type="button" title="Add to Cart" class="addtocart btn btn-block btn-warning btn-lg" rel="[@rndm@][@SKU@]"><i class="icon-time icon-white"></i> Pre-Order Now</button>
-		[%elseifif [@store_quantity@] >= '1'%]
-				<button type="button" title="Add to Cart" class="addtocart btn btn-success btn-block btn-lg" rel="[@rndm@][@SKU@]"><i class="icon-shopping-cart icon-white"></i> Add to Cart</button>
+		[%elseif [@store_quantity@] >= '1'%]
+			<button type="button" title="Add to Cart" class="addtocart btn btn-success btn-block btn-lg" rel="[@rndm@][@SKU@]"><i class="icon-shopping-cart icon-white"></i> Add to Cart</button>
 		[%/if%]
 	</div>
 </div>
