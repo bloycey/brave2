@@ -9325,6 +9325,7 @@ h1.product-name {
 #n_product .qty {
   text-align: center;
   height: 60px;
+  min-width: 80px;
 }
 #n_product .qty::-webkit-outer-spin-button,
 #n_product .qty::-webkit-inner-spin-button {
