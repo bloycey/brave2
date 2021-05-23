@@ -1,57 +1,100 @@
 [%CACHE type:'gallery' id:'[@inventory_id@]'%]
 
-<article class="wrapper-thumbnail col-xs-6 col-sm-4" role="article" aria-label="Product Thumbnail">
+<article
+	class="wrapper-thumbnail col-xs-6 col-sm-4"
+	role="article"
+	aria-label="Product Thumbnail"
+>
 	<div class="thumbnail" itemscope itemtype="http://schema.org/Product">
-		<meta itemprop="brand" content="[@brand@]"/>
-		<meta itemprop="mpn" content="[@sku@]"/>
+		<meta
+			itemprop="name"
+			content="[%format type:'text' truemaxlength:'50' rmhtml:'1'%][@model@][%/FORMAT%]"
+		/>
+		<meta itemprop="brand" content="[@brand@]" />
+		<meta itemprop="mpn" content="[@sku@]" />
 		<a href="[@URL@]">
 			<div class="thumbnail-image-wrapper relative">
-			<img src="[%asset_url type:'product' thumb:'thumbL' id:'[@SKU@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%end param%][%/asset_url%]" data-original="[%asset_url type:'product' thumb:'thumbL' id:'[@SKU@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%end param%][%/asset_url%]" itemprop="image" class="product-image" alt="[@model@]" rel="itmimg[@SKU@]" data-alt="[%asset_url type:'product' thumb:'alt_1' id:'[@SKU@]' %][%param default%] [%end param%][%/asset_url%]">
+				<img
+					src="[%asset_url type:'product' thumb:'thumbL' id:'[@SKU@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%end param%][%/asset_url%]"
+					data-original="[%asset_url type:'product' thumb:'thumbL' id:'[@SKU@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%end param%][%/asset_url%]"
+					itemprop="image"
+					class="product-image"
+					alt="[@model@]"
+					rel="itmimg[@SKU@]"
+					data-alt="[%asset_url type:'product' thumb:'alt_1' id:'[@SKU@]' %][%param default%] [%end param%][%/asset_url%]"
+				/>
 				<div class="thumbnail-price text-right">
-					<div class="price">
+					<div
+						class="price"
+						itemprop="offers"
+						itemscope
+						itemtype="https://schema.org/Offer"
+					>
 						<a href="[@URL@]">
-						[%if [@inpromo@]%]
-							Now [%if [@has_child@]%]from&nbsp;[%/if%]
-							<meta itemprop="priceValidUntil" content="[%format type:'date' format:'#Y-#M-#d'%][@promo_end@][%END format%]"/>
-							<span itemprop="price" content="[@promo_price@]">[%format type:'currency'%][@promo_price@][%/format%]</span>
-						[%else%]
-							[%if [@has_child@]%]From&nbsp;[%/if%]
-							<span itemprop="price" content="[@store_price@]">[%format type:'currency'%][@store_price@][%/format%]</span>
-						[%/if%]
+							[%if [@inpromo@]%] Now [%if
+							[@has_child@]%]from&nbsp;[%/if%]
+							<meta
+								itemprop="priceValidUntil"
+								content="[%format type:'date' format:'#Y-#M-#d'%][@promo_end@][%END format%]"
+							/>
+							<span itemprop="price" content="[@promo_price@]"
+								>[%format
+								type:'currency'%][@promo_price@][%/format%]</span
+							>
+							[%else%] [%if [@has_child@]%]From&nbsp;[%/if%]
+							<span itemprop="price" content="[@store_price@]"
+								>[%format
+								type:'currency'%][@store_price@][%/format%]</span
+							>
+							[%/if%]
 						</a>
 					</div>
 					<div class="product-badges">
 						[%if [@inpromo@]%]
-							<div class="badge-wrapper">
-								<p class="inpromo"><i class="fa fa-tag"></i><br>On Sale</p>
-							</div>
-						[%/if%]
-						[%if [@save@] > 0 AND ![@has_child@] %]
-				
 						<div class="badge-wrapper">
-								<p class="percentoff"><i class="fa fa-hand-o-down"></i><br>[%format type:'percent'%][@save@][%/format%] OFF</p>
-							</div>
-						[%/if%]
-						[%if [@save@] > 0%]
+							<p class="inpromo">
+								<i class="fa fa-tag"></i><br />On Sale
+							</p>
+						</div>
+						[%/if%] [%if [@save@] > 0 AND ![@has_child@] %]
+
 						<div class="badge-wrapper">
-								<p class="rrp"><i class="fa fa-usd"></i><br>RRP [%format type:'currency'%][@retail@][%/format%]</p>
-							</div>
-						[%/if%]		  
+							<p class="percentoff">
+								<i class="fa fa-hand-o-down"></i><br />[%format
+								type:'percent'%][@save@][%/format%] OFF
+							</p>
+						</div>
+						[%/if%] [%if [@save@] > 0%]
+						<div class="badge-wrapper">
+							<p class="rrp">
+								<i class="fa fa-usd"></i><br />RRP [%format
+								type:'currency'%][@retail@][%/format%]
+							</p>
+						</div>
+						[%/if%]
 					</div>
 				</div>
 			</div>
 		</a>
 		<div class="thumbnail-product-details">
-				<div class="row">
-						<div class="col-xs-12">	
-								<div class="product-name">
-									<a href="[@URL@]">[%format type:'text' truemaxlength:'50' rmhtml:'1'%][@model@][%/FORMAT%]</a>
-								</div>
-								[%if [@form:disable_scripts@] ne 'true'%][%tracking_code type:'Thumbnails' /%][%/if%]
-						</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="product-name">
+						<meta
+							itemprop="name"
+							content="[%format type:'text' truemaxlength:'50'
+						rmhtml:'1'%][@model@][%/FORMAT%]"
+						/>
+						<a href="[@URL@]"
+							>[%format type:'text' truemaxlength:'50'
+							rmhtml:'1'%][@model@][%/FORMAT%]</a
+						>
+					</div>
+					[%if [@form:disable_scripts@] ne 'true'%][%tracking_code
+					type:'Thumbnails' /%][%/if%]
 				</div>
-					
-			</div>		
+			</div>
 		</div>
+	</div>
 </article>
 [%/CACHE%]

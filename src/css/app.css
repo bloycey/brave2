@@ -9998,6 +9998,7 @@ h1.product-name {
 }
 .top-bar .col-xs-12 {
   min-height: 0;
+  z-index: 99999;
 }
 .top-bar .announcement {
   font-size: 14px;
