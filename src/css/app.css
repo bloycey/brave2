@@ -9149,9 +9149,6 @@ a:focus {
   display: flex;
   align-items: center;
 }
-#left-sidebar {
-  opacity: 0.9;
-}
 .main-content {
   margin-left: auto;
 }
@@ -10659,4 +10656,11 @@ ul.pager {
 }
 .modal-dialog {
   margin-top: 15% !important;
+}
+#left-sidebar .dropdown-menu-horizontal {
+  top: 0;
+  left: 100%;
+}
+#left-sidebar .dropdown {
+  position: relative;
 }
